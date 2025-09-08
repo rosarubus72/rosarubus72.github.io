@@ -38,7 +38,36 @@
 				<p style="vertical-align: initial; margin-top: 5px; line-height: 0em;">
 					<br/>
 				</p>
-				<h1 style="line-height: 1.8em; margin: 10px 10px 15px; font-size: 16px; display: block; margin-bottom: 0px;">
+				<h1 style="line-height: 1.8em; margin: 10px 10p<!-- 在你的海报HTML底部添加 -->
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<button id="savePoster" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; padding: 10px 20px; background: #293b94; color: white; border: none; border-radius: 4px;">
+  保存为1200×800 JPG
+</button>
+
+<script>
+document.getElementById('savePoster').addEventListener('click', function() {
+  const poster = document.querySelector('[data-role="outer"][label="edit by 135editor"]');
+  
+  // 确保目标元素有明确尺寸
+  poster.style.width = '1200px';
+  poster.style.height = '800px';
+  
+  html2canvas(poster, {
+    width: 1200,
+    height: 800,
+    scale: 1, // 关键：防止高DPI屏幕放大
+    useCORS: true,
+    allowTaint: true,
+    backgroundColor: '#ffffff'
+  }).then(canvas => {
+    // 创建下载链接
+    const link = document.createElement('a');
+    link.download = 'poster-1200x800.jpg';
+    link.href = canvas.toDataURL('image/jpeg', 0.95);
+    link.click();
+  });
+});
+</script>x 15px; font-size: 16px; display: block; margin-bottom: 0px;">
 					<span style="font-size: 14px; letter-spacing: 1px; text-indent: 20px; caret-color: red;">
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;当我们思考、记忆或感受时，大脑中的白质纤维束像高速公路一样传递信息，而皮层的复杂折叠则像地图上的山脉与河谷，为这些信息提供了独特的路径。长期以来，科学家往往将皮层形态（皮层几何模式）和白质通路（纤维束连接）分开研究，很少探讨它们之间的联系。这种研究局限意味着，我们可能错过了理解大脑整体运作的重要线索。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
 				</h1>
