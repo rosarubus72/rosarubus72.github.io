@@ -1,9 +1,6 @@
 <!-- 添加固定尺寸的海报容器 - 关键修改 -->
-<section data-role="outer" label="edit by 135editor" style="width: 1200px; height: 800px; overflow: hidden; position: relative; box-sizing: border-box; padding: 30px; background: white; font-family: 'Microsoft YaHei', Arial, sans-serif;">
-
-<!-- 添加比例计算样式 - 关键修改 -->
-<style>
-  /* 确保图片保持1200:800=1.5的宽高比 */
+<section data-role="outer" label="edit by 135editor" style="width: 1200px; height: 800px; overflow: hidden; position: relative; padding: 30px; background: white;box-sizing:border-box;font-family:&#39;Microsoft YaHei&#39;, Arial, sans-serif;" class="">
+	<!-- 添加比例计算样式 - 关键修改 --><style>/* 确保图片保持1200:800=1.5的宽高比 */
   .poster-image-container {
     position: relative;
     width: 100%;
@@ -35,145 +32,77 @@
     font-weight: bold;
     margin-bottom: 20px;
     color: #293b94;
-  }
-</style>
-
-<!-- 主要内容区域 - 关键修改 -->
-<div class="poster-content">
-  <section data-role="paragraph">
-    <section>
-      <!-- 修改图片尺寸属性 - 关键修改 -->
-      <div class="poster-image-container">
-        <img alt="公众号GIF.gif" class="rich_pages wxw-img poster-image" 
-             width="1200" height="800" 
-             style="max-inline-size: 100%; margin: 0; padding: 0; cursor: pointer; color: #000; 
-                    caret-color: #ff0000; background-color: #fff; text-decoration-thickness: initial; 
-                    vertical-align: baseline; overflow-wrap: break-word !important; 
-                    outline: none 0px !important; box-sizing: border-box; max-width: 100% !important;" 
-             title="公众号GIF.gif" 
-             src="https://mmecoa.qpic.cn/sz_mmecoa_gif/YeYEOicfKO60l2o9BNA6CiayKy4Jnvt98Hk591AKQURtEc6qn8WBWSibqrpib57VbwYA4Rj73Z5KbWhQm70nQll90g/640?from=appmsg" 
-             data-ratio="0.6667" data-w="1200"/>
-      </div>
-    </section>
-  </section>
-  
-  <section data-tools="135编辑器" data-id="94886" class="_135editor">
-    <section style="max-width: 100% !important; width: 100%; box-sizing: border-box;" data-width="100%">
-      <section style="background: rgba(242, 242, 242, 0.5);">
-        <p style="vertical-align: initial; margin-top: 5px; line-height: 0em;">
-          <span><br/></span>
-        </p>
-        <h1 style="line-height: 1.8em; margin: 10px 10px 15px; font-size: 16px; display: block; margin-bottom: 0px;">
-          <span style="font-size: 14px; letter-spacing: 1px; text-indent: 20px; caret-color: red;">
-            当我们思考、记忆或感受时，大脑中的白质纤维束像高速公路一样传递信息，而皮层的复杂折叠则像地图上的山脉与河谷，为这些信息提供了独特的路径。长期以来，科学家往往将皮层形态（皮层几何模式）和白质通路（纤维束连接）分开研究，很少探讨它们之间的联系。这种研究局限意味着，我们可能错过了理解大脑整体运作的重要线索。
-          </span>
-        </h1>
-        <h1 style="line-height: 1.8em; margin: 10px 10px 15px; font-size: 16px; display: block; margin-bottom: 0px;">
-          <span style="font-size: 14px; letter-spacing: 1px; text-indent: 20px; caret-color: red;">
-            近日，中国科学院自动化研究所脑图谱与类脑智能实验室脑网络组研究团队
-            <span style="color: #083d90;"><strong>揭示了人类大脑皮层几何模式与白质纤维连接的内在关系，提出了"白质纤维-皮层几何耦合"</strong></span>
-          </span>
-          <span style="font-size: 14px; caret-color: red; letter-spacing: 0.25px;">
-            <span style="color: #083d90;"><strong>（Tract-Geometry Coupling, TGC）</strong></span>
-          </span>
-          <span style="font-size: 14px; letter-spacing: 1px; text-indent: 20px; caret-color: red;">
-            <span style="color: #083d90;"><strong>这一指标</strong></span>。该研究以
-          </span>
-          <span style="font-size: 14px; caret-color: red; letter-spacing: 0.25px;">
-            "Mapping the coupling between tract reachability and cortical geometry of the human brain"
-          </span>
-          <span style="font-size: 14px; letter-spacing: 1px; text-indent: 20px; caret-color: red;">
-            为题发表在《自然-通讯》
-          </span>
-          <span style="font-size: 14px; caret-color: red; letter-spacing: 0.25px;">
-            （Nature Communications）
-          </span>
-          <span style="font-size: 14px; letter-spacing: 1px; text-indent: 20px; caret-color: red;">
-            上。
-          </span>
-        </h1>
-        <p style="line-height:1.5em;">
-          <span><br/></span>
-        </p>
-      </section>
-    </section>
-  </section>
-  
-  <!-- 对所有图片应用相同修改 - 关键修改 -->
-  <section data-role="paragraph">
-    <section>
-      <div class="poster-image-container">
-        <img alt="f.png" class="rich_pages wxw-img poster-image" 
-             width="1200" height="800" 
-             style="vertical-align: baseline; width: 100%; height: auto !important; 
-                    box-sizing: border-box; max-width: 100% !important;" 
-             src="https://mmecoa.qpic.cn/sz_mmecoa_png/YeYEOicfKO601CPXhsD2g7joMhaNAEibnLSicQFEUqQoZrBrex7NCJMamm2kLK5Dib2gjNiarQeMYDibn3n2u2ibvoKGA/640?from=appmsg" 
-             data-ratio="0.6667" data-w="1200"/>
-      </div>
-    </section>
-  </section>
-  
-  <!-- 其他内容区域适当缩减字体和间距以适应800px高度 -->
-  <section data-role="title" data-tools="135编辑器" data-id="2446" class="_135editor">
-    <section style="border: 0px none; box-sizing: border-box;">
-      <section style="padding: 0px 8px; margin: 8px auto; border-radius: 3px; border-left: 3px solid rgba(127, 127, 127, 0.76); box-sizing: border-box;">
-        <section style="line-height: 1.4; box-sizing: border-box; color: inherit;">
-          <section data-brushtype="text" style="border-color: rgba(127, 127, 127, 0.76); color: rgba(127, 127, 127, 0.76); font-size: 15px; text-align: justify; letter-spacing: 1.5px; line-height: 1.6em; box-sizing: border-box;" hm_fix="236:393">
-            <p style="vertical-align: initial; letter-spacing: 1.5px;">
-              <strong style="font-size: 15px; caret-color: red; color: #293b94; line-height: 1.6em;">
-                <span>白质纤维与皮层几何模式相互耦合，共同发育</span>
-              </strong>
-            </p>
-          </section>
-        </section>
-      </section>
-    </section>
-  </section>
-  
-  <section data-role="paragraph">
-    <p style="margin-left: 10px; margin-right: 10px; margin-top: 12px; display: block; line-height: 1.7em;">
-      <span style="font-size: 14px; letter-spacing: 1px;">
-        白质纤维在不同脑区之间建立解剖连接，构成了大脑的"连接组"，它们就像一张庞大而精准的交通网络，保障信息在各个功能区域之间顺畅传递。同时，皮层的复杂折叠形态在有限的颅腔内极大地提升了表面积，让更多神经元和连接得以容纳，从而支持复杂功能的实现。研究表明，这两者在发育过程中并不是独立存在，而是持续相互影响...
-      </span>
-    </p>
-  </section>
-  
-  <!-- 继续对其他图片应用相同修改 -->
-  <section data-role="paragraph">
-    <section style="text-align:center; margin-top: 12px; display: block; margin-left: 10px; margin-right: 10px;">
-      <div class="poster-image-container">
-        <img alt="A.png" class="rich_pages wxw-img poster-image" 
-             width="1200" height="800" 
-             style="vertical-align: baseline; width: 100%; height: auto !important; 
-                    box-sizing: border-box; max-width: 100% !important;" 
-             src="https://mmecoa.qpic.cn/sz_mmecoa_png/YeYEOicfKO601CPXhsD2g7joMhaNAEibnLUAzbAA66Y9NsQmNicX2UMUEkzpuyb5P1p02jrriaRhD7NpJ7NwsyOdWA/640?from=appmsg" 
-             data-ratio="0.6667" data-w="1200"/>
-      </div>
-    </section>
-  </section>
-  
-  <!-- 其他内容继续缩减以适应固定高度 -->
-  <!-- ... 其他内容保持类似修改 ... -->
-  
-  <!-- 论文信息部分调整为更紧凑的格式 -->
-  <section data-tools="135编辑器" data-id="87523" class="_135editor">
-    <section style="margin-top: 8px; padding: 10px; text-align: justify; background-color: #f5f5f4; box-sizing: border-box;">
-      <p style="text-align:justify; margin: 8px 5px 0px; line-height: 1.5em; font-size: 13px;">
-        <strong><span style="color: rgba(14, 52, 150, 0.9);">论文信息：</span></strong>
-      </p>
-      <p style="text-align:left; margin: 3px 5px; line-height: 1.4em; font-size: 12px;">
-        <span>Li, D. et al. Mapping the coupling between tract reachability and cortical geometry of the human brain. Nat Commun 16, 7489 (2025).</span>
-      </p>
-      <p style="text-align:left; margin: 3px 5px; line-height: 1.4em; font-size: 12px;">
-        <span>DOI: https://doi.org/10.1038/s41467-025-62812-9</span>
-      </p>
-      <p style="text-align:left; margin: 8px 5px 0px; line-height: 1.5em; font-size: 13px;">
-        <strong><span style="color: rgba(14, 52, 150, 0.9);">论文地址：</span></strong>
-      </p>
-      <p style="margin-left: 5px; margin-right: 5px; font-size: 12px;">
-        <span>https://www.nature.com/articles/s41467-025-62812-9</span>
-      </p>
-    </section>
-  </section>
-</div>
+  }</style><!-- 主要内容区域 - 关键修改 -->
+	<section data-tools="135编辑器" data-id="94886" class="_135editor">
+		<section style="max-width: 100% !important; width: 100%;box-sizing:border-box;" data-width="100%">
+			<section style="background: rgba(242, 242, 242, 0.5);" class="">
+				<p style="vertical-align: initial; margin-top: 5px; line-height: 0em;">
+					<br/>
+				</p>
+				<h1 style="line-height: 1.8em; margin: 10px 10px 15px; font-size: 16px; display: block; margin-bottom: 0px;">
+					<span style="font-size: 14px; letter-spacing: 1px; text-indent: 20px; caret-color: red;">
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;当我们思考、记忆或感受时，大脑中的白质纤维束像高速公路一样传递信息，而皮层的复杂折叠则像地图上的山脉与河谷，为这些信息提供了独特的路径。长期以来，科学家往往将皮层形态（皮层几何模式）和白质通路（纤维束连接）分开研究，很少探讨它们之间的联系。这种研究局限意味着，我们可能错过了理解大脑整体运作的重要线索。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+				</h1>
+				<h1 style="line-height: 1.8em; margin: 10px 10px 15px; font-size: 16px; display: block; margin-bottom: 0px;">
+					<span style="font-size: 14px; letter-spacing: 1px; text-indent: 20px; caret-color: red;">
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;近日，中国科学院自动化研究所脑图谱与类脑智能实验室脑网络组研究团队 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #083d90;"><strong>揭示了人类大脑皮层几何模式与白质纤维连接的内在关系，提出了&quot;白质纤维-皮层几何耦合&quot;</strong></span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 14px; caret-color: red; letter-spacing: 0.25px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #083d90;"><strong>（Tract-Geometry Coupling, TGC）</strong></span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 14px; letter-spacing: 1px; text-indent: 20px; caret-color: red;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #083d90;"><strong>这一指标</strong></span>。该研究以 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 14px; caret-color: red; letter-spacing: 0.25px;">
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&quot;Mapping the coupling between tract reachability and cortical geometry of the human brain&quot; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 14px; letter-spacing: 1px; text-indent: 20px; caret-color: red;">
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;为题发表在《自然-通讯》 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 14px; caret-color: red; letter-spacing: 0.25px;">
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;（Nature Communications） &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size: 14px; letter-spacing: 1px; text-indent: 20px; caret-color: red;">
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;上。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+				</h1>
+				<p style="line-height:1.5em;">
+					<br/>
+				</p>
+			</section>
+		</section>
+	</section><!-- 对所有图片应用相同修改 - 关键修改 -->
+	<section data-role="title" data-tools="135编辑器" data-id="2446" class="_135editor">
+		<section style="border: 0px none; box-sizing: border-box;">
+			<section style="padding: 0px 8px; margin: 8px auto; border-radius: 3px; border-left: 3px solid rgba(127, 127, 127, 0.76); box-sizing: border-box;" >
+				<section style="line-height: 1.4; box-sizing: border-box; color: inherit;">
+					<section data-brushtype="text" style="border-color: rgba(127, 127, 127, 0.76); color: rgba(127, 127, 127, 0.76); font-size: 15px; text-align: justify; letter-spacing: 1.5px; line-height: 1.6em; box-sizing: border-box;" hm_fix="236:393">
+						<p style="vertical-align: initial; letter-spacing: 1.5px;">
+							<strong style="font-size: 15px; caret-color: red; color: #293b94; line-height: 1.6em;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;白质纤维与皮层几何模式相互耦合，共同发育 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong>
+						</p>
+					</section>
+				</section>
+			</section>
+		</section>
+	</section>
+	<section data-role="paragraph">
+		<p style="margin-left: 10px; margin-right: 10px; margin-top: 12px; display: block; line-height: 1.7em;">
+			<span style="font-size: 14px; letter-spacing: 1px;">
+ &nbsp; &nbsp; &nbsp; &nbsp;白质纤维在不同脑区之间建立解剖连接，构成了大脑的&quot;连接组&quot;，它们就像一张庞大而精准的交通网络，保障信息在各个功能区域之间顺畅传递。同时，皮层的复杂折叠形态在有限的颅腔内极大地提升了表面积，让更多神经元和连接得以容纳，从而支持复杂功能的实现。研究表明，这两者在发育过程中并不是独立存在，而是持续相互影响... &nbsp; &nbsp; &nbsp;</span>
+		</p>
+	</section><!-- 继续对其他图片应用相同修改 -->
+	<section data-role="paragraph">
+		<section style="text-align:center; margin-top: 12px; display: block; margin-left: 10px; margin-right: 10px;">
+			<section class="poster-image-container">
+				<img alt="A.png" class="rich_pages wxw-img poster-image" width="1200" height="800" style="vertical-align: baseline; width: 100%; height: auto !important;box-sizing:border-box;max-width:100% !important;" src="https://mmecoa.qpic.cn/sz_mmecoa_png/YeYEOicfKO601CPXhsD2g7joMhaNAEibnLUAzbAA66Y9NsQmNicX2UMUEkzpuyb5P1p02jrriaRhD7NpJ7NwsyOdWA/640?from=appmsg" data-ratio="0.2796296296296296" data-w="1080"/>
+			</section>
+		</section>
+	</section><!-- 其他内容继续缩减以适应固定高度 -->
+ &nbsp;<!-- ... 其他内容保持类似修改 ... -->
+ &nbsp;
+ &nbsp;<!-- 论文信息部分调整为更紧凑的格式 -->
+	<section data-tools="135编辑器" data-id="87523" class="_135editor">
+		<section style="margin-top: 8px; padding: 10px; text-align: justify; background-color: #f5f5f4; box-sizing: border-box;">
+			<p style="margin: 8px 5px 0px; line-height: 1.5em; font-size: 13px;text-align:justify;" align="justify">
+				<strong><span style="color: rgba(14, 52, 150, 0.9);">论文信息：</span></strong>
+			</p>
+			<p style="margin: 3px 5px; line-height: 1.4em; font-size: 12px;text-align:left;" align="left">
+				Li, D. et al. Mapping the coupling between tract reachability and cortical geometry of the human brain. Nat Commun 16, 7489 (2025).
+			</p>
+			<p style="margin: 3px 5px; line-height: 1.4em; font-size: 12px;text-align:left;" align="left">
+				DOI: https://doi.org/10.1038/s41467-025-62812-9
+			</p>
+			<p style="margin: 8px 5px 0px; line-height: 1.5em; font-size: 13px;text-align:left;" align="left">
+				<strong><span style="color: rgba(14, 52, 150, 0.9);">论文地址：</span></strong>
+			</p>
+			<p style="margin-left: 5px; margin-right: 5px; font-size: 12px;">
+				https://www.nature.com/articles/s41467-025-62812-9
+			</p>
+		</section>
+	</section>
 </section>
