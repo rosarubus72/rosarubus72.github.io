@@ -1,140 +1,303 @@
-```html
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>PosterAgent: Academic Poster Generation Framework</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header { background-color: #4CAF50; color: white; padding: 1em; text-align: center; }
-        main { padding: 2em; }
-        .section { border-bottom: 1px solid #ddd; margin-bottom: 2em; }
-        h2 { margin-top: 0; }
-        .summary { margin-bottom: 1em; }
-        .question { margin-bottom: 1em; }
-        .options { list-style-type: none; margin-left: 1em; }
-        .options li { margin-bottom: 0.5em; }
-    </style>
+  <meta charset="utf-8">
+  <meta name="description" content="Introducing PosterAgent: A multi-agent pipeline for generating high-quality academic posters from papers.">
+  <meta property="og:title" content="PosterAgent: Academic Poster Generation from Papers">
+  <meta property="og:description" content="Introducing PosterAgent: A multi-agent pipeline for generating high-quality academic posters from papers.">
+  <meta property="og:url" content="https://paper2poster.github.io">
+  <meta property="og:image" content="static/image/banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="PosterAgent: Academic Poster Generation from Papers">
+  <meta name="twitter:description" content="Introducing PosterAgent: A multi-agent pipeline for generating high-quality academic posters from papers.">
+  <meta name="twitter:image" content="static/images/twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="academic poster, poster generation, multi-agent system, visual feedback, paper2poster">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>PosterAgent: Academic Poster Generation from Papers</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
 </head>
 <body>
-    <header>
-        <h1>PosterAgent: Academic Poster Generation Framework</h1>
-    </header>
-    <main>
-        <div class="section" id="what-is-it">
-            <h2>What is it?</h2>
-            <p class="summary">The paper proposes the PosterAgent framework, a multi-agent pipeline designed to generate high-quality posters from academic papers. It addresses the challenges of long-context and layout-sensitive tasks, leveraging structured parsing, hierarchical planning, and visual feedback.</p>
-            <div class="question">
-                <h3>Key Contributions:</h3>
-                <ul class="options">
-                    <li>A. Introducing a novel benchmark, Paper2Poster, for evaluating poster generation systems.</li>
-                    <li>B. Proposing a 'Top-down' design philosophy that involves global restructuring and local refinements.</li>
-                    <li>C. Developing PosterAgent variants, such as PosterAgent-4o and PosterAgent-Qwen, which show significant improvements in visual quality, text coherence, and overall aesthetic scores.</li>
-                </ul>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">PosterAgent: Academic Poster Generation from Papers</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://go2heart.github.io" target="_blank">Yibin Yan</a>, </span>
+                <span class="author-block">
+                  <a href="https://weidixie.github.io" target="_blank">Weidi Xie</a></span>
             </div>
-        </div>
-        <div class="section" id="why">
-            <h2>Why?</h2>
-            <p class="summary">The research addresses the challenge of generating academic posters from long scientific papers that contain interleaved text, figures, and tables. The motivation stems from the need to efficiently communicate key findings at conferences where attendees have limited time.</p>
-            <div class="question">
-                <h3>Motivation:</h3>
-                <ul class="options">
-                    <li>A. To develop a benchmark and evaluation metrics for poster generation, focusing on visual quality, textual coherence, and the ability to convey core paper content.</li>
-                    <li>B. To introduce PosterAgent, a multi-agent system that uses visual feedback to produce concise and coherent posters, addressing issues such as text overflow and spatial alignment.</li>
-                </ul>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">School of Artificial Intelligence, Shanghai Jiao Tong University<br>EMNLP 2024 Findings</span>
             </div>
-        </div>
-        <div class="section" id="how-to-do-it">
-            <h2>How to do it?</h2>
-            <div class="question">
-                <h3>Key Technologies:</h3>
-                <ul class="options">
-                    <li>A. LLM for semantic alignment of visual assets with textual content.</li>
-                </ul>
-                <h3>Implementation Steps:</h3>
-                <ul class="options">
-                    <li>B. Iteratively configuring the layout section by section.</li>
-                </ul>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2407.12735" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+                <span class="link-block">
+                  <a href="https://github.com/Paper2Poster/Paper2Poster" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              </div>
             </div>
+          </div>
         </div>
-        <div class="section" id="how-effective">
-            <h2>How Effective is it?</h2>
-            <p class="summary">The experimental results indicate that the PosterAgent variants perform similarly in terms of overall robustness, with PaperQuiz scores ranging from 114.09 to 118.25. The fully open-source stack (Qwen-Qwen) achieves a score of 114.65, closely following the best closed-source variant.</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th>Visual quality &amp; Text coherence</th>
-                        <th>Visual quality &amp; Text coherence</th>
-                        <th>Visual quality &amp; Text coherence</th>
-                        <th>VLM-as-Judge</th>
-                        <th>VLM-as-Judge</th>
-                        <th>VLM-as-Judge</th>
-                        <th>Density-augmented Score</th>
-                        <th>Density-augmented Score</th>
-                        <th>Density-augmented Score</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>LLM</td>
-                        <td>VLM</td>
-                        <td>0.75</td>
-                        <td>8.31</td>
-                        <td>0.24</td>
-                        <td>3.58</td>
-                        <td>3.86</td>
-                        <td>3.72</td>
-                        <td>101.87</td>
-                        <td>130.39</td>
-                        <td>116.13</td>
-                    </tr>
-                    <tr>
-                        <td>LLM</td>
-                        <td>Qwen-2.5-7B</td>
-                        <td>0.75</td>
-                        <td>9.25</td>
-                        <td>0.24</td>
-                        <td>3.33</td>
-                        <td>3.82</td>
-                        <td>3.58</td>
-                        <td>105.61</td>
-                        <td>130.88</td>
-                        <td>118.25</td>
-                    </tr>
-                    <tr>
-                        <td>Qwen-2.5-7B</td>
-                        <td>LLM</td>
-                        <td>0.76</td>
-                        <td>9.12</td>
-                        <td>0.25</td>
-                        <td>3.57</td>
-                        <td>3.82</td>
-                        <td>3.70</td>
-                        <td>100.09</td>
-                        <td>128.09</td>
-                        <td>114.09</td>
-                    </tr>
-                    <tr>
-                        <td>Qwen-2.5-7B</td>
-                        <td>Qwen-2.5-7B</td>
-                        <td>0.75</td>
-                        <td>8.81</td>
-                        <td>0.24</td>
-                        <td>3.50</td>
-                        <td>3.83</td>
-                        <td>3.66</td>
-                        <td>100.35</td>
-                        <td>128.94</td>
-                        <td>114.65</td>
-                    </tr>
-                </tbody>
-            </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero ">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Introduction</h2>
+        <div class="content has-text-justified">
+          <p>
+            The task of generating academic posters from long scientific papers is a critical yet challenging endeavor in scientific communication. This paper introduces the <strong>PosterAgent framework</strong>, a multi-agent pipeline designed to address the complexities of this task. It leverages structured parsing, hierarchical planning, and visual feedback to generate high-quality posters. The main contributions include introducing a new benchmark, Paper2Poster, and proposing a 'Top-down' design philosophy that ensures global restructuring and local refinements.
+          </p>
         </div>
-    </main>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-small">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">How It Works</h2>
+        <div class="content has-text-justified">
+          <p>
+            The PosterAgent framework operates through three key stages:
+            <ol>
+              <li><strong>Parser:</strong> Extracts key textual and visual content from the paper to build an asset library.</li>
+              <li><strong>Planner:</strong> Aligns assets and arranges them into coherent layouts, generating panels iteratively with a zoom-in mechanism.</li>
+              <li><strong>Painter-Commenter:</strong> Produces panel-level bullet points and ensures layout coherence and avoids overflow using a VLM as Commenter.</li>
+            </ol>
+            This top-down, visual-in-the-loop design ensures concise and coherent posters without manual tuning.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-small">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experimental Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            Experimental results show that PosterAgent variants perform similarly in terms of overall robustness. The fully open-source stack (Qwen-Qwen) achieves a score of 114.65, closely following the best closed-source variant. Substituting Qwen for the VLM in the LLM-VLM configuration improves the PaperQuiz score, suggesting better balance between informativeness and visual appeal. The density-augmented scores also show improvements when Qwen is used as the VLM, enhancing aesthetic and overall quality.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Introducing PosterAgent: A multi-agent pipeline for generating high-quality academic posters from papers.">
+  <meta property="og:title" content="PosterAgent: Academic Poster Generation from Papers">
+  <meta property="og:description" content="Introducing PosterAgent: A multi-agent pipeline for generating high-quality academic posters from papers.">
+  <meta property="og:url" content="https://paper2poster.github.io">
+  <meta property="og:image" content="static/image/banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="PosterAgent: Academic Poster Generation from Papers">
+  <meta name="twitter:description" content="Introducing PosterAgent: A multi-agent pipeline for generating high-quality academic posters from papers.">
+  <meta name="twitter:image" content="static/images/twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="academic poster, poster generation, multi-agent system, visual feedback, paper2poster">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>PosterAgent: Academic Poster Generation from Papers</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">PosterAgent: Academic Poster Generation from Papers</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://go2heart.github.io" target="_blank">Yibin Yan</a>, </span>
+                <span class="author-block">
+                  <a href="https://weidixie.github.io" target="_blank">Weidi Xie</a></span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">School of Artificial Intelligence, Shanghai Jiao Tong University<br>EMNLP 2024 Findings</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2407.12735" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+                <span class="link-block">
+                  <a href="https://github.com/Paper2Poster/Paper2Poster" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero ">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Introduction</h2>
+        <div class="content has-text-justified">
+          <p>
+            The task of generating academic posters from long scientific papers is a critical yet challenging endeavor in scientific communication. This paper introduces the <strong>PosterAgent framework</strong>, a multi-agent pipeline designed to address the complexities of this task. It leverages structured parsing, hierarchical planning, and visual feedback to generate high-quality posters. The main contributions include introducing a new benchmark, Paper2Poster, and proposing a 'Top-down' design philosophy that ensures global restructuring and local refinements.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-small">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">How It Works</h2>
+        <div class="content has-text-justified">
+          <p>
+            The PosterAgent framework operates through three key stages:
+            <ol>
+              <li><strong>Parser:</strong> Extracts key textual and visual content from the paper to build an asset library.</li>
+              <li><strong>Planner:</strong> Aligns assets and arranges them into coherent layouts, generating panels iteratively with a zoom-in mechanism.</li>
+              <li><strong>Painter-Commenter:</strong> Produces panel-level bullet points and ensures layout coherence and avoids overflow using a VLM as Commenter.</li>
+            </ol>
+            This top-down, visual-in-the-loop design ensures concise and coherent posters without manual tuning.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-small">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experimental Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            Experimental results show that PosterAgent variants perform similarly in terms of overall robustness. The fully open-source stack (Qwen-Qwen) achieves a score of 114.65, closely following the best closed-source variant. Substituting Qwen for the VLM in the LLM-VLM configuration improves the PaperQuiz score, suggesting better balance between informativeness and visual appeal. The density-augmented scores also show improvements when Qwen is used as the VLM, enhancing aesthetic and overall quality.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
-```
-
-This HTML structure provides a clear and interactive representation of the key aspects of the research. The content is organized into sections for easy navigation, and the questions and options are presented in a list format for a more engaging experience. The table of experimental results is included to showcase the performance of different PosterAgent variants.
