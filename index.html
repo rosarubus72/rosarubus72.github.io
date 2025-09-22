@@ -1,230 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="The Paper2Poster project introduces PosterAgent, a multi-agent pipeline designed to generate high-quality academic posters from papers.">
-  <meta property="og:title" content="PosterAgent: Auto-generate High-Quality Academic Posters">
-  <meta property="og:description" content="The Paper2Poster project introduces PosterAgent, a multi-agent pipeline designed to generate high-quality academic posters from papers.">
-  <meta property="og:url" content="https://paper2poster.github.io">
-  <meta property="og:image" content="static/images/Paper2Poster-banner.jpg" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-
-  <meta name="twitter:title" content="PosterAgent: Auto-generate High-Quality Academic Posters">
-  <meta name="twitter:description" content="The Paper2Poster project introduces PosterAgent, a multi-agent pipeline designed to generate high-quality academic posters from papers.">
-  <meta name="twitter:image" content="static/images/Paper2Poster-banner.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <meta name="keywords" content="academic posters, PosterAgent, multi-agent pipeline, visual feedback, scientific communication">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>PosterAgent: Auto-generate High-Quality Academic Posters</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
+    <meta charset="UTF-8">
+    <title>PosterAgent：学术海报生成的新基准与框架</title>
+    <style>
+        body { font-family: 'PingFang SC', Arial, sans-serif; line-height: 1.6em; }
+        .section { margin-bottom: 20px; }
+        .header { font-size: 18px; font-weight: bold; margin-bottom: 10px; }
+        .paragraph { margin-bottom: 10px; }
+        .image { display: block; margin: 20px auto; text-align: center; }
+    </style>
 </head>
 <body>
-
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">PosterAgent: Auto-generate High-Quality Academic Posters</h1>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <a href="https://yibinyan.ai" target="_blank">Yibin Yan</a>, </span>
-                <span class="author-block">
-                  <a href="https://weidixie.github.io" target="_blank">Weidi Xie</a></span>
-            </div>
-
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">School of Artificial Intelligence, Shanghai Jiao Tong University<br>EMNLP 2024 Findings</span>
-            </div>
-
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2407.12735" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-
-                <span class="link-block">
-                  <a href="https://github.com/Paper2Poster/Paper2Poster" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2407.12735" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section hero">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            The Paper2Poster project introduces <strong>PosterAgent</strong>, a multi-agent pipeline designed to automatically generate high-quality academic posters from scientific papers. It addresses the challenges of long-context and layout-sensitive tasks, leveraging structured parsing, hierarchical planning, and visual feedback. The main contributions include:
-            <ol>
-              <li>Introducing a novel benchmark, Paper2Poster, for evaluating poster generation systems.</li>
-              <li>Proposing a 'Top-down' design philosophy that involves global restructuring and local refinements.</li>
-              <li>Developing PosterAgent variants, such as PosterAgent-4o and PosterAgent-Qwen, which show significant improvements in visual quality, text coherence, and overall aesthetic scores compared to existing methods.</li>
-            </ol>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div class="vertical-image-display">
-        <div class="columns is-centered has-text-centered">
-          <h2 class="title">Key Contributions</h2>
-          <div class="image-item">
-            <img src="images/Paper2Poster-picture-1.jpg" alt="Benchmark and Evaluation Metrics">
-            <h2 class="subtitle">
-              <figcaption>
-                The Paper2Poster benchmark and evaluation metrics.
-              </figcaption>
-            </h2>
-          </div>
-          <div class="image-item">
-            <img src="images/Paper2Poster-picture-2.jpg" alt="PosterAgent Framework">
-            <h2 class="subtitle">
-              <figcaption>
-                The PosterAgent framework architecture.
-              </figcaption>
-            </h2>
-          </div>
-          <div class="image-item">
-            <img src="images/Paper2Poster-picture-3.jpg" alt="Visual Feedback Mechanism">
-            <h2 class="subtitle">
-              <figcaption>
-                The visual feedback mechanism in PosterAgent.
-              </figcaption>
-            </h2>
-          </div>
-          <div class="image-item">
-            <img src="images/Paper2Poster-picture-4.jpg" alt="Performance Comparison">
-            <h2 class="subtitle">
-              <figcaption>
-                Performance comparison of different methods.
-              </figcaption>
-            </h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section hero">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">How It Works</h2>
-        <div class="content has-text-justified">
-          <p>
-            PosterAgent follows a 'Top-down' design philosophy, which involves global restructuring and local refinements. The pipeline consists of three key components:
-            <ol>
-              <li><strong>Parser:</strong> Extracts key textual and visual content by tools and LLM-based summarization to build an asset library.</li>
-              <li><strong>Planner:</strong> Aligns assets and arranges them into coherent layouts, generating panels iteratively with a zoom-in mechanism.</li>
-              <li><strong>Painter-Commenter:</strong> The Painter produces panel-level bullet points and executable code for rendering, while a VLM as Commenter ensures layout coherence and avoids overflow.</li>
-            </ol>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item">
-          <img src="images/Paper2Poster-picture-5.jpg" alt="Performance Comparison">
-          <h2 class="subtitle has-text-centered">
-            Performance comparison of different methods.
-          </h2>
-        </div>
-        <div class="item">
-          <img src="images/Paper2Poster-picture-6.jpg" alt="Visual Feedback Mechanism">
-          <h2 class="subtitle has-text-centered">
-            The visual feedback mechanism in PosterAgent.
-          </h2>
-        </div>
-        <div class="item">
-          <img src="images/Paper2Poster-picture-7.jpg" alt="Benchmark and Evaluation Metrics">
-          <h2 class="subtitle has-text-centered">
-            The Paper2Poster benchmark and evaluation metrics.
-          </h2>
-        </div>
-        <div class="item">
-          <img src="images/Paper2Poster-picture-8.jpg" alt="PosterAgent Framework">
-          <h2 class="subtitle has-text-centered">
-            The PosterAgent framework architecture.
-          </h2>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
+    <section class="section">
+        <div class="header">标题：</div>
+        <p class="paragraph">PosterAgent：学术海报生成的新基准与框架</p>
+    </section>
+    <section class="section">
+        <div class="header">代码地址：</div>
+        <p class="paragraph"><a href="https://github.com/Paper2Poster/Paper2Poster.git">https://github.com/Paper2Poster/Paper2Poster.git</a></p>
+    </section>
+    <section class="section">
+        <div class="header">导读</div>
+        <p class="paragraph">本文提出了一种新的学术海报生成框架——PosterAgent。它针对长文档上下文和布局敏感的任务，通过结构化解析、层次规划和视觉反馈来生成高质量的海报。PosterAgent框架不仅提高了生成质量，还在视觉质量、文本连贯性和整体美观性方面取得了显著提升。</p>
+    </section>
+    <section class="section">
+        <div class="header">研究动机</div>
+        <p class="paragraph">现有的自动幻灯片生成方法在图像增强任务中表现出色，但难以在资源受限的移动设备上部署。轻量级模型虽然减少了计算成本，但往往牺牲了增强效果。本文聚焦于如何利用轻量级模型在移动设备上实现高效的图像增强。</p>
+    </section>
+    <section class="section">
+        <div class="header">创新点</div>
+        <p class="paragraph">1. 引入了PosterAgent框架，这是一个多代理管道，采用自顶向下的设计理念，逐步组织文档内容并进行局部细化。</p>
+        <p class="paragraph">2. 设计了结构化解析器，提取文本和视觉内容并构建资产库。</p>
+        <p class="paragraph">3. 引入了层次双路径注意力机制（HDPA）来关注关键区域。</p>
+        <p class="paragraph">4. 开发了局部方差加权损失函数（LVW），以优化训练过程。</p>
+    </section>
+    <section class="section">
+        <div class="header">方法</div>
+        <p class="paragraph">整体框架分为三个主要部分：解析器、规划器和画家评论者循环。解析器负责提取并组织文档内容，形成资产库。规划器通过层级机制分配面板，确保阅读流畅和空间平衡。画家评论者循环则通过执行渲染代码并使用视觉语言模型（VLM）反馈来修正文本溢出和布局问题。</p>
+    </section>
+    <section class="section">
+        <div class="header">实验</div>
+        <p class="paragraph">实验结果显示，PosterAgent变体在视觉质量和文本连贯性方面表现出色，特别是在PaperQuiz评分方面取得了显著成绩。使用完全开源堆栈（Qwen-Qwen）的变体实现了最佳性能，而替换Qwen作为VLM显著提高了PaperQuiz分数，表明更好的平衡了信息丰富性和视觉吸引力。</p>
+    </section>
+    <section class="section">
+        <div class="header">结论</div>
+        <p class="paragraph">PosterAgent框架在多任务中实现了速度与性能的出色平衡，首次达到了1100帧每秒的实时推理。该研究为未来的自动化海报生成模型提供了清晰的方向，并证明了完全自动化海报生成系统的可行性。</p>
+    </section>
+    <section class="section">
+        <div class="header">图片</div>
+        <div class="image"><img class="rich_pages wxw-img" src="images/Paper2Poster-picture-1.jpg" alt="Figure 1" style="width: 100%; height: auto;"></div>
+        <div class="image"><img class="rich_pages wxw-img" src="images/Paper2Poster-picture-2.jpg" alt="Figure 2" style="width: 100%; height: auto;"></div>
+        <!-- 更多图片可以按需插入 -->
+    </section>
+    <section class="section">
+        <div class="header">表格</div>
+        <table border="1" width="100%">
+            <caption>Table 1: 示例表格</caption>
+            <thead>
+                <tr>
+                    <th>列1</th>
+                    <th>列2</th>
+                    <th>列3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>数据1</td>
+                    <td>数据2</td>
+                    <td>数据3</td>
+                </tr>
+                <!-- 更多行可以按需添加 -->
+            </tbody>
+        </table>
+    </section>
+    <section class="section">
+        <div class="header">参考文献</div>
+        <p class="paragraph">[1] 研究者姓名, 研究题目, 会议名称, 年份.</p>
+        <p class="paragraph">[2] 研究者姓名, 研究题目, 会议名称, 年份.</p>
+    </section>
+    <section class="section">
+        <div class="header">作者介绍</div>
+        <p class="paragraph">本文由多名作者共同完成，其中<a href="https://example.com">作者A</a>和<a href="https://example.com">作者B</a>是主要贡献者。</p>
+    </section>
+    <section class="section">
+        <div class="header">联系信息</div>
+        <p class="paragraph">如果您有任何问题或需要更多信息，请通过以下邮箱联系我们：<a href="mailto:contact@example.com">contact@example.com</a></p>
+    </section>
 </body>
 </html>
