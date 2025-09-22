@@ -5,24 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="assets/videogui.png">
-
-  <title>Paper2Poster</title>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDF010G6PN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-EDF010G6PN');
-
-  </script>
-
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
-
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./static/slick/slick.css" />
   <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css" />
@@ -30,12 +12,9 @@
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
-
   <style>
     .navbar {
       list-style-type: none;
@@ -69,8 +48,41 @@
       color: white;
     }
 
-    .navbar li a:hover {
-      background-color: #111;
+    .poster-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 20px;
+      padding: 20px;
+      cursor: grab;
+    }
+
+    .poster-carousel:active {
+      cursor: grabbing;
+    }
+
+    .poster-item {
+      flex: 0 0 auto;
+      width: 45%;
+      text-align: center;
+    }
+
+    .poster-item img {
+      height: 500px;
+      object-fit: contain;
+    }
+
+    .caption-small {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .caption-large {
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 20px;
     }
   </style>
 
@@ -88,9 +100,7 @@
 
 <body>
   <ul class="navbar" id="navbar">
-    <li><a href="#home">
-      <strong>🎓Paper2Poster</strong>
-    </a></li>
+    <li><a href="#home"><strong>🎓Paper2Poster</strong></a></li>
   </ul>
 
   <section class="hero">
@@ -98,53 +108,49 @@
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-4 has-text-centered">
-            <img src="./assets/poster.png" alt="Home" style="height:30px; width:30px; vertical-align:middle; margin-right:5px;">
+            <img src="assets/poster.png" alt="Home" style="height:30px; width:30px; vertical-align:middle; margin-right:5px;">
             <h1 class="title is-2 publication-title">
               🎓Paper2Poster<br>Towards Multimodal Poster Automation from Scientific Papers
             </h1>
             <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                Wei Pang<sup>&#9825;</sup><a href="https://scholar.google.com/citations?user=f90pZOYAAAAJ&hl=en">,</a>
-                Kevin Qinghong Lin<sup>✉</sup><a href="https://qhlin.me">,</a>
-                Xiangru Jian<sup>&#9825;</sup><a href="https://edward-jianqaq.github.io/">,</a>
-                Xi He<sup>&#9825;</sup><a href="https://cs.uwaterloo.ca/~xihe/">,</a>
-                Philip Torr<sup>&#9827;</sup><a href="https://scholar.google.com/citations?user=kPxa2w0AAAAJ&hl=en">
-              </span>
-              <span class="author-block">
-                <sup>&#9825;</sup>University of Waterloo
-              </span>
-              <span class="author-block">
-                <sup>&#9824;</sup>National University of Singapore
-              </span>
-              <span class="author-block">
-                <sup>&#9827;</sup>University of Oxford
-              </span>
-              <sup>&#9825;</sup>Equal Contribution
-              <sup>✉</sup>Corresponding Authors
+              <span class="author-block"><sup>&#9825;</sup><a href="https://scholar.google.com/citations?user=f90pZOYAAAAJ&hl=en">Wei Pang</a><sup>†</sup>,</span>
+              <span class="author-block"><sup>&#9824;</sup><a href="https://qhlin.me">Kevin Qinghong Lin</a><sup>✉</sup><sup>†</sup>,</span>
+              <span class="author-block"><sup>&#9825;</sup><a href="https://edward-jianqaq.github.io/">Xiangru Jian</a><sup>†</sup>,</span>
+              <span class="author-block"><sup>&#9825;</sup><a href="https://cs.uwaterloo.ca/~xihe/">Xi He</a><sup>✉</sup>,</span>
+              <span class="author-block"><sup>&#9827;</sup><a href="https://scholar.google.com/citations?user=kPxa2w0AAAAJ&hl=en">Philip Torr</a>
             </div>
-          </div>
-        </div>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-4">
-            <div class="publication-links">
-              <a href="https://arxiv.org/abs/2505.21497" class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                  <i class="ai ai-arxiv"></i>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>&#9825;</sup>University of Waterloo</span>
+              <span class="author-block"><sup>&#9824;</sup>National University of Singapore</span>
+              <span class="author-block"><sup>&#9827;</sup>University of Oxford</span>
+            </div>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2505.21497" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
                 </span>
-                <span>Paper</span>
-              </a>
-              <a href="https://github.com/Paper2Poster/Paper2Poster" class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                  <i class="fab fa-github"></i>
+                <span class="link-block">
+                  <a href="https://github.com/Paper2Poster/Paper2Poster" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
                 </span>
-                <span>Code</span>
-              </a>
-              <a href="https://huggingface.co/datasets/Paper2Poster/Paper2Poster" class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                  <i class="ai ai-obp"></i>
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/Paper2Poster/Paper2Poster" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-obp"></i>
+                    </span>
+                    <span>Datasets</span>
+                  </a>
                 </span>
-                <span>Datasets</span>
-              </a>
+              </div>
             </div>
           </div>
         </div>
@@ -164,7 +170,9 @@
           </div>
         </div>
       </div>
-      <img src="./assets/overall.png" alt="" style="max-width: 100%; height: auto;">
+      <center>
+        <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-1.jpg" alt="">
+      </center>
     </div>
   </section>
 
@@ -175,12 +183,14 @@
       </div>
       <div class="container is-max-desktop">
         <div class="columns is-vcentered">
+          <!-- Left: Paper -->
           <div class="column has-text-centered">
-            <img src="./assets/example/paper.png" alt="Paper" style="height: 400px;">
+            <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-2.jpg" alt="Paper" style="height: 400px;">
             <p class="caption" style="text-align: center; margin-top: 10px;"><strong>Inputs: </strong><a href="https://arxiv.org/pdf/2210.15986">Paper</a> (a PDF)</p>
           </div>
+          <!-- Right: Poster -->
           <div class="column has-text-centered">
-            <img src="./assets/example/gt_poster.png" alt="Poster" style="height: 400px;">
+            <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-3.jpg" alt="Poster" style="height: 400px; max-width: none;">
             <p class="caption" style="text-align: center; margin-top: 10px;"><strong>Outputs: </strong><a href="https://neurips.cc/media/PosterPDFs/NeurIPS%202022/61269.png?t=1669788855.791561">Poster</a> (designed by author)</p>
           </div>
         </div>
@@ -195,22 +205,26 @@
       </div>
       <div class="container is-max-desktop">
         <div class="columns is-vcentered">
+          <!-- GPT-4o Image -->
           <div class="column has-text-centered">
-            <img src="./assets/example/4o_image.png" alt="GPT-4o Image" style="height: 400px;">
+            <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-4.jpg" alt="GPT-4o Image" style="height: 400px; max-width: none;">
             <p class="caption" style="text-align: center; margin-top: 10px;"><strong>Poster generated by GPT-4o-image</strong></p>
           </div>
+          <!-- GPT-4o HTML -->
           <div class="column has-text-centered">
-            <img src="./assets/example/4o_html.png" alt="GPT-4o HTML" style="height: 400px;">
+            <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-5.jpg" alt="GPT-4o HTML" style="height: 400px; max-width: none;">
             <p class="caption" style="text-align: center; margin-top: 10px;"><strong>Poster generated by GPT-4o-html</strong></p>
           </div>
         </div>
         <div class="columns is-vcentered">
+          <!-- PPT-Agent -->
           <div class="column has-text-centered">
-            <img src="./assets/example/ppt_agent.png" alt="PPT-Agent" style="height: 400px;">
+            <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-6.jpg" alt="PPT-Agent" style="height: 400px; max-width: none;">
             <p class="caption" style="text-align: center; margin-top: 10px;"><strong>Poster generated by <a href="https://github.com/icip-cas/PPTAgent">PPTAgent</a></strong></p>
           </div>
+          <!-- OWL -->
           <div class="column has-text-centered">
-            <img src="./assets/example/owl.png" alt="OWL" style="height: 400px;">
+            <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-7.jpg" alt="OWL" style="height: 400px; max-width: none;">
             <p class="caption" style="text-align: center; margin-top: 10px;"><strong>Poster generated by <a href="https://github.com/camel-ai/owl">🦉OWL</a></strong></p>
           </div>
         </div>
@@ -220,6 +234,7 @@
           <strong>PPTAgent</strong> struggles with layout control, often resulting in missing panels. 
         </figcaption>
       </div>
+    </div>
   </section>
 
   <section class="hero teaser">
@@ -230,7 +245,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-vcentered">
           <div class="column has-text-centered">
-            <img src="./assets/example/poster_agent_red.png" alt="PosterAgent" style="height: 600px;">
+            <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-8.jpg" alt="PosterAgent" style="height: 600px; max-width: none;">
             <p class="caption" style="text-align: center; margin-top: 10px;">In contrast, <strong>PosterAgent</strong> generates structurally coherent and readable posters while using significantly fewer words.</p>
           </div>
         </div>
@@ -240,7 +255,7 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
+      <div class="columns is-centered">
         <h2 class="title is-3">What are the Challenges?</h2>
       </div>
       <div class="columns is-centered has-text-centered">
@@ -267,17 +282,17 @@
           <div class="columns is-centered">
             <div class="column is-full">
               <figure style="width: 100%;">
-                <img src="./assets/posteragent.png" alt="stat" width="90%">
+                <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-9.jpg" alt="stat" width="90%">
               </figure>
             </div>
           </div>
         </center>
         <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
           <strong>A Top-down, visual-in-the-loop, efficient multi-agent pipeline.</strong>
+          <strong>(a) Parser</strong> distills the paper into a structured asset library;
+          the <strong>(b) Planner</strong> aligns text–visual pairs into a binary‐tree layout that preserves reading order and spatial balance; 
+          and the <strong>(c) Painter-Commentor</strong> loop refines each panel by executing rendering code and using VLM feedback to eliminate overflow and ensure alignment.
         </figcaption>
-        <strong>(a) Parser</strong> distills the paper into a structured asset library;
-        the <strong>(b) Planner</strong> aligns text–visual pairs into a binary‐tree layout that preserves reading order and spatial balance; 
-        and the <strong>(c) Painter-Commentor</strong> loop refines each panel by executing rendering code and using VLM feedback to eliminate overflow and ensure alignment.
       </div>
     </div>
   </section>
@@ -292,17 +307,17 @@
           <div class="columns is-centered">
             <div class="column is-full">
               <figure style="width: 100%;">
-                <img src="./assets/paperquiz.png" alt="stat" width="90%">
+                <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-10.jpg" alt="stat" width="90%">
               </figure>
             </div>
           </div>
         </center>
         <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
           <strong>A Good poster should convey core paper content visually.</strong>
+          <strong>Left:</strong> We automatically generate multiple-choice questions from each paper using an LLM (o3), forming the our PaperQuiz evaluation. 
+          <strong>Right:</strong> In PaperQuiz, we simulate multiple reader by allowing VLMs—representing different expertise levels (e.g., student, professor)—to read each generated poster and answer the quiz. 
+          The poster that achieves the highest average score is considered the most effective in conveying the paper's content.
         </figcaption>
-        <strong>Left:</strong> We automatically generate multiple-choice questions from each paper using an LLM (o3), forming the our PaperQuiz evaluation. 
-        <strong>Right:</strong> In PaperQuiz, we simulate multiple reader by allowing VLMs—representing different expertise levels (e.g., student, professor)—to read each generated poster and answer the quiz. 
-        The poster that achieves the highest average score is considered the most effective in conveying the paper's content.
       </div>
     </div>
   </section>
@@ -312,7 +327,7 @@
       <h2 class="title is-3">Abstract</h2>
       <div class="content has-text-justified">
         <p>
-          Academic poster generation is a crucial yet challenging task in scientific communication, requiring the compression of long-context interleaved documents into a single, visually coherent page. To address this challenge, we introduce the first benchmark and metric suite for poster generation, which pairs recent conference papers with author-designed posters and evaluates outputs on (i) Visual Quality—semantic alignment with human posters, (ii) Textual Coherence—language fluency, (iii) Holistic Assessment—six fine-grained aesthetic and informational criteria scored by a VLM-as-judge, and notably (iv) PaperQuiz—the poster’s ability to convey core paper content as measured by VLMs answering generated quizzes. Building on this benchmark, we propose PosterAgent, a top-down, visual-in-the-loop multi-agent pipeline: the (a) Parser distills the paper into a structured asset library; the (b) Planner aligns text–visual pairs into a binary-tree layout that preserves reading order and spatial balance; and the (c) Painter–Commenter loop refines each panel by executing rendering code and using VLM feedback to eliminate overflow and ensure alignment. In our comprehensive evaluation, we find that GPT-4o outputs—though visually appealing at first glance—often exhibit noisy text and poor PaperQuiz scores, and we find that reader engagement is the primary aesthetic bottleneck, as human-designed posters rely largely on visual semantics to convey meaning. Our fully open-source Paper2Poster pipeline outperforms GPT-4o–based systems across nearly all metrics while consuming 87% fewer tokens. These findings chart clear directions for the next generation of fully automated poster-generation models.
+          Academic poster generation is a crucial yet challenging task in scientific communication, requiring the compression of long-context interleaved documents into a single, visually coherent page. To address this challenge, we introduce the first benchmark and metric suite for poster generation, which pairs recent conference papers with author-designed posters and evaluates outputs on (i) Visual Quality—semantic alignment with human posters, (ii) Textual Coherence—language fluency, (iii) Holistic Assessment—six fine-grained aesthetic and informational criteria scored by a VLM-as-judge, and notably (iv) PaperQuiz—the poster’s ability to convey core paper content as measured by VLMs answering generated quizzes. Building on this benchmark, we propose PosterAgent, a top-down, visualin-the-loop multi-agent pipeline: the (a) Parser distills the paper into a structured asset library; the (b) Planner aligns text–visual pairs into a binary-tree layout that preserves reading order and spatial balance; and the (c) Painter–Commenter loop refines each panel by executing rendering code and using VLM feedback to eliminate overflow and ensure alignment. In our comprehensive evaluation, we find that GPT-4o outputs—though visually appealing at first glance—often exhibit noisy text and poor PaperQuiz scores, and we find that reader engagement is the primary aesthetic bottleneck, as human-designed posters rely largely on visual semantics to convey meaning. Our fully open-source Paper2Poster pipeline outperforms GPT-4o–based systems across nearly all metrics while consuming 87% fewer tokens. These findings chart clear directions for the next generation of fully automated poster-generation models.
         </p>
       </div>
     </div>
@@ -328,13 +343,13 @@
           <div class="columns is-centered">
             <div class="column is-full">
               <figure style="width: 100%;">
-                <img src="./assets/stat.png" alt="stat" width="90%">
+                <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-11.jpg" alt="stat" width="90%">
               </figure>
             </div>
           </div>
         </center>
         <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
-          (a) Word cloud illustrating the diversity of research topics. (b) Textual Token statistics and Figure count statistics for input papers vs. posters provided by authors.
+          <strong>(a) Word cloud illustrating the diversity of research topics. (b) Textual Token statistics and Figure count statistics for input papers vs. posters provided by authors.</strong>
         </figcaption>
       </div>
     </div>
@@ -346,26 +361,34 @@
         <h2 class="title is-3">Main Results on Existing Solutions</h2>
       </div>
       <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column is-full">
-            <figure style="width: 100%;">
-              <img src="./assets/table1.png" alt="stat" width="90%">
-              <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
-                <strong>Detailed evaluation of Paper2Poster.</strong>
-              </figcaption>
-            </figure>
+        <center>
+          <div class="columns is-centered">
+            <div class="column is-full">
+              <figure style="width: 100%;">
+                <img src="C:\Users\gjr\Downloads\Paper2Poster-table-1.jpg" alt="stat" width="90%">
+                <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
+                  <strong>Detailed evaluation of Paper2Poster.</strong>
+                </figcaption>
+              </figure>
+            </div>
           </div>
-        </div>
+        </center>
       </div>
-      <div class="columns is-centered">
-        <div class="column is-full">
-          <figure style="width: 100%;">
-            <img src="./assets/table2.png" alt="stat" width="90%">
-            <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
-              <strong>PaperQuiz evaluation on Paper2Poster.</strong>
-            </figcaption>
-          </figure>
-        </div>
+    </div>
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <center>
+          <div class="columns is-centered">
+            <div class="column is-full">
+              <figure style="width: 100%;">
+                <img src="C:\Users\gjr\Downloads\Paper2Poster-table-2.jpg" alt="stat" width="90%">
+                <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
+                  <strong>PaperQuiz evaluation on Paper2Poster.</strong>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </center>
       </div>
     </div>
   </section>
@@ -377,7 +400,7 @@
           <div class="columns is-centered">
             <div class="column is-full">
               <figure style="width: 100%;">
-                <img src="./assets/Tab 3.png" alt="Efficiency & Cost analysis" width="90%">
+                <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-12.jpg" alt="Efficiency & Cost analysis" width="90%">
                 <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
                   <strong>Efficiency & Cost analysis demonstrating PosterAgent’s strong efficiency and low API cost.</strong>
                 </figcaption>
@@ -389,34 +412,34 @@
     </div>
   </section>
 
-  <div class="hero teaser">
+  <section class="hero teaser">
     <div class="hero-body">
       <div class="columns is-centered">
         <h2 class="title is-3">More Examples</h2>
       </div>
       <div class="poster-carousel" id="carousel">
         <div class="poster-item">
-          <img src="./assets/supp_examples/Conformal Semantic Keypoint Detection with Statistical Guarantees/gt.png" alt="gt poster">
+          <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-13.jpg" alt="gt poster">
           <p class="caption-small">Generated by Author</p>
         </div>
         <div class="poster-item">
-          <img src="./assets/supp_examples/Conformal Semantic Keypoint Detection with Statistical Guarantees/4o_image.png" alt="GPT-4o Image">
+          <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-14.jpg" alt="GPT-4o Image">
           <p class="caption-small">Generated by GPT-4o-image</p>
         </div>
         <div class="poster-item">
-          <img src="./assets/supp_examples/Conformal Semantic Keypoint Detection with Statistical Guarantees/4o_html.png" alt="GPT-4o Html">
+          <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-15.jpg" alt="GPT-4o Html">
           <p class="caption-small">Generated by GPT-4o-html</p>
         </div>
         <div class="poster-item">
-          <img src="./assets/supp_examples/Conformal Semantic Keypoint Detection with Statistical Guarantees/ppt_agent.png" alt="PPT Agent">
+          <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-16.jpg" alt="PPT Agent">
           <p class="caption-small">Generated by PPTAgent</p>
         </div>
         <div class="poster-item">
-          <img src="./assets/supp_examples/Conformal Semantic Keypoint Detection with Statistical Guarantees/owl.png" alt="OWL">
+          <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-17.jpg" alt="OWL">
           <p class="caption-small">Generated by OWL</p>
         </div>
         <div class="poster-item">
-          <img src="./assets/supp_examples/Conformal Semantic Keypoint Detection with Statistical Guarantees/ours.png" alt="PosterAgent">
+          <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-18.jpg" alt="PosterAgent">
           <p class="caption-small">Generated by PostAgent</p>
         </div>
       </div>
@@ -425,79 +448,33 @@
       </p>
       <div class="poster-carousel" id="carousel">
         <div class="poster-item">
-          <img src="./assets/supp_examples/Neural Tangent Kernels for Axis-Aligned Tree Ensembles/gt.png" alt="gt poster">
+          <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-19.jpg" alt="gt poster">
           <p class="caption-small">Generated by Author</p>
         </div>
         <div class="poster-item">
-          <img src="./assets/supp_examples/Neural Tangent Kernels for Axis-Aligned Tree Ensembles/4o_image.png" alt="GPT-4o Image">
+          <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-20.jpg" alt="GPT-4o Image">
           <p class="caption-small">Generated by GPT-4o-image</p>
         </div>
         <div class="poster-item">
-          <img src="./assets/supp_examples/Neural Tangent Kernels for Axis-Aligned Tree Ensembles/4o_html.png" alt="GPT-4o Html">
+          <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-21.jpg" alt="GPT-4o Html">
           <p class="caption-small">Generated by GPT-4o-html</p>
         </div>
         <div class="poster-item">
-          <img src="./assets/supp_examples/Neural Tangent Kernels for Axis-Aligned Tree Ensembles/ppt_agent.png" alt="PPT Agent">
+          <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-22.jpg" alt="PPT Agent">
           <p class="caption-small">Generated by PPTAgent</p>
         </div>
         <div class="poster-item">
-          <img src="./assets/supp_examples/Neural Tangent Kernels for Axis-Aligned Tree Ensembles/owl.png" alt="OWL">
+          <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-23.jpg" alt="OWL">
           <p class="caption-small">Generated by OWL</p>
         </div>
         <div class="poster-item">
-          <img src="./assets/supp_examples/Neural Tangent Kernels for Axis-Aligned Tree Ensembles/ours.png" alt="PosterAgent">
+          <img src="C:\Users\gjr\Downloads\Paper2Poster-picture-24.jpg" alt="PosterAgent">
           <p class="caption-small">Generated by PostAgent</p>
         </div>
       </div>
       <p class="caption-large">
         Case-2: <a href="https://arxiv.org/pdf/2109.04983">Neural Tangent Kernels for Axis-Aligned Tree Ensembles</a>.
       </p>
-      <div class="poster-carousel" id="carousel">
-        <div class="poster-item">
-          <img src="./assets/supp_examples/Truly Scale-Equivariant Deep Nets with Fourier Layers/gt.png" alt="gt poster">
-          <p class="caption-small">Generated by Author</p>
-        </div>
-        <div class="poster-item">
-          <img src="./assets/supp_examples/Truly Scale-Equivariant Deep Nets with Fourier Layers/4o_image.png" alt="GPT-4o Image">
-          <p class="caption-small">Generated by GPT-4o-image</p>
-        </div>
-        <div class="poster-item">
-          <img src="./assets/supp_examples/Truly Scale-Equivariant Deep Nets with Fourier Layers/4o_html.png" alt="GPT-4o Html">
-          <p class="caption-small">Generated by GPT-4o-html</p>
-        </div>
-        <div class="poster-item">
-          <img src="./assets/supp_examples/Truly Scale-Equivariant Deep Nets with Fourier Layers/ppt_agent.png" alt="PPT Agent">
-          <p class="caption-small">Generated by PPTAgent</p>
-        </div>
-        <div class="poster-item">
-          <img src="./assets/supp_examples/Truly Scale-Equivariant Deep Nets with Fourier Layers/owl.png" alt="OWL">
-          <p class="caption-small">Generated by OWL</p>
-        </div>
-        <div class="poster-item">
-          <img src="./assets/supp_examples/Truly Scale-Equivariant Deep Nets with Fourier Layers/ours.png" alt="PosterAgent">
-          <p class="caption-small">Generated by PostAgent</p>
-        </div>
-      </div>
-      <p class="caption-large">
-        Case-3: <a href="https://arxiv.org/pdf/2311.02922">Truly Scale-Equivariant Deep Nets with Fourier Layers</a>.
-      </p>
-    </div>
-  </section>
-
-  <section class="section" id="BibTeX">
-    <div class="container content is-max-desktop">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>
-@misc{pang2025paper2postermultimodalposterautomation,
-      title={Paper2Poster: Towards Multimodal Poster Automation from Scientific Papers}, 
-      author={Wei Pang and Kevin Qinghong Lin and Xiangru Jian and Xi He and Philip Torr},
-      year={2025},
-      eprint={2505.21497},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2505.21497}, 
-}
-</code></pre>
     </div>
   </section>
 
@@ -505,15 +482,13 @@
     <div class="container">
       <div class="content has-text-centered">
         <p>
-          The source code of this webpage is based on the <a href="https://github.com/nerfies/nerfies.github.io/">
-            Nerfies</a> and <a href="https://showlab.github.io/VideoGUI/">
-            VideoGUI</a>. 
+          The source code of this webpage is based on the <a href="https://github.com/nerfies/nerfies.github.io/">Nerfies</a> and <a href="https://showlab.github.io/VideoGUI/">VideoGUI</a>.
         </p>
       </div>
     </div>
   </footer>
-
-  <script type="text/javascript" src="./static/slick/slick.min.js"></script>
 </body>
 
 </html>
+
+以上HTML代码包含了论文摘要、挑战、方法、实验结果等部分，并插入了相应的图表。请确保所有路径正确无误，并根据实际文件位置调整路径。如果有任何问题或需要进一步修改，请告知！
