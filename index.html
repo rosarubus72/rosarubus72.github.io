@@ -1,394 +1,532 @@
-<p>
-	<span><br/></span>
-</p>
-<section data-tools="135编辑器" data-id="107291" class="_135editor">
-	<section style="text-align: center;margin: 10px auto;visibility: visible;">
-		<section style="display: inline-block;visibility: visible;">
-			<section style="width: 20px;margin: 0px 0px -8px 8px;visibility: visible;line-height: 1.6em;box-sizing:border-box;">
-				<img src="https://mmbiz.qpic.cn/mmbiz_png/JaFvPvvA2J1l9248vhzo8jicBPJaBT4ZZCAEicSu7Wu6HvbIJLvlkvl0xBnmX6WSS5h2CTynAvCr9bItG720tCRQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1&tp=webp" alt="图片" class="rich_pages wxw-img" style="display: block;vertical-align: baseline;visibility: visible !important;width: 20px !important;height: auto !important;box-sizing:border-box;" data-width="100%" draggable="false" data-ratio="1.1176470588235294" data-w="34"/>
-			</section>
-			<section style="background-color: rgb(255, 209, 64);padding: 9px 25px;box-sizing: border-box;visibility: visible;">
-				<section data-brushtype="text" style="font-size: 16px;letter-spacing: 1.5px;color: rgb(0, 0, 0);visibility: visible;line-height: 1.6em;">
-					<span><span textstyle="" style="font-size: 16px;">点击卡片 关注下吧</span></span>
-				</section>
-			</section>
-		</section>
-	</section>
-</section>
-<section class="custom_select_card mp_profile_iframe js_wx_tap_highlight _135editor" style="visibility: visible;line-height: 1.6em;">
-	<mp-common-profile data-pluginname="mpprofile" data-nickname="AI启智汇" data-alias="AIqizhihui" data-index="0" data-from="2" data-headimg="https://mmbiz.qpic.cn/mmbiz_png/7IPW8F7ibjZ9koicUDXiacqW2PM32b6ib86nGPJGDwiaYviayf6l2ibe0Lkban7icI3tQJB3b88Qv1d9sfO5ueCdQXUHLg/300?wx_fmt=png&amp;wxfrom=19" data-signature="PASSION FOR SHARING！感谢您的关注，这里会持续分享人工智能（AI）领域的前沿论文、干货知识、实用工具、书籍、开源项目等，希望和大家一起学习进步~" data-id="Mzk2NDg3OTM5Nw==" data-is_biz_ban="0" data-origin_num="96" data-biz_account_status="0" data-service_type="1" data-verify_status="0"></mp-common-profile>
-</section>
-<p>
-	<span><br/></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><img class="rich_pages wxw-img" src="/images/Paper2Poster-picture-1.jpg" style="width:553.6099853515625px;height:132.1400146484375px;vertical-align:baseline;box-sizing:border-box;" data-ratio="0.2388888888888889" data-w="1080"/></span></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><br/></span></span>
-</p>
-<p style="text-align: left;" align="left">
-	<span style="font-variant: normal;text-transform: none;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;"><strong>标题：</strong></span></span></span><span style="font-variant: normal;text-transform: none;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;">PosterAgent: 一种用于从学术论文自动生成海报的多智能体框架</span></span></span>
-</p>
-<p style="text-align: left;" align="left">
-	<span style="font-variant: normal;text-transform: none;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;"><strong>主要贡献：</strong></span></span></span><span style="font-variant: normal;text-transform: none;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;">本论文提出了一种名为PosterAgent的多智能体框架，旨在从长文档（如学术论文）中自动生成高质量的海报。该框架通过以下方面取得了显著进展：1. 引入了一个新的基准——Paper2Poster，用于评估海报生成系统。2. 提出了一种“自顶向下”的设计理念，包括全局重构和局部细化步骤。3. 发展了多种PosterAgent变体，这些变体在视觉质量、文本连贯性和整体美学评分方面表现出色，优于现有方法。</span></span></span>
-</p>
-<p style="text-align: left;visibility: visible;" data-pm-slice="0 0 []" align="left">
-	<span style="font-size: 10.5pt;font-variant: normal;text-transform: none;visibility: visible;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p style="text-align: left;visibility: visible;" align="left">
-	<span style="font-size: 10.5pt;font-variant: normal;text-transform: none;visibility: visible;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p style="text-align: left;visibility: visible;" align="left">
-	<span style="font-size: 10.5pt;font-variant: normal;text-transform: none;visibility: visible;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p style="text-align: center;line-height: 1.6em;visibility: visible;" data-pm-slice="0 0 []" align="center">
-	<span style="font-size: 10.5pt;font-variant: normal;text-transform: none;visibility: visible;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;"><strong>研究动机</strong></span></span></span>
-</p>
-<p style="margin-top: 0pt;margin-bottom: 0pt;text-align: justify;margin-left: 0pt;text-indent: 0pt;line-height: 1.6em;font-size: 12pt;font-weight: normal;font-family:Calibri;" align="justify">
-	<span style="font-size: 12pt;font-variant: normal;text-transform: none;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;mso-bidi-font-weight:bold;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;">学术海报生成面临挑战：</span></span></span><span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;">当前的自动化幻灯片生成方法虽然在图像生成方面表现出色，但难以在资源受限的移动设备上部署，因为它们依赖于昂贵的自注意力机制和迭代扩散过程。另一方面，现有轻量级模型在增强质量方面有所牺牲，难以在多种退化场景中保持高性能。</span></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;mso-bidi-font-weight:bold;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;">轻量级模型的局限性：</span></span></span><span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;">现有的轻量级模型通常通过参数压缩和低 FLOPs 架构设计来降低计算复杂度，但往往牺牲增强质量，难以在不同的退化场景中保持高性能。</span></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;mso-bidi-font-weight:bold;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;">通用高效的框架需求：</span></span></span><span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;">当前的方法大多针对特定的退化类型（如低光照、水下成像），缺乏能够适应各种场景的通用高效框架。因此，本研究致力于开发一种能够在移动设备上实现快速且高质量图像增强的轻量级模型。</span></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><img src="/images/Paper2Poster-picture-2.jpg" class="rich_pages wxw-img" style="width:425.6100158691406px;height:289.60003662109375px;vertical-align:baseline;box-sizing:border-box;" data-ratio="0.6805157593123209" data-w="698"/></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;">图1展示的是PosterAgent在速度、参数数量和精度方面的综合优势，相比其他模型实现了更好的权衡。</span></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<section autoid="1895" data-style-type="0" style="max-width: 100%;white-space: normal;letter-spacing: 0.544px;background-color: rgb(255, 255, 255);box-sizing: border-box !important;overflow-wrap: break-word !important;margin-bottom: 0px;visibility: visible;font-family:-apple-system-font, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei UI&quot;, &quot;Microsoft YaHei&quot;, Arial, sans-serif;" data-pm-slice="0 0 []">
-	<section style="padding: 8px;max-width: 100%;box-sizing: border-box;border-left: 6px solid rgb(255, 202, 0);font-size: 18px;line-height: 1.4;text-decoration: inherit;border-color: rgb(255, 202, 0);overflow-wrap: break-word !important;visibility: visible;font-family:inherit;">
-		<p style="line-height: 1.6em;margin-bottom: 0px;visibility: visible;">
-			<strong><span><span textstyle="" style="font-size: 16px;">创新点</span></span></strong>
-		</p>
-	</section>
-</section>
-<p style="margin-top: 0pt;margin-bottom: 0pt;text-align: justify;margin-left: 0pt;text-indent: 0pt;line-height: 1.6em;font-size: 12pt;font-weight: normal;font-family:Calibri;" align="justify">
-	<span style="font-size: 12pt;font-variant: normal;text-transform: none;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;mso-bidi-font-weight:bold;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;"><strong>PosterAgent框架：</strong></span></span></span><span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;">PosterAgent采用了一种新颖的设计理念——自顶向下的框架，通过全局重构和局部细化步骤，逐步生成海报。</span></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;mso-bidi-font-weight:bold;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;"><strong>全局重构：</strong></span></span></span><span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;">首先，Parser模块提取关键文本和视觉内容，构建一个结构化的资产库。</span></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;mso-bidi-font-weight:bold;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;"><strong>局部细化：</strong></span></span></span><span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;">随后，Planner模块通过层级规划算法，将资产库中的内容分配到相应的布局框中，生成初步的海报布局。</span></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;mso-bidi-font-weight:bold;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;"><strong>视觉反馈循环：</strong></span></span></span><span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;">最后，Painter-Commenter循环通过执行渲染代码并利用视觉语言模型（VLM）的反馈，不断优化每个面板的内容，确保布局合理且视觉效果良好。</span></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<section autoid="1895" data-style-type="0" style="max-width: 100%;white-space: normal;letter-spacing: 0.544px;background-color: rgb(255, 255, 255);box-sizing: border-box !important;overflow-wrap: break-word !important;margin-bottom: 0px;visibility: visible;font-family:-apple-system-font, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei UI&quot;, &quot;Microsoft YaHei&quot;, Arial, sans-serif;" data-pm-slice="0 0 []">
-	<section style="padding: 8px;max-width: 100%;box-sizing: border-box;border-left: 6px solid rgb(255, 202, 0);font-size: 18px;line-height: 1.4;text-decoration: inherit;border-color: rgb(255, 202, 0);overflow-wrap: break-word !important;visibility: visible;font-family:inherit;">
-		<p style="line-height: 1.6em;margin-bottom: 0px;visibility: visible;">
-			<strong><span><span textstyle="" style="font-size: 16px;">实验结果</span></span></strong>
-		</p>
-	</section>
-</section>
-<p style="margin-top: 0pt;margin-bottom: 0pt;text-align: justify;margin-left: 0pt;text-indent: 0pt;line-height: 1.6em;font-size: 12pt;font-weight: normal;font-family:Calibri;" align="justify">
-	<span style="font-size: 12pt;font-variant: normal;text-transform: none;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;mso-bidi-font-weight:bold;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;"><strong>PosterAgent变体性能：</strong></span></span></span><span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;">PosterAgent的多个变体在视觉质量和文本连贯性方面表现相似，其中完全开源的版本（Qwen-Qwen）达到了114.65的PaperQuiz得分，紧随最佳闭源变体。</span></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;mso-bidi-font-weight:bold;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;"><strong>开放源码的优势：</strong></span></span></span><span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;">完全开源的PosterAgent系统在PaperQuiz得分上与最佳闭源变体相差不大，表明在没有专有API的情况下也能实现强大的性能。</span></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><img src="/images/Paper2Poster-picture-3.jpg" class="rich_pages wxw-img" style="width:552.5400390625px;height:331.2699890136719px;vertical-align:baseline;box-sizing:border-box;" data-ratio="0.6" data-w="1080"/></span></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><br/></span></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><img src="/images/Paper2Poster-picture-4.jpg" class="rich_pages wxw-img" style="width:553.5400390625px;height:175.79998779296875px;vertical-align:baseline;box-sizing:border-box;" data-ratio="0.3175925925925926" data-w="1080"/></span></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><br/></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;mso-bidi-font-weight:bold;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;"><strong>结论</strong></span></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;">PosterAgent框架通过引入新的设计理念和技术，解决了学术海报生成中的挑战，实现了高质量海报的自动生成，具有广泛的应用前景。</span></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><img src="/images/Paper2Poster-picture-5.jpg" class="rich_pages wxw-img" style="width:372.2099609375px;height:384.4100036621094px;vertical-align:baseline;box-sizing:border-box;" data-ratio="1.0327868852459017" data-w="671"/></span></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><img src="/images/Paper2Poster-picture-6.jpg" class="rich_pages wxw-img" style="width:336.94000244140625px;height:233.53997802734375px;vertical-align:baseline;box-sizing:border-box;" data-ratio="0.6931637519872814" data-w="629"/></span></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><br/></span></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><img src="/images/Paper2Poster-picture-7.jpg" class="rich_pages wxw-img" style="width:328.6700439453125px;height:245.66998291015625px;vertical-align:baseline;box-sizing:border-box;" data-ratio="0.7473524962178517" data-w="661"/></span></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><img src="/images/Paper2Poster-picture-8.jpg" class="rich_pages wxw-img" style="width:358.07000732421875px;height:154.8699951171875px;vertical-align:baseline;box-sizing:border-box;" data-ratio="0.43243243243243246" data-w="666"/></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><img src="/images/Paper2Poster-picture-9.jpg" class="rich_pages wxw-img" style="width:369.94000244140625px;height:218.739990234375px;vertical-align:baseline;box-sizing:border-box;" data-ratio="0.5912636505460218" data-w="641"/></span></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><img src="/images/Paper2Poster-picture-10.jpg" class="rich_pages wxw-img" style="width:434.21002197265625px;height:225.07000732421875px;vertical-align:baseline;box-sizing:border-box;" data-ratio="0.518348623853211" data-w="654"/></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><img src="/images/Paper2Poster-picture-11.jpg" class="rich_pages wxw-img" style="width:402.8699645996094px;height:233.27000427246094px;vertical-align:baseline;box-sizing:border-box;" data-ratio="0.5789473684210527" data-w="646"/></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><img src="/images/Paper2Poster-picture-12.jpg" class="rich_pages wxw-img" style="width:385.0700378417969px;height:329.6099853515625px;vertical-align:baseline;box-sizing:border-box;" data-ratio="0.8558421851289834" data-w="659"/></span></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><br/></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;">该研究通过引入一种新颖的多智能体框架——PosterAgent，有效解决了学术海报自动生成中的挑战，实现了高质量海报的快速生成，具有广泛应用前景。</span></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><img src="/images/Paper2Poster-picture-13.jpg" class="rich_pages wxw-img" style="width:395.21002197265625px;height:104.8699951171875px;vertical-align:baseline;box-sizing:border-box;" data-ratio="0.2653061224489796" data-w="637"/></span></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><br/></span></span>
-</p>
-<p style="text-align:center;" align="center">
-	<span style="mso-ascii-font-family:Calibri;mso-fareast-font-family:宋体;font-variant:normal;text-transform:none;font-family:Calibri;"><span><br/></span></span>
-</p>
-<section autoid="1895" data-style-type="0" style="max-width: 100%;white-space: normal;letter-spacing: 0.544px;background-color: rgb(255, 255, 255);box-sizing: border-box !important;overflow-wrap: break-word !important;margin-bottom: 0px;visibility: visible;font-family:-apple-system-font, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei UI&quot;, &quot;Microsoft YaHei&quot;, Arial, sans-serif;" data-pm-slice="0 0 []">
-	<section style="padding: 8px;max-width: 100%;box-sizing: border-box;border-left: 6px solid rgb(255, 202, 0);font-size: 18px;line-height: 1.4;text-decoration: inherit;border-color: rgb(255, 202, 0);overflow-wrap: break-word !important;visibility: visible;font-family:inherit;">
-		<p style="line-height: 1.6em;margin-bottom: 0px;visibility: visible;">
-			<strong><span><span textstyle="" style="font-size: 16px;">总结</span></span></strong>
-		</p>
-	</section>
-</section>
-<p style="margin-top: 0pt;margin-bottom: 0pt;text-align: justify;margin-left: 0pt;text-indent: 0pt;line-height: 1.6em;font-size: 12pt;font-weight: normal;font-family:Calibri;" align="justify">
-	<span style="font-size: 12pt;font-variant: normal;text-transform: none;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;font-family:微软雅黑;"><span><span textstyle="" style="font-size: 16px;">该论文旨在攻克深度学习模型在移动设备部署的难题。当前，基于Transformer和扩散模型的方法虽在图像增强表现优异，却因计算成本高难以用于移动设备，而轻量级模型又常牺牲增强质量。论文提出 MobileIE 框架，通过多分支重参数化卷积捕捉多尺度特征，利用增量权重优化策略提升特征整合。同时，借助特征自变换模块增强特征表示，以分层双路径注意力机制聚焦关键区域，并采用局部方差加权损失函数优化训练。实验表明，MobileIE 在多个图像增强任务中，速度与性能平衡表现最佳，能在移动设备上实现实时且高质量的图像增强。</span></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p style="margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;clear: both;min-height: 1em;color: rgba(0, 0, 0, 0.9);font-size: 17px;font-style: normal;font-variant-ligatures: normal;font-variant-caps: normal;font-weight: 400;letter-spacing: 0.544px;text-indent: 0px;text-transform: none;word-spacing: 0px;-webkit-text-stroke-width: 0px;white-space: normal;background-color: rgb(255, 255, 255);text-decoration-thickness: initial;text-decoration-style: initial;text-decoration-color: initial;text-align: center;line-height: 1.6em;font-family:&quot;PingFang SC&quot;, system-ui, -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei UI&quot;, &quot;Microsoft YaHei&quot;, Arial, sans-serif;" data-pm-slice="0 0 []" align="center">
-	<span style="margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;"><span textstyle="" style="font-size: 13px;color: rgb(136, 136, 136);">编辑|AI启智汇</span></span>
-</p>
-<section data-role="splitline" data-tools="135编辑器" data-id="16401" style="-webkit-tap-highlight-color: transparent;margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;color: rgba(0, 0, 0, 0.9);font-size: 17px;font-style: normal;font-variant-ligatures: normal;font-variant-caps: normal;font-weight: 400;letter-spacing: 0.544px;orphans: 2;text-align: justify;text-indent: 0px;text-transform: none;widows: 2;word-spacing: 0px;-webkit-text-stroke-width: 0px;white-space: normal;background-color: rgb(255, 255, 255);text-decoration-thickness: initial;text-decoration-style: initial;text-decoration-color: initial;font-family:&quot;PingFang SC&quot;, system-ui, -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei UI&quot;, &quot;Microsoft YaHei&quot;, Arial, sans-serif;" class="_135editor">
-	<section style="-webkit-tap-highlight-color: transparent;margin: 10px auto;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;text-align: center;">
-		<section style="-webkit-tap-highlight-color: transparent;margin: 0px 0px 6px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;display: flex;justify-content: center;align-items: center;">
-			<section style="-webkit-tap-highlight-color: transparent;margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;flex: 1 1 0%;background-image: linear-gradient(to right, rgba(211, 19, 20, 0) 0%, rgb(0, 0, 0) 100%);height: 1px;">
-				<p style="-webkit-tap-highlight-color: transparent;margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;">
-					<br/>
-				</p>
-			</section>
-			<section style="-webkit-tap-highlight-color: transparent;margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;flex: 1 1 0%;background-image: linear-gradient(to left, rgba(211, 19, 20, 0) 0%, rgb(0, 0, 0) 100%);height: 1px;">
-				<p style="-webkit-tap-highlight-color: transparent;margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;">
-					<br/>
-				</p>
-			</section>
-		</section>
-	</section>
-</section>
-<section data-tools="135编辑器" data-id="130421" style="-webkit-tap-highlight-color: transparent;margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;color: rgba(0, 0, 0, 0.9);font-size: 17px;font-style: normal;font-variant-ligatures: normal;font-variant-caps: normal;font-weight: 400;letter-spacing: 0.544px;orphans: 2;text-align: justify;text-indent: 0px;text-transform: none;widows: 2;word-spacing: 0px;-webkit-text-stroke-width: 0px;white-space: normal;background-color: rgb(255, 255, 255);text-decoration-thickness: initial;text-decoration-style: initial;text-decoration-color: initial;font-family:&quot;PingFang SC&quot;, system-ui, -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei UI&quot;, &quot;Microsoft YaHei&quot;, Arial, sans-serif;" class="_135editor">
-	<section style="-webkit-tap-highlight-color: transparent;margin: 10px auto;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;display: flex;justify-content: center;">
-		<section style="-webkit-tap-highlight-color: transparent;margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;">
-			<section style="margin: 0px auto;padding: 0px;outline: 0px;max-width: 100%;overflow-wrap: break-word !important;width: 30px;line-height: 1.6em;box-sizing:border-box;">
-				<img src="https://mmbiz.qpic.cn/sz_mmbiz_png/LojazbRM8yiczsBkiaTiaUVliaF26hcVyv8QyicibJQicWOImAG83bdEDIdH4NwicnMpibT4DXFvslrzMLuohrGmefRVJcg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1&tp=webp" alt="图片" class="rich_pages wxw-img" style="margin: 0px;padding: 0px;outline: 0px;vertical-align: baseline;display: block;overflow-wrap: break-word !important;visibility: visible !important;width: 30px !important;height: auto !important;box-sizing:border-box;" data-width="100%" draggable="false" data-ratio="0.7751937984496124" data-w="129"/>
-			</section>
-			<section style="margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;flex: 1 1 0%;background-image: linear-gradient(to right, rgba(211, 19, 20, 0) 0%, rgb(0, 0, 0) 100%);height: 1px;">
-				<p style="-webkit-tap-highlight-color: transparent;margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;">
-					<br/>
-				</p>
-			</section>
-			<section style="margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;font-size: 16px;color: rgb(92, 161, 76);text-align: center;line-height: 1.6em;">
-				<strong data-brushtype="text" style="margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;"><span style="margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;">END</span></strong>
-			</section>
-		</section>
-	</section>
-</section>
-<p>
-	<span><br/></span>
-</p>
-<p>
-	<span><br/></span>
-</p>
-<section class="custom_select_card mp_profile_iframe js_wx_tap_highlight _135editor" style="line-height: 1.6em;">
-	<mp-common-profile data-pluginname="mpprofile" data-nickname="AI启智汇" data-alias="AIqizhihui" data-index="1" data-from="2" data-headimg="https://mmbiz.qpic.cn/mmbiz_png/7IPW8F7ibjZ9koicUDXiacqW2PM32b6ib86nGPJGDwiaYviayf6l2ibe0Lkban7icI3tQJB3b88Qv1d9sfO5ueCdQXUHLg/300?wx_fmt=png&amp;wxfrom=19" data-signature="PASSION FOR SHARING！感谢您的关注，这里会持续分享人工智能（AI）领域的前沿论文、干货知识、实用工具、书籍、开源项目等，希望和大家一起学习进步~" data-id="Mzk2NDg3OTM5Nw==" data-is_biz_ban="0" data-origin_num="96" data-biz_account_status="0" data-service_type="1" data-verify_status="0"></mp-common-profile>
-</section>
-<p>
-	<span><br/></span>
-</p>
-<p style="margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;clear: both;min-height: 1em;color: rgba(0, 0, 0, 0.9);font-size: 17px;font-style: normal;font-variant-ligatures: normal;font-variant-caps: normal;font-weight: 400;letter-spacing: 0.544px;text-indent: 0px;text-transform: none;word-spacing: 0px;-webkit-text-stroke-width: 0px;white-space: normal;background-color: rgb(255, 255, 255);text-decoration-thickness: initial;text-decoration-style: initial;text-decoration-color: initial;text-align: center;line-height: 1.6em;font-family:&quot;PingFang SC&quot;, system-ui, -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei UI&quot;, &quot;Microsoft YaHei&quot;, Arial, sans-serif;" data-pm-slice="0 0 []" align="center">
-	<span style="margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;"><span textstyle="" style="font-size: 14px;">点击上方“</span><span textstyle="" style="font-size: 14px;color: rgb(0, 122, 170);">AI启智汇</span><span textstyle="" style="font-size: 14px;">”，关注我们</span></span>
-</p>
-<p style="margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;clear: both;min-height: 1em;color: rgba(0, 0, 0, 0.9);font-size: 17px;font-style: normal;font-variant-ligatures: normal;font-variant-caps: normal;font-weight: 400;letter-spacing: 0.544px;text-indent: 0px;text-transform: none;word-spacing: 0px;-webkit-text-stroke-width: 0px;white-space: normal;background-color: rgb(255, 255, 255);text-decoration-thickness: initial;text-decoration-style: initial;text-decoration-color: initial;text-align: center;line-height: 1.6em;font-family:&quot;PingFang SC&quot;, system-ui, -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei UI&quot;, &quot;Microsoft YaHei&quot;, Arial, sans-serif;" align="center">
-	<span style="margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;"><span textstyle="" style="font-size: 14px;">更快获取AI分享</span></span>
-</p>
-<section style="text-align: center;line-height: 1.6em;">
-	<span style="margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;" data-pm-slice="1 1 [&quot;para&quot;,{&quot;tagName&quot;:&quot;p&quot;,&quot;attributes&quot;:{&quot;style&quot;:&quot;-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; clear: both; min-height: 1em; color: rgba(0, 0, 0, 0.9); font-family: \&quot;PingFang SC\&quot;, system-ui, -apple-system, BlinkMacSystemFont, \&quot;Helvetica Neue\&quot;, \&quot;Hiragino Sans GB\&quot;, \&quot;Microsoft YaHei UI\&quot;, \&quot;Microsoft YaHei\&quot;, Arial, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 0.544px; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: center;&quot;,&quot;data-pm-slice&quot;:&quot;0 0 []&quot;},&quot;namespaceURI&quot;:&quot;http://www.w3.org/1999/xhtml&quot;}]"><span textstyle="" style="font-size: 12px;color: rgb(255, 76, 65);"><strong>PASSION FOR SHARING</strong></span></span>
-</section>
-<section style="text-align: center;">
-	<p style="-webkit-tap-highlight-color: transparent;margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;" data-pm-slice="1 1 [&quot;para&quot;,{&quot;tagName&quot;:&quot;p&quot;,&quot;attributes&quot;:{&quot;style&quot;:&quot;-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; clear: both; min-height: 1em; color: rgba(0, 0, 0, 0.9); font-family: \&quot;PingFang SC\&quot;, system-ui, -apple-system, BlinkMacSystemFont, \&quot;Helvetica Neue\&quot;, \&quot;Hiragino Sans GB\&quot;, \&quot;Microsoft YaHei UI\&quot;, \&quot;Microsoft YaHei\&quot;, Arial, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 0.544px; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: center;&quot;,&quot;data-pm-slice&quot;:&quot;0 0 []&quot;},&quot;namespaceURI&quot;:&quot;http://www.w3.org/1999/xhtml&quot;}]">
-		<br/>
-	</p>
-</section>
-<section style="text-align: center;">
-	<p style="-webkit-tap-highlight-color: transparent;margin: 0px;padding: 0px;outline: 0px;max-width: 100%;box-sizing: border-box !important;overflow-wrap: break-word !important;" data-pm-slice="1 1 [&quot;para&quot;,{&quot;tagName&quot;:&quot;p&quot;,&quot;attributes&quot;:{&quot;style&quot;:&quot;-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; clear: both; min-height: 1em; color: rgba(0, 0, 0, 0.9); font-family: \&quot;PingFang SC\&quot;, system-ui, -apple-system, BlinkMacSystemFont, \&quot;Helvetica Neue\&quot;, \&quot;Hiragino Sans GB\&quot;, \&quot;Microsoft YaHei UI\&quot;, \&quot;Microsoft YaHei\&quot;, Arial, sans-serif; font-size: 17px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: 0.544px; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: center;&quot;,&quot;data-pm-slice&quot;:&quot;0 0 []&quot;},&quot;namespaceURI&quot;:&quot;http://www.w3.org/1999/xhtml&quot;}]">
-		<br/>
-	</p>
-</section>
-<section style="line-height: 1.6em;">
-	<strong data-brushtype="text" itemprop="name"><span>往期推荐:</span></strong>
-</section>
-<section style="max-width: 100% !important;width: 100%;height: 12px;background: #edf5ff;margin-top: 3px;box-sizing:border-box;" data-width="100%">
-	<p>
-		<br/>
-	</p>
-</section>
-<section style="display: flex;align-items: center;margin-bottom: -5px;">
-	<section style="flex: 1;height: 1px;background: #0b79ff;">
-		<p>
-			<br/>
-		</p>
-	</section>
-	<section style="width: 10px;margin-left: -5px;height: 10px;border:1px solid #0b79ff;border-radius: 100%;box-sizing:border-box;">
-		<p>
-			<br/>
-		</p>
-	</section>
-	<section style="width: 15px;height: 1px;background: #0b79ff;box-sizing:border-box;">
-		<p>
-			<br/>
-		</p>
-	</section>
-</section>
-<section style="border: 1px solid #0b79ff;border-top: none;padding: 20px 20px 10px 20px;box-sizing:border-box;">
-	<section style="justify-content: flex-start;align-items: flex-start;display: flex;margin-bottom: 10px;flex-shrink: 0;">
-		<section style="width: 12px;height: 12px;background:#0b79ff;margin-right: 8px;margin-top: 6px;flex-shrink: 0;box-sizing:border-box;">
-			<p>
-				<br/>
-			</p>
-		</section>
-		<section data-autoskip="1" style="text-align: justify;font-size: 14px;letter-spacing: 1.5px;line-height: 1.75em;color: #464646;box-sizing: border-box;">
-			<p itemprop="link" itemscope="" itemtype="https://mp.weixin.qq.com/voc/URL" style="vertical-align: initial;line-height: 1.6em;">
-				<span><a class="normal_text_link" target="_blank" style="" href="https://mp.weixin.qq.com/s?__biz=Mzk2NDg3OTM5Nw==&mid=2247486117&idx=1&sn=c56026dad0a605204b9de2fa483ad623&scene=21#wechat_redirect" textvalue="IJCV2025 | 从分层Transformer到动态路由：卢湖川团队提出高效跟踪模型，边缘设备实时性提升3倍！" data-itemshowtype="0" linktype="text" data-linktype="2">IJCV2025 | 从分层Transformer到动态路由：卢湖川团队提出高效跟踪模型，边缘设备实时性提升3倍！</a></span>
-			</p>
-		</section>
-	</section>
-	<section style="justify-content: flex-start;align-items: flex-start;display: flex;margin-bottom: 10px;flex-shrink: 0;">
-		<section style="width: 12px;height: 12px;background:#0b79ff;margin-right: 8px;margin-top: 6px;flex-shrink: 0;box-sizing:border-box;">
-			<p>
-				<br/>
-			</p>
-		</section>
-		<section data-autoskip="1" style="text-align: justify;font-size: 14px;letter-spacing: 1.5px;line-height: 1.75em;color: #464646;box-sizing: border-box;">
-			<p itemprop="link" itemscope="" itemtype="https://mp.weixin.qq.com/voc/URL" style="vertical-align: initial;line-height: 1.6em;">
-				<span><a class="normal_text_link" target="_blank" style="" href="https://mp.weixin.qq.com/s?__biz=Mzk2NDg3OTM5Nw==&mid=2247486085&idx=1&sn=04361ded5badc7461419835335b8ffd3&scene=21#wechat_redirect" textvalue="ICCV2025接收论文速览" data-itemshowtype="0" linktype="text" data-linktype="2">ICCV2025接收论文速览</a></span>
-			</p>
-		</section>
-	</section>
-	<section style="justify-content: flex-start;align-items: flex-start;display: flex;margin-bottom: 10px;flex-shrink: 0;">
-		<section style="width: 12px;height: 12px;background:#0b79ff;margin-right: 8px;margin-top: 6px;flex-shrink: 0;box-sizing:border-box;">
-			<p>
-				<br/>
-			</p>
-		</section>
-		<section data-autoskip="1" style="text-align: justify;font-size: 14px;letter-spacing: 1.5px;line-height: 1.75em;color: #464646;box-sizing: border-box;">
-			<p itemprop="link" itemscope="" itemtype="https://mp.weixin.qq.com/voc/URL" style="vertical-align: initial;line-height: 1.6em;">
-				<span><a class="normal_text_link" target="_blank" style="" href="https://mp.weixin.qq.com/s?__biz=Mzk2NDg3OTM5Nw==&mid=2247485797&idx=1&sn=9ccd94df5b0addc1336f5a7f1291af4e&scene=21#wechat_redirect" textvalue="斯坦福&amp;上交大等新成果！多记忆机制让视频生成告别“记忆遗忘”，长时场景一致性提升60%！" data-itemshowtype="0" linktype="text" data-linktype="2">斯坦福&amp;上交大等新成果！多记忆机制让视频生成告别“记忆遗忘”，长时场景一致性提升60%！</a></span>
-			</p>
-		</section>
-	</section>
-	<section style="justify-content: flex-start;align-items: flex-start;display: flex;margin-bottom: 10px;flex-shrink: 0;">
-		<section style="width: 12px;height: 12px;background:#0b79ff;margin-right: 8px;margin-top: 6px;flex-shrink: 0;box-sizing:border-box;">
-			<p>
-				<br/>
-			</p>
-		</section>
-		<section data-autoskip="1" style="text-align: justify;font-size: 14px;letter-spacing: 1.5px;line-height: 1.75em;color: #464646;box-sizing: border-box;">
-			<p itemprop="link" itemscope="" itemtype="https://mp.weixin.qq.com/voc/URL" style="vertical-align: initial;line-height: 1.6em;">
-				<span><a class="normal_text_link" target="_blank" style="" href="https://mp.weixin.qq.com/s?__biz=Mzk2NDg3OTM5Nw==&mid=2247485981&idx=1&sn=e5ae5c7bb5681deeb87bdd78b950eff1&scene=21#wechat_redirect" textvalue="中科院提出OAFA：解决无人机多模态目标检测弱对齐难题！" data-itemshowtype="0" linktype="text" data-linktype="2">中科院提出OAFA：解决无人机多模态目标检测弱对齐难题！</a></span>
-			</p>
-		</section>
-	</section>
-	<section style="justify-content: flex-start;align-items: flex-start;display: flex;margin-bottom: 10px;flex-shrink: 0;">
-		<section style="width: 12px;height: 12px;background:#0b79ff;margin-right: 8px;margin-top: 6px;flex-shrink: 0;box-sizing:border-box;">
-			<p>
-				<br/>
-			</p>
-		</section>
-		<section data-autoskip="1" style="text-align: justify;font-size: 14px;letter-spacing: 1.5px;line-height: 1.75em;color: #464646;box-sizing: border-box;">
-			<p itemprop="link" itemscope="" itemtype="https://mp.weixin.qq.com/voc/URL" style="vertical-align: initial;line-height: 1.6em;">
-				<span><a class="normal_text_link" target="_blank" style="" href="https://mp.weixin.qq.com/s?__biz=Mzk2NDg3OTM5Nw==&mid=2247485882&idx=1&sn=21d433bd32eab1b5c92e167d252e41a3&scene=21#wechat_redirect" textvalue="港大&amp;南大等联合提出TACA：重新思考多模态扩散Transformer的跨模态交互，让文本生成图像更精准！" data-itemshowtype="0" linktype="text" data-linktype="2">港大&amp;南大等联合提出TACA：重新思考多模态扩散Transformer的跨模态交互，让文本生成图像更精准！</a></span>
-			</p>
-		</section>
-	</section>
-</section>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;font-family:微软雅黑;"><span><br/></span></span>
-</p>
-<p>
-	<span style="mso-ascii-font-family:微软雅黑;mso-bidi-font-family:微软雅黑;font-variant:normal;text-transform:none;mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;font-family:微软雅黑;"><span><br/></span></span>
-	<page></page>
-</p>
-<p style="display: none;">
-	<br/>
-</p>
-<section class="_135editor">
-	<mp-style-type data-value="10000"></mp-style-type>
-</section>
-<p>
-	<br/>
-</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css" />
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <style>
+    .navbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #209CEE;
+      position: fixed;
+      width: 100%;
+      transition: background-color 0.5s ease;
+    }
+
+    .navbar.scrolled {
+      background-color: #209CEE;
+    }
+
+    .navbar li {
+      float: left;
+    }
+
+    .navbar li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      transition: color 0.5s ease;
+    }
+
+    .navbar.scrolled li a {
+      color: white;
+    }
+
+    .hero.teaser {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .hero-teaser {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .poster-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 20px;
+      padding: 20px;
+      cursor: grab;
+    }
+
+    .poster-carousel:active {
+      cursor: grabbing;
+    }
+
+    .poster-item {
+      flex: 0 0 auto;
+      width: 45%;
+      text-align: center;
+    }
+
+    .poster-item img {
+      height: 500px;
+      object-fit: contain;
+    }
+
+    .caption-small {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .caption-large {
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    window.onscroll = function () {
+      var navbar = document.getElementById('navbar');
+      if (window.pageYOffset > 0) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <ul class="navbar" id="navbar">
+    <li><a href="#home">
+      <strong>🎓Paper2Poster</strong> </a>
+    </li>
+  </ul>
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-4 has-text-centered">
+            <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-1.jpg" alt="Home" style="height:30px; width:30px; vertical-align:middle; margin-right:5px;">
+            <strong>🎓Paper2Poster</strong>
+          </div>
+        </div>
+        <div class="container has-text-centered">
+          <h1 class="title is-2 publication-title">
+            <br>
+            🎓Paper2Poster<br>Towards Multimodal Poster Automation from Scientific Papers
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+            <sup>&#9825;</sup><a href="https://scholar.google.com/citations?user=f90pZOYAAAAJ&hl=en">Wei Pang</a><sup>†</sup>,</span>
+            <span class="author-block">
+            <sup>&#9824;</sup><a href="https://qhlin.me">Kevin Qinghong Lin</a><sup>✉</sup><sup>†</sup>,</span>
+            <span class="author-block">
+            <sup>&#9825;</sup><a href="https://edward-jianqaq.github.io/">Xiangru Jian</a><sup>†</sup>,</span>
+            <span class="author-block">
+            <sup>&#9825;</sup><a href="https://cs.uwaterloo.ca/~xihe/">Xi He</a><sup>✉</sup>,</span>
+            <span class="author-block">
+            <sup>&#9827;</sup><a href="https://scholar.google.com/citations?user=kPxa2w0AAAAJ&hl=en">Philip Torr</a>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>&#9825;</sup>University of Waterloo</span>
+            <span class="author-block"><sup>&#9824;</sup>National University of Singapore</span>
+            <span class="author-block"><sup>&#9827;</sup>University of Oxford</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2505.21497" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/Paper2Poster/Paper2Poster" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/Paper2Poster/Paper2Poster" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-obp"></i>
+                  </span>
+                  <span>Datasets</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">TL;DR</h2>
+            <div class="content has-text-centered">
+              <p>
+                We address <strong>How to create a poster from a paper</strong> and <strong>How to evaluate poster</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-2.jpg" alt="Overview" style="max-width: 100%; height: auto;">
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-vcentered">
+          <!-- Left: Paper -->
+          <div class="column has-text-centered">
+            <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-3.jpg" alt="Paper" style="height: 400px;">
+            <p class="caption" style="text-align: center; margin-top: 10px;"><strong>Inputs: </strong><a href="https://arxiv.org/pdf/2210.15986">Paper</a> (a PDF)</p>
+          </div>
+          <!-- Right: Poster -->
+          <div class="column has-text-centered">
+            <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-4.jpg" alt="Poster" style="height: 400px;">
+            <p class="caption" style="text-align: center; margin-top: 10px;"><strong>Outputs: </strong><a href="https://neurips.cc/media/PosterPDFs/NeurIPS%202022/61269.png?t=1669788855.791561">Poster</a> (designed by author)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <h2 class="title is-3">How GPT-4o or Open-source Multi-agents behave?</h2>
+      </div>
+      <div class="container is-max-desktop">
+        <div class="columns is-vcentered">
+          <!-- GPT-4o Image -->
+          <div class="column has-text-centered">
+            <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-5.jpg" alt="GPT-4o Image" style="height: 400px; max-width: none;">
+            <p class="caption" style="text-align: center; margin-top: 10px;"><strong>Poster generated by GPT-4o-image</strong></p>
+          </div>
+          <!-- GPT-4o HTML -->
+          <div class="column has-text-centered">
+            <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-6.jpg" alt="GPT-4o HTML" style="height: 400px; max-width: none;">
+            <p class="caption" style="text-align: center; margin-top: 10px;"><strong>Poster generated by GPT-4o-html</strong></p>
+          </div>
+        </div>
+        <div class="columns is-vcentered">
+          <!-- PPT-Agent -->
+          <div class="column has-text-centered">
+            <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-7.jpg" alt="PPT-Agent" style="height: 400px; max-width: none;">
+            <p class="caption" style="text-align: center; margin-top: 10px;"><strong>Poster generated by <a href="https://github.com/icip-cas/PPTAgent">PPTAgent</a></strong></p>
+          </div>
+          <!-- OWL -->
+          <div class="column has-text-centered">
+            <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-8.jpg" alt="OWL" style="height: 400px; max-width: none;">
+            <p class="caption" style="text-align: center; margin-top: 10px;"><strong>Poster generated by <a href="https://github.com/camel-ai/owl">🦉OWL</a></strong></p>
+          </div>
+        </div>
+      </div>
+      <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
+        <strong>GPT-4o-image</strong> visually acceptable layouts at first glance, but closer inspection <strong>zoom-in-region</strong> reveals impaired text rendering, leading to poor readability of fine-grained details.
+        <strong>GPT-4o-HTML</strong> and <strong>OWL</strong> generate blog-like, text-dense posters that suffer from low visual readability.
+        <strong>PPTAgent</strong> struggles with layout control, often resulting in missing panels.
+      </figcaption>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <h2 class="title is-3">Poster Generated by PosterAgent</h2>
+      </div>
+      <div class="container is-max-desktop">
+        <div class="columns is-vcentered">
+          <div class="column has-text-centered">
+            <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-9.jpg" alt="PosterAgent" style="height: 600px; max-width: none;">
+            <p class="caption" style="text-align: center; margin-top: 10px;">In contrast, <strong>PosterAgent</strong> generates structurally coherent and readable posters while using significantly fewer words.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">What are the Challenges?</h2>
+        </div>
+        <div class="content has-text-justified">
+          <ul>
+            <li><strong>Long-Context Long-Horizon Task:</strong> Scientific papers span multiple pages and thousands of words. Summarizing key insights while preserving coherence demands hierarchical understanding and selective abstraction. The complexity further necessitates long-horizon reasoning and multiple iterative interactions, making the task especially challenging.</li>
+            <li><strong>Interleaved Multimodal Inputs:</strong> Papers integrate numerous figures, tables, and charts, each semantically linked to the surrounding text. Successful poster generation demands the ability to extract, interpret, and align these multimodal elements in a contextually appropriate manner.</li>
+            <li><strong>Layout-aware Multimodal Outputs:</strong> Unlike tasks focused solely on text (e.g., blog) or vision, poster generation requires producing interleaved text–image outputs within a constrained spatial layout. This necessitates joint reasoning over language, visual content, and layout to prevent overflow, imbalance, and logical misalignment.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <h2 class="title is-3">How to create poster 👉 PosterAgent</h2>
+      </div>
+      <div class="container is-max-desktop">
+        <figure style="width: 100%;">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-10.jpg" alt="stat" width="90%">
+        </figure>
+        <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
+          <strong>A Top-down, visual-in-the-loop, efficient multi-agent pipeline.</strong>
+        </figcaption>
+        <strong>(a) Parser</strong> distills the paper into a structured asset library;
+        the <strong>(b) Planner</strong> aligns text–visual pairs into a binary‐tree layout that preserves reading order and spatial balance; 
+        and the <strong>(c) Painter-Commentor</strong> loop refines each panel by executing rendering code and using VLM feedback to eliminate overflow and ensure alignment.
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <h2 class="title is-3">How to evaluate poster 👉 PaperQuiz</h2>
+      </div>
+      <div class="container is-max-desktop">
+        <figure style="width: 100%;">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-11.jpg" alt="stat" width="90%">
+        </figure>
+        <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
+          <strong>A Good poster should convey core paper content visually.</strong>
+        </figcaption>
+        <strong>Left:</strong> We automatically generate multiple-choice questions from each paper using an LLM (o3), forming the our PaperQuiz evaluation. 
+        <strong>Right:</strong> In PaperQuiz, we simulate multiple reader by allowing VLMs—representing different expertise levels (e.g., student, professor)—to read each generated poster and answer the quiz. 
+        The poster that achieves the highest average score is considered the most effective in conveying the paper's content.
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Abstract</h2>
+      <div class="content has-text-justified">
+        <p>
+          Academic poster generation is a crucial yet challenging task in scientific communication, requiring the compression of long-context interleaved documents into a single, visually coherent page. To address this challenge, we introduce the first benchmark and metric suite for poster generation, which pairs recent conference papers with author-designed posters and evaluates outputs on (i) Visual Quality—semantic alignment with human posters, (ii) Textual Coherence—language fluency, (iii) Holistic Assessment—six fine-grained aesthetic and informational criteria scored by a VLM-as-judge, and notably (iv) PaperQuiz—the poster’s ability to convey core paper content as measured by VLMs answering generated quizzes. Building on this benchmark, we propose PosterAgent, a top-down, visual-in-the-loop multi-agent pipeline: the (a) Parser distills the paper into a structured asset library; the (b) Planner aligns text–visual pairs into a binary-tree layout that preserves reading order and spatial balance; and the (c) Painter–Commenter loop refines each panel by executing rendering code and using VLM feedback to eliminate overflow and ensure alignment. In our comprehensive evaluation, we find that GPT-4o outputs—though visually appealing at first glance—often exhibit noisy text and poor PaperQuiz scores, and we find that reader engagement is the primary aesthetic bottleneck, as human-designed posters rely largely on visual semantics to convey meaning. Our fully open-source Paper2Poster pipeline outperforms GPT-4o–based systems across nearly all metrics while consuming 87% fewer tokens. These findings chart clear directions for the next generation of fully automated poster-generation models.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <h2 class="title is-3">Data Statistic</h2>
+      </div>
+      <div class="container is-max-desktop">
+        <figure style="width: 100%;">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-12.jpg" alt="stat" width="90%">
+        </figure>
+        <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
+          <strong>Data statistics of Paper2Poster.</strong>
+        </figcaption>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <h2 class="title is-3">Main Results on Existing Solutions</h2>
+      </div>
+      <div class="container is-max-desktop">
+        <figure style="width: 100%;">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-table-1.jpg" alt="table1" width="90%">
+          <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
+            <strong>Detailed evaluation of Paper2Poster.</strong>
+          </figcaption>
+        </figure>
+        <figure style="width: 100%;">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-table-2.jpg" alt="table2" width="90%">
+          <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
+            <strong>PaperQuiz evaluation on Paper2Poster.</strong>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <figure style="width: 100%;">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-table-4.jpg" alt="Efficiency & Cost analysis" width="90%">
+          <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
+            <strong>Efficiency & Cost analysis demonstrating PosterAgent’s strong efficiency and low API cost.</strong>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <h2 class="title is-3">More Examples</h2>
+      </div>
+      <div class="poster-carousel" id="carousel">
+        <div class="poster-item">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-13.jpg" alt="gt poster">
+          <p class="caption-small">Generated by Author</p>
+        </div>
+        <div class="poster-item">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-14.jpg" alt="GPT-4o Image">
+          <p class="caption-small">Generated by GPT-4o-image</p>
+        </div>
+        <div class="poster-item">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-15.jpg" alt="GPT-4o Html">
+          <p class="caption-small">Generated by GPT-4o-html</p>
+        </div>
+        <div class="poster-item">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-16.jpg" alt="PPT Agent">
+          <p class="caption-small">Generated by PPTAgent</p>
+        </div>
+        <div class="poster-item">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-17.jpg" alt="OWL">
+          <p class="caption-small">Generated by OWL</p>
+        </div>
+        <div class="poster-item">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-18.jpg" alt="PosterAgent">
+          <p class="caption-small">Generated by PostAgent</p>
+        </div>
+      </div>
+      <p class="caption-large">
+        Case-1: <a href="https://arxiv.org/pdf/2303.12246">Conformal Semantic Keypoint Detection with Statistical Guarantees</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <h2 class="title is-3">More Examples</h2>
+      </div>
+      <div class="poster-carousel" id="carousel">
+        <div class="poster-item">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-19.jpg" alt="gt poster">
+          <p class="caption-small">Generated by Author</p>
+        </div>
+        <div class="poster-item">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-20.jpg" alt="GPT-4o Image">
+          <p class="caption-small">Generated by GPT-4o-image</p>
+        </div>
+        <div class="poster-item">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-21.jpg" alt="GPT-4o Html">
+          <p class="caption-small">Generated by GPT-4o-html</p>
+        </div>
+        <div class="poster-item">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-22.jpg" alt="PPT Agent">
+          <p class="caption-small">Generated by PPTAgent</p>
+        </div>
+        <div class="poster-item">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-23.jpg" alt="OWL">
+          <p class="caption-small">Generated by OWL</p>
+        </div>
+        <div class="poster-item">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-24.jpg" alt="PosterAgent">
+          <p class="caption-small">Generated by PostAgent</p>
+        </div>
+      </div>
+      <p class="caption-large">
+        Case-2: <a href="https://arxiv.org/pdf/2109.04983">Neural Tangent Kernels for Axis-Aligned Tree Ensembles</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <h2 class="title is-3">More Examples</h2>
+      </div>
+      <div class="poster-carousel" id="carousel">
+        <div class="poster-item">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-25.jpg" alt="gt poster">
+          <p class="caption-small">Generated by Author</p>
+        </div>
+        <div class="poster-item">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-26.jpg" alt="GPT-4o Image">
+          <p class="caption-small">Generated by GPT-4o-image</p>
+        </div>
+        <div class="poster-item">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-27.jpg" alt="GPT-4o Html">
+          <p class="caption-small">Generated by GPT-4o-html</p>
+        </div>
+        <div class="poster-item">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-28.jpg" alt="PPT Agent">
+          <p class="caption-small">Generated by PPTAgent</p>
+        </div>
+        <div class="poster-item">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-29.jpg" alt="OWL">
+          <p class="caption-small">Generated by OWL</p>
+        </div>
+        <div class="poster-item">
+          <img src="https://rosarubus72.github.io/images/Paper2Poster-picture-30.jpg" alt="PosterAgent">
+          <p class="caption-small">Generated by PostAgent</p>
+        </div>
+      </div>
+      <p class="caption-large">
+        Case-3: <a href="https://arxiv.org/pdf/2311.02922">Truly Scale-Equivariant Deep Nets with Fourier Layers</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container content is-max-desktop">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+@misc{pang2025paper2postermultimodalposterautomation,
+      title={Paper2Poster: Towards Multimodal Poster Automation from Scientific Papers}, 
+      author={Wei Pang and Kevin Qinghong Lin and Xiangru Jian and Xi He and Philip Torr},
+      year={2025},
+      eprint={2505.21497},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2505.21497}, 
+}
+</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          The source code of this webpage is based on the <a href="https://github.com/nerfies/nerfies.github.io/">Nerfies</a> and <a href="https://showlab.github.io/VideoGUI/">VideoGUI</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="./static/slick/slick.min.js"></script>
+</body>
+
+</html>
