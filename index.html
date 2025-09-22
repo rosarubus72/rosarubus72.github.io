@@ -1,234 +1,203 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MobileIE: 超轻量级卷积神经网络框架</title>
-    <style>
-        body {
-            font-family: "PingFang SC", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", Arial, sans-serif;
-            line-height: 1.6em;
-            color: rgba(0, 0, 0, 0.9);
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-        }
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #f2f2f2;
-        }
-        section {
-            margin: 20px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .card {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        .card img {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-        }
-        .card h2 {
-            font-size: 24px;
-            margin: 10px 0;
-        }
-        .card p {
-            font-size: 16px;
-            line-height: 1.5;
-        }
-        .interactive-button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: #0b79ff;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .interactive-button:hover {
-            background-color: #0661c8;
-        }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #f2f2f2;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="description" content="The paper proposes the PosterAgent framework, a multi-agent pipeline designed to generate high-quality posters from academic papers.">
+  <meta property="og:title" content="PosterAgent Framework: Generating Academic Posters from Papers">
+  <meta property="og:description" content="The paper proposes the PosterAgent framework, a multi-agent pipeline designed to generate high-quality posters from academic papers.">
+  <meta property="og:url" content="https://github.com/Paper2Poster/Paper2Poster">
+  <meta property="og:image" content="static/image/banner_poster.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="PosterAgent Framework: Generating Academic Posters from Papers">
+  <meta name="twitter:description" content="The paper proposes the PosterAgent framework, a multi-agent pipeline designed to generate high-quality posters from academic papers.">
+  <meta name="twitter:image" content="static/images/twitter_banner_poster.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="PosterAgent, academic posters, multi-agent pipeline, visual feedback">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>PosterAgent Framework: Generating Academic Posters from Papers</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
 </head>
 <body>
-    <header>
-        <h1>MobileIE: 超轻量级卷积神经网络框架</h1>
-        <p>解决移动设备图像增强难题</p>
-    </header>
 
-    <section>
-        <h2>研究动机</h2>
-        <p>尽管基于Transformer和扩散模型的方法在图像增强任务中表现出色，但由于自注意力机制和迭代扩散过程计算成本高昂，难以在移动设备等资源受限平台部署。</p>
-        <p>现有轻量级模型通过参数压缩和低FLOPs架构设计降低计算复杂度，但常牺牲增强质量，难以在多种退化场景中保持高性能。</p>
-    </section>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">PosterAgent Framework: Generating Academic Posters from Papers</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://go2heart.github.io" target="_blank">Yibin Yan</a>, </span>
+                <span class="author-block">
+                  <a href="https://weidixie.github.io" target="_blank">Weidi Xie</a>
+                </span>
+              </div>
 
-    <section>
-        <h2>创新点</h2>
-        <ul>
-            <li>设计含约4K参数的高效网络，通过重参数化和增量权重优化策略，实现移动设备上的实时图像增强。</li>
-            <li>增量权重优化（IWO）策略：融合预训练冻结权重与可学习权重，提升特征整合能力。</li>
-            <li>局部方差加权（LVW）损失函数：基于局部均值和方差动态调整像素权重，缓解极端像素对训练的影响。</li>
-            <li>特征自变换（FST）模块与分层双路径注意力（HDPA）机制：提升关键区域关注度。</li>
-        </ul>
-    </section>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">School of Artificial Intelligence, Shanghai Jiao Tong University<br>EMNLP 2024 Findings</span>
+              </div>
 
-    <section>
-        <h2>方法</h2>
-        <p>MobileIE框架包含多分支重参数化卷积（MBRConv）、特征自变换（FST）模块以及分层双路径注意力（HDPA）机制。在训练阶段，退化图像先通过MBRConv5×5和PReLU提取浅层特征，之后借助两个MBRConv3×3和FST模块来学习深层特征，HDPA机制会引导模型关注重要区域，最后由MBRConv3×3对输出进行优化。而在推理阶段，所有的MBRConv层会重参数化为标准卷积，在保持性能的同时减少参数数量，使模型规模缩小到4K参数。</p>
-    </section>
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="https://arxiv.org/pdf/2407.12735" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
 
-    <section>
-        <h2>实验</h2>
-        <p>在多个图像增强任务中，MobileIE在速度与性能平衡表现最佳，能在移动设备上实现实时且高质量的图像增强。</p>
-    </section>
+                  <span class="link-block">
+                    <a href="https://github.com/Go2Heart/EchoSight" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
 
-    <section class="card">
-        <img src="https://mmbiz.qpic.cn/mmbiz_png/7IPW8F7ibjZ8toLAP9tlFzicbonHoAjvAibgIELWcyicUdBrCBysufLbmrGvto3DuXL4ib5iaCDRtnkhAyuw1gfIPUQw/640?wx_fmt=png" alt="MobileIE架构图">
-        <h2>架构图</h2>
-        <p>图展示了MobileIE的整体架构，包括MBRConv、FST、HDPA模块及训练/推理流程。</p>
-        <a href="https://github.com/AVC2-UESTC/MobileIE.git" class="interactive-button">GitHub代码</a>
-    </section>
-
-    <section>
-        <h2>总结</h2>
-        <p>该论文旨在攻克深度学习模型在移动设备部署的难题。当前，基于Transformer和扩散模型的方法虽在图像增强表现优异，却因计算成本高难以用于移动设备，而轻量级模型又常牺牲增强质量。论文提出MobileIE框架，通过多分支重参数化卷积捕捉多尺度特征，利用增量权重优化策略提升特征整合。同时，借助特征自变换模块增强特征表示，以分层双路径注意力机制聚焦关键区域，并采用局部方差加权损失函数优化训练。</p>
-    </section>
-
-    <div class="footer">
-        <p>编辑|AI启智汇</p>
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2407.12735" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
-</html>
-可以帮我预览一下这个网页效果吗<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MobileIE: 超轻量级卷积神经网络框架</title>
-    <style>
-        body {
-            font-family: "PingFang SC", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", Arial, sans-serif;
-            line-height: 1.6em;
-            color: rgba(0, 0, 0, 0.9);
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-        }
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #f2f2f2;
-        }
-        section {
-            margin: 20px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .card {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        .card img {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-        }
-        .card h2 {
-            font-size: 24px;
-            margin: 10px 0;
-        }
-        .card p {
-            font-size: 16px;
-            line-height: 1.5;
-        }
-        .interactive-button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: #0b79ff;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .interactive-button:hover {
-            background-color: #0661c8;
-        }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #f2f2f2;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>MobileIE: 超轻量级卷积神经网络框架</h1>
-        <p>解决移动设备图像增强难题</p>
-    </header>
+  </div>
 
-    <section>
-        <h2>研究动机</h2>
-        <p>尽管基于Transformer和扩散模型的方法在图像增强任务中表现出色，但由于自注意力机制和迭代扩散过程计算成本高昂，难以在移动设备等资源受限平台部署。</p>
-        <p>现有轻量级模型通过参数压缩和低FLOPs架构设计降低计算复杂度，但常牺牲增强质量，难以在多种退化场景中保持高性能。</p>
-    </section>
-
-    <section>
-        <h2>创新点</h2>
-        <ul>
-            <li>设计含约4K参数的高效网络，通过重参数化和增量权重优化策略，实现移动设备上的实时图像增强。</li>
-            <li>增量权重优化（IWO）策略：融合预训练冻结权重与可学习权重，提升特征整合能力。</li>
-            <li>局部方差加权（LVW）损失函数：基于局部均值和方差动态调整像素权重，缓解极端像素对训练的影响。</li>
-            <li>特征自变换（FST）模块与分层双路径注意力（HDPA）机制：提升关键区域关注度。</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>方法</h2>
-        <p>MobileIE框架包含多分支重参数化卷积（MBRConv）、特征自变换（FST）模块以及分层双路径注意力（HDPA）机制。在训练阶段，退化图像先通过MBRConv5×5和PReLU提取浅层特征，之后借助两个MBRConv3×3和FST模块来学习深层特征，HDPA机制会引导模型关注重要区域，最后由MBRConv3×3对输出进行优化。而在推理阶段，所有的MBRConv层会重参数化为标准卷积，在保持性能的同时减少参数数量，使模型规模缩小到4K参数。</p>
-    </section>
-
-    <section>
-        <h2>实验</h2>
-        <p>在多个图像增强任务中，MobileIE在速度与性能平衡表现最佳，能在移动设备上实现实时且高质量的图像增强。</p>
-    </section>
-
-    <section class="card">
-        <img src="https://mmbiz.qpic.cn/mmbiz_png/7IPW8F7ibjZ8toLAP9tlFzicbonHoAjvAibgIELWcyicUdBrCBysufLbmrGvto3DuXL4ib5iaCDRtnkhAyuw1gfIPUQw/640?wx_fmt=png" alt="MobileIE架构图">
-        <h2>架构图</h2>
-        <p>图展示了MobileIE的整体架构，包括MBRConv、FST、HDPA模块及训练/推理流程。</p>
-        <a href="https://github.com/AVC2-UESTC/MobileIE.git" class="interactive-button">GitHub代码</a>
-    </section>
-
-    <section>
-        <h2>总结</h2>
-        <p>该论文旨在攻克深度学习模型在移动设备部署的难题。当前，基于Transformer和扩散模型的方法虽在图像增强表现优异，却因计算成本高难以用于移动设备，而轻量级模型又常牺牲增强质量。论文提出MobileIE框架，通过多分支重参数化卷积捕捉多尺度特征，利用增量权重优化策略提升特征整合。同时，借助特征自变换模块增强特征表示，以分层双路径注意力机制聚焦关键区域，并采用局部方差加权损失函数优化训练。</p>
-    </section>
-
-    <div class="footer">
-        <p>编辑|AI启智汇</p>
+  <section class="section hero ">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              The paper proposes the <strong>PosterAgent framework</strong>, a multi-agent pipeline designed to generate high-quality posters from academic papers. It addresses the challenges of long-context and layout-sensitive tasks, leveraging structured parsing, hierarchical planning, and visual feedback. The main contributions include:
+              <ul>
+                <li>Introducing a novel benchmark, Paper2Poster, for evaluating poster generation systems.</li>
+                <li>Proposing a 'Top-down' design philosophy that involves global restructuring and local refinements.</li>
+                <li>Developing PosterAgent variants, such as PosterAgent-4o and PosterAgent-Qwen, which show significant improvements in visual quality, text coherence, and overall aesthetic scores compared to existing methods.</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="vertical-image-display">
+          <div class="columns is-centered has-text-centered">
+            <h2 class="title is-3">Key Technologies</h2>
+          </div>
+          <div class="image-item">
+            <img src="/static/images/technology_1.png" alt="LLM for Semantic Alignment">
+            <h2 class="subtitle">
+              <span>LLM for Semantic Alignment of Visual Assets with Textual Content</span>
+            </h2>
+          </div>
+          <div class="columns is-centered has-text-centered">
+            <h2 class="title is-3">Implementation Steps</h2>
+          </div>
+          <div class="image-item">
+            <img src="/static/images/technology_2.png" alt="Iterative Layout Configuration">
+            <h2 class="subtitle">
+              <span>Iterative Configuring Layout Section by Section</span>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <img src="/static/images/results_1.png" alt="Benchmark Comparison">
+            <h2 class="subtitle has-text-centered">
+              <span>Comparison with Other Methods</span>
+            </h2>
+          </div>
+          <div class="item">
+            <img src="/static/images/results_2.png" alt="Aesthetic Scores">
+            <h2 class="subtitle has-text-centered">
+              <span>Aesthetic Scores and Performance</span>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{yan-xie-2024-posteragent,
+          title = "PosterAgent: A Multi-Agent Pipeline for Generating Academic Posters from Papers",
+          author = "Yan, Yibin  and
+            Xie, Weidi",
+          editor = "Al-Onaizan, Yaser  and
+            Bansal, Mohit  and
+            Chen, Yun-Nung",
+          booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2024",
+          month = nov,
+          year = "2024",
+          address = "Miami, Florida, USA",
+          publisher = "Association for Computational Linguistics",
+          url = "https://aclanthology.org/2024.findings-emnlp.83",
+          pages = "1538--1551",
+          abstract = "The paper proposes the PosterAgent framework, a multi-agent pipeline designed to generate high-quality posters from academic papers. It addresses the challenges of long-context and layout-sensitive tasks, leveraging structured parsing, hierarchical planning, and visual feedback. The main contributions include introducing a novel benchmark, Paper2Poster, for evaluating poster generation systems, proposing a 'Top-down' design philosophy, and developing PosterAgent variants, which show significant improvements in visual quality, text coherence, and overall aesthetic scores compared to existing methods."
+      } 
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the elements of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
