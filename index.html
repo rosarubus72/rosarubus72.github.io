@@ -1,153 +1,86 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
+  <meta name="description" content="The Paper2Poster project introduces PosterAgent, a multi-agent pipeline designed to generate high-quality academic posters from papers.">
+  <meta property="og:title" content="PosterAgent: Auto-generate High-Quality Academic Posters">
+  <meta property="og:description" content="The Paper2Poster project introduces PosterAgent, a multi-agent pipeline designed to generate high-quality academic posters from papers.">
+  <meta property="og:url" content="https://paper2poster.github.io">
+  <meta property="og:image" content="static/images/Paper2Poster-banner.jpg" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="PosterAgent: Auto-generate High-Quality Academic Posters">
+  <meta name="twitter:description" content="The Paper2Poster project introduces PosterAgent, a multi-agent pipeline designed to generate high-quality academic posters from papers.">
+  <meta name="twitter:image" content="static/images/Paper2Poster-banner.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="keywords" content="academic posters, PosterAgent, multi-agent pipeline, visual feedback, scientific communication">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="assets/videogui.png">
+
+  <title>PosterAgent: Auto-generate High-Quality Academic Posters</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="./static/slick/slick.css" />
-  <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css" />
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-  <style>
-    .navbar {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #209CEE;
-      position: fixed;
-      width: 100%;
-      transition: background-color 0.5s ease;
-    }
+  <link rel="stylesheet" href="static/css/index.css">
 
-    .navbar.scrolled {
-      background-color: #209CEE;
-    }
-
-    .navbar li {
-      float: left;
-    }
-
-    .navbar li a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      transition: color 0.5s ease;
-    }
-
-    .navbar.scrolled li a {
-      color: white;
-    }
-
-    .poster-carousel {
-      display: flex;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      gap: 20px;
-      padding: 20px;
-      cursor: grab;
-    }
-
-    .poster-carousel:active {
-      cursor: grabbing;
-    }
-
-    .poster-item {
-      flex: 0 0 auto;
-      width: 45%;
-      text-align: center;
-    }
-
-    .poster-item img {
-      height: 500px;
-      object-fit: contain;
-    }
-
-    .caption-small {
-      margin-top: 8px;
-      font-size: 14px;
-      color: #555;
-    }
-
-    .caption-large {
-      text-align: center;
-      font-weight: bold;
-      font-size: 16px;
-      margin-top: 20px;
-    }
-  </style>
-
-  <script>
-    window.onscroll = function () {
-      var navbar = document.getElementById('navbar');
-      if (window.pageYOffset > 0) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    }
-  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
 </head>
-
 <body>
-  <ul class="navbar" id="navbar">
-    <li><a href="#home"><strong>🎓Paper2Poster</strong></a></li>
-  </ul>
 
   <section class="hero">
     <div class="hero-body">
-      <div class="container">
+      <div class="container is-max-desktop">
         <div class="columns is-centered">
-          <div class="column is-4 has-text-centered">
-            <img src="assets/poster.png" alt="Home" style="height:30px; width:30px; vertical-align:middle; margin-right:5px;">
-            <h1 class="title is-2 publication-title">
-              🎓Paper2Poster<br>Towards Multimodal Poster Automation from Scientific Papers
-            </h1>
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">PosterAgent: Auto-generate High-Quality Academic Posters</h1>
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>&#9825;</sup><a href="https://scholar.google.com/citations?user=f90pZOYAAAAJ&hl=en">Wei Pang</a><sup>†</sup>,</span>
-              <span class="author-block"><sup>&#9824;</sup><a href="https://qhlin.me">Kevin Qinghong Lin</a><sup>✉</sup><sup>†</sup>,</span>
-              <span class="author-block"><sup>&#9825;</sup><a href="https://edward-jianqaq.github.io/">Xiangru Jian</a><sup>†</sup>,</span>
-              <span class="author-block"><sup>&#9825;</sup><a href="https://cs.uwaterloo.ca/~xihe/">Xi He</a><sup>✉</sup>,</span>
-              <span class="author-block"><sup>&#9827;</sup><a href="https://scholar.google.com/citations?user=kPxa2w0AAAAJ&hl=en">Philip Torr</a>
+              <span class="author-block">
+                <a href="https://yibinyan.ai" target="_blank">Yibin Yan</a>, </span>
+                <span class="author-block">
+                  <a href="https://weidixie.github.io" target="_blank">Weidi Xie</a></span>
             </div>
+
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>&#9825;</sup>University of Waterloo</span>
-              <span class="author-block"><sup>&#9824;</sup>National University of Singapore</span>
-              <span class="author-block"><sup>&#9827;</sup>University of Oxford</span>
+              <span class="author-block">School of Artificial Intelligence, Shanghai Jiao Tong University<br>EMNLP 2024 Findings</span>
             </div>
+
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2505.21497" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://arxiv.org/pdf/2407.12735" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                      <i class="ai ai-arxiv"></i>
+                      <i class="fas fa-file-pdf"></i>
                     </span>
                     <span>Paper</span>
                   </a>
                 </span>
+
                 <span class="link-block">
-                  <a href="https://github.com/Paper2Poster/Paper2Poster" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://github.com/Paper2Poster/Paper2Poster" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
                     <span>Code</span>
                   </a>
                 </span>
+
                 <span class="link-block">
-                  <a href="https://huggingface.co/datasets/Paper2Poster/Paper2Poster" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://arxiv.org/abs/2407.12735" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                      <i class="ai ai-obp"></i>
+                      <i class="ai ai-arxiv"></i>
                     </span>
-                    <span>Datasets</span>
+                    <span>arXiv</span>
                   </a>
                 </span>
               </div>
@@ -156,338 +89,142 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">TL;DR</h2>
-          <div class="content has-text-centered">
-            <p>
-              We address <strong>How to create a poster from a paper</strong> and <strong>How to evaluate poster</strong>.
-            </p>
-          </div>
-        </div>
-      </div>
-      <center>
-        <img src="images/Paper2Poster-picture-1.jpg" alt="">
-      </center>
-    </div>
-  </section>
-
-  <section class="hero teaser">
-    <div class="hero-body">
-      <div class="columns is-centered">
-        <h2 class="title is-3">Can AI assistants create a well-designed Poster given a Paper?</h2>
-      </div>
-      <div class="container is-max-desktop">
-        <div class="columns is-vcentered">
-          <!-- Left: Paper -->
-          <div class="column has-text-centered">
-            <img src="images/Paper2Poster-picture-2.jpg" alt="Paper" style="height: 400px;">
-            <p class="caption" style="text-align: center; margin-top: 10px;"><strong>Inputs: </strong><a href="https://arxiv.org/pdf/2210.15986">Paper</a> (a PDF)</p>
-          </div>
-          <!-- Right: Poster -->
-          <div class="column has-text-centered">
-            <img src="images/Paper2Poster-picture-3.jpg" alt="Poster" style="height: 400px; max-width: none;">
-            <p class="caption" style="text-align: center; margin-top: 10px;"><strong>Outputs: </strong><a href="https://neurips.cc/media/PosterPDFs/NeurIPS%202022/61269.png?t=1669788855.791561">Poster</a> (designed by author)</p>
-          </div>
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The Paper2Poster project introduces <strong>PosterAgent</strong>, a multi-agent pipeline designed to automatically generate high-quality academic posters from scientific papers. It addresses the challenges of long-context and layout-sensitive tasks, leveraging structured parsing, hierarchical planning, and visual feedback. The main contributions include:
+            <ol>
+              <li>Introducing a novel benchmark, Paper2Poster, for evaluating poster generation systems.</li>
+              <li>Proposing a 'Top-down' design philosophy that involves global restructuring and local refinements.</li>
+              <li>Developing PosterAgent variants, such as PosterAgent-4o and PosterAgent-Qwen, which show significant improvements in visual quality, text coherence, and overall aesthetic scores compared to existing methods.</li>
+            </ol>
+          </p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="hero teaser">
-    <div class="hero-body">
-      <div class="columns is-centered">
-        <h2 class="title is-3">How GPT-4o or Open-source Multi-agents behave?</h2>
-      </div>
-      <div class="container is-max-desktop">
-        <div class="columns is-vcentered">
-          <!-- GPT-4o Image -->
-          <div class="column has-text-centered">
-            <img src="images/Paper2Poster-picture-4.jpg" alt="GPT-4o Image" style="height: 400px; max-width: none;">
-            <p class="caption" style="text-align: center; margin-top: 10px;"><strong>Poster generated by GPT-4o-image</strong></p>
-          </div>
-          <!-- GPT-4o HTML -->
-          <div class="column has-text-centered">
-            <img src="images/Paper2Poster-picture-5.jpg" alt="GPT-4o HTML" style="height: 400px; max-width: none;">
-            <p class="caption" style="text-align: center; margin-top: 10px;"><strong>Poster generated by GPT-4o-html</strong></p>
-          </div>
-        </div>
-        <div class="columns is-vcentered">
-          <!-- PPT-Agent -->
-          <div class="column has-text-centered">
-            <img src="images/Paper2Poster-picture-6.jpg" alt="PPT-Agent" style="height: 400px; max-width: none;">
-            <p class="caption" style="text-align: center; margin-top: 10px;"><strong>Poster generated by <a href="https://github.com/icip-cas/PPTAgent">PPTAgent</a></strong></p>
-          </div>
-          <!-- OWL -->
-          <div class="column has-text-centered">
-            <img src="images/Paper2Poster-picture-7.jpg" alt="OWL" style="height: 400px; max-width: none;">
-            <p class="caption" style="text-align: center; margin-top: 10px;"><strong>Poster generated by <a href="https://github.com/camel-ai/owl">🦉OWL</a></strong></p>
-          </div>
-        </div>
-        <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
-          <strong>GPT-4o-image</strong> visually acceptable layouts at first glance, but closer inspection <strong>zoom-in-region</strong> reveals impaired text rendering, leading to poor readability of fine-grained details. 
-          <strong>GPT-4o-HTML</strong> and <strong>OWL</strong> generate blog-like, text-dense posters that suffer from low visual readability. 
-          <strong>PPTAgent</strong> struggles with layout control, often resulting in missing panels. 
-        </figcaption>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero teaser">
-    <div class="hero-body">
-      <div class="columns is-centered">
-        <h2 class="title is-3">Poster Generated by PosterAgent</h2>
-      </div>
-      <div class="container is-max-desktop">
-        <div class="columns is-vcentered">
-          <div class="column has-text-centered">
-            <img src="images/Paper2Poster-picture-8.jpg" alt="PosterAgent" style="height: 600px; max-width: none;">
-            <p class="caption" style="text-align: center; margin-top: 10px;">In contrast, <strong>PosterAgent</strong> generates structurally coherent and readable posters while using significantly fewer words.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <h2 class="title is-3">What are the Challenges?</h2>
-      </div>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <div class="content has-text-justified">
-            <ul>
-              <li><strong>Long-Context Long-Horizon Task:</strong> Scientific papers span multiple pages and thousands of words. Summarizing key insights while preserving coherence demands hierarchical understanding and selective abstraction. The complexity further necessitates long-horizon reasoning and multiple iterative interactions, making the task especially challenging.</li>
-              <li><strong>Interleaved Multimodal Inputs:</strong> Papers integrate numerous figures, tables, and charts, each semantically linked to the surrounding text. Successful poster generation demands the ability to extract, interpret, and align these multimodal elements in a contextually appropriate manner.</li>
-              <li><strong>Layout-aware Multimodal Outputs:</strong> Unlike tasks focused solely on text (e.g., blog) or vision, poster generation requires producing interleaved text–image outputs within a constrained spatial layout. This necessitates joint reasoning over language, visual content, and layout to prevent overflow, imbalance, and logical misalignment.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero teaser">
-    <div class="hero-body">
-      <div class="columns is-centered">
-        <h2 class="title is-3">How to create poster 👉 PosterAgent</h2>
-      </div>
-      <div class="container is-max-desktop">
-        <center>
-          <div class="columns is-centered">
-            <div class="column is-full">
-              <figure style="width: 100%;">
-                <img src="images/Paper2Poster-picture-9.jpg" alt="stat" width="90%">
-              </figure>
-            </div>
-          </div>
-        </center>
-        <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
-          <strong>A Top-down, visual-in-the-loop, efficient multi-agent pipeline.</strong>
-          <strong>(a) Parser</strong> distills the paper into a structured asset library;
-          the <strong>(b) Planner</strong> aligns text–visual pairs into a binary‐tree layout that preserves reading order and spatial balance; 
-          and the <strong>(c) Painter-Commentor</strong> loop refines each panel by executing rendering code and using VLM feedback to eliminate overflow and ensure alignment.
-        </figcaption>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero teaser">
-    <div class="hero-body">
-      <div class="columns is-centered">
-        <h2 class="title is-3">How to evaluate poster 👉 PaperQuiz</h2>
-      </div>
-      <div class="container is-max-desktop">
-        <center>
-          <div class="columns is-centered">
-            <div class="column is-full">
-              <figure style="width: 100%;">
-                <img src="images/Paper2Poster-picture-10.jpg" alt="stat" width="90%">
-              </figure>
-            </div>
-          </div>
-        </center>
-        <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
-          <strong>A Good poster should convey core paper content visually.</strong>
-          <strong>Left:</strong> We automatically generate multiple-choice questions from each paper using an LLM (o3), forming the our PaperQuiz evaluation. 
-          <strong>Right:</strong> In PaperQuiz, we simulate multiple reader by allowing VLMs—representing different expertise levels (e.g., student, professor)—to read each generated poster and answer the quiz. 
-          The poster that achieves the highest average score is considered the most effective in conveying the paper's content.
-        </figcaption>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3">Abstract</h2>
-      <div class="content has-text-justified">
-        <p>
-          Academic poster generation is a crucial yet challenging task in scientific communication, requiring the compression of long-context interleaved documents into a single, visually coherent page. To address this challenge, we introduce the first benchmark and metric suite for poster generation, which pairs recent conference papers with author-designed posters and evaluates outputs on (i) Visual Quality—semantic alignment with human posters, (ii) Textual Coherence—language fluency, (iii) Holistic Assessment—six fine-grained aesthetic and informational criteria scored by a VLM-as-judge, and notably (iv) PaperQuiz—the poster’s ability to convey core paper content as measured by VLMs answering generated quizzes. Building on this benchmark, we propose PosterAgent, a top-down, visualin-the-loop multi-agent pipeline: the (a) Parser distills the paper into a structured asset library; the (b) Planner aligns text–visual pairs into a binary-tree layout that preserves reading order and spatial balance; and the (c) Painter–Commenter loop refines each panel by executing rendering code and using VLM feedback to eliminate overflow and ensure alignment. In our comprehensive evaluation, we find that GPT-4o outputs—though visually appealing at first glance—often exhibit noisy text and poor PaperQuiz scores, and we find that reader engagement is the primary aesthetic bottleneck, as human-designed posters rely largely on visual semantics to convey meaning. Our fully open-source Paper2Poster pipeline outperforms GPT-4o–based systems across nearly all metrics while consuming 87% fewer tokens. These findings chart clear directions for the next generation of fully automated poster-generation models.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero teaser">
-    <div class="hero-body">
-      <div class="columns is-centered">
-        <h2 class="title is-3">Data Statistic</h2>
-      </div>
-      <div class="container is-max-desktop">
-        <center>
-          <div class="columns is-centered">
-            <div class="column is-full">
-              <figure style="width: 100%;">
-                <img src="images/Paper2Poster-picture-11.jpg" alt="stat" width="90%">
-              </figure>
-            </div>
-          </div>
-        </center>
-        <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
-          <strong>(a) Word cloud illustrating the diversity of research topics. (b) Textual Token statistics and Figure count statistics for input papers vs. posters provided by authors.</strong>
-        </figcaption>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero teaser">
-    <div class="hero-body">
-      <div class="columns is-centered">
-        <h2 class="title is-3">Main Results on Existing Solutions</h2>
-      </div>
-      <div class="container is-max-desktop">
-        <center>
-          <div class="columns is-centered">
-            <div class="column is-full">
-              <figure style="width: 100%;">
-                <img src="images/Paper2Poster-table-1.jpg" alt="stat" width="90%">
-                <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
-                  <strong>Detailed evaluation of Paper2Poster.</strong>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </center>
-      </div>
-    </div>
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <center>
-          <div class="columns is-centered">
-            <div class="column is-full">
-              <figure style="width: 100%;">
-                <img src="images/Paper2Poster-table-2.jpg" alt="stat" width="90%">
-                <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
-                  <strong>PaperQuiz evaluation on Paper2Poster.</strong>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </center>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero teaser">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <center>
-          <div class="columns is-centered">
-            <div class="column is-full">
-              <figure style="width: 100%;">
-                <img src="images/Paper2Poster-picture-12.jpg" alt="Efficiency & Cost analysis" width="90%">
-                <figcaption class="caption" style="margin-bottom: 1px; text-align: center;">
-                  <strong>Efficiency & Cost analysis demonstrating PosterAgent’s strong efficiency and low API cost.</strong>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </center>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero teaser">
-    <div class="hero-body">
-      <div class="columns is-centered">
-        <h2 class="title is-3">More Examples</h2>
-      </div>
-      <div class="poster-carousel" id="carousel">
-        <div class="poster-item">
-          <img src="images/Paper2Poster-picture-13.jpg" alt="gt poster">
-          <p class="caption-small">Generated by Author</p>
-        </div>
-        <div class="poster-item">
-          <img src="images/Paper2Poster-picture-14.jpg" alt="GPT-4o Image">
-          <p class="caption-small">Generated by GPT-4o-image</p>
-        </div>
-        <div class="poster-item">
-          <img src="images/Paper2Poster-picture-15.jpg" alt="GPT-4o Html">
-          <p class="caption-small">Generated by GPT-4o-html</p>
-        </div>
-        <div class="poster-item">
-          <img src="images/Paper2Poster-picture-16.jpg" alt="PPT Agent">
-          <p class="caption-small">Generated by PPTAgent</p>
-        </div>
-        <div class="poster-item">
-          <img src="images/Paper2Poster-picture-17.jpg" alt="OWL">
-          <p class="caption-small">Generated by OWL</p>
-        </div>
-        <div class="poster-item">
-          <img src="images/Paper2Poster-picture-18.jpg" alt="PosterAgent">
-          <p class="caption-small">Generated by PostAgent</p>
-        </div>
-      </div>
-      <p class="caption-large">
-        Case-1: <a href="https://arxiv.org/pdf/2303.12246">Conformal Semantic Keypoint Detection with Statistical Guarantees</a>.
-      </p>
-      <div class="poster-carousel" id="carousel">
-        <div class="poster-item">
-          <img src="images/Paper2Poster-picture-19.jpg" alt="gt poster">
-          <p class="caption-small">Generated by Author</p>
-        </div>
-        <div class="poster-item">
-          <img src="images/Paper2Poster-picture-20.jpg" alt="GPT-4o Image">
-          <p class="caption-small">Generated by GPT-4o-image</p>
-        </div>
-        <div class="poster-item">
-          <img src="images/Paper2Poster-picture-21.jpg" alt="GPT-4o Html">
-          <p class="caption-small">Generated by GPT-4o-html</p>
-        </div>
-        <div class="poster-item">
-          <img src="images/Paper2Poster-picture-22.jpg" alt="PPT Agent">
-          <p class="caption-small">Generated by PPTAgent</p>
-        </div>
-        <div class="poster-item">
-          <img src="images/Paper2Poster-picture-23.jpg" alt="OWL">
-          <p class="caption-small">Generated by OWL</p>
-        </div>
-        <div class="poster-item">
-          <img src="images/Paper2Poster-picture-24.jpg" alt="PosterAgent">
-          <p class="caption-small">Generated by PostAgent</p>
-        </div>
-      </div>
-      <p class="caption-large">
-        Case-2: <a href="https://arxiv.org/pdf/2109.04983">Neural Tangent Kernels for Axis-Aligned Tree Ensembles</a>.
-      </p>
-    </div>
-  </section>
-
-  <footer class="footer">
+<section class="hero is-small">
+  <div class="hero-body">
     <div class="container">
-      <div class="content has-text-centered">
-        <p>
-          The source code of this webpage is based on the <a href="https://github.com/nerfies/nerfies.github.io/">Nerfies</a> and <a href="https://showlab.github.io/VideoGUI/">VideoGUI</a>.
-        </p>
+      <div class="vertical-image-display">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title">Key Contributions</h2>
+          <div class="image-item">
+            <img src="images/Paper2Poster-picture-1.jpg" alt="Benchmark and Evaluation Metrics">
+            <h2 class="subtitle">
+              <figcaption>
+                The Paper2Poster benchmark and evaluation metrics.
+              </figcaption>
+            </h2>
+          </div>
+          <div class="image-item">
+            <img src="images/Paper2Poster-picture-2.jpg" alt="PosterAgent Framework">
+            <h2 class="subtitle">
+              <figcaption>
+                The PosterAgent framework architecture.
+              </figcaption>
+            </h2>
+          </div>
+          <div class="image-item">
+            <img src="images/Paper2Poster-picture-3.jpg" alt="Visual Feedback Mechanism">
+            <h2 class="subtitle">
+              <figcaption>
+                The visual feedback mechanism in PosterAgent.
+              </figcaption>
+            </h2>
+          </div>
+          <div class="image-item">
+            <img src="images/Paper2Poster-picture-4.jpg" alt="Performance Comparison">
+            <h2 class="subtitle">
+              <figcaption>
+                Performance comparison of different methods.
+              </figcaption>
+            </h2>
+          </div>
+        </div>
       </div>
     </div>
-  </footer>
-</body>
+  </div>
+</section>
 
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">How It Works</h2>
+        <div class="content has-text-justified">
+          <p>
+            PosterAgent follows a 'Top-down' design philosophy, which involves global restructuring and local refinements. The pipeline consists of three key components:
+            <ol>
+              <li><strong>Parser:</strong> Extracts key textual and visual content by tools and LLM-based summarization to build an asset library.</li>
+              <li><strong>Planner:</strong> Aligns assets and arranges them into coherent layouts, generating panels iteratively with a zoom-in mechanism.</li>
+              <li><strong>Painter-Commenter:</strong> The Painter produces panel-level bullet points and executable code for rendering, while a VLM as Commenter ensures layout coherence and avoids overflow.</li>
+            </ol>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <img src="images/Paper2Poster-picture-5.jpg" alt="Performance Comparison">
+          <h2 class="subtitle has-text-centered">
+            Performance comparison of different methods.
+          </h2>
+        </div>
+        <div class="item">
+          <img src="images/Paper2Poster-picture-6.jpg" alt="Visual Feedback Mechanism">
+          <h2 class="subtitle has-text-centered">
+            The visual feedback mechanism in PosterAgent.
+          </h2>
+        </div>
+        <div class="item">
+          <img src="images/Paper2Poster-picture-7.jpg" alt="Benchmark and Evaluation Metrics">
+          <h2 class="subtitle has-text-centered">
+            The Paper2Poster benchmark and evaluation metrics.
+          </h2>
+        </div>
+        <div class="item">
+          <img src="images/Paper2Poster-picture-8.jpg" alt="PosterAgent Framework">
+          <h2 class="subtitle has-text-centered">
+            The PosterAgent framework architecture.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
 </html>
-以上HTML代码包含了论文摘要、挑战、方法、实验结果等部分，并插入了相应的图表。请确保所有路径正确无误，并根据实际文件位置调整路径。如果有任何问题或需要进一步修改，请告知！
