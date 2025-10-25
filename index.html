@@ -8,7 +8,6 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    /* 添加一些自定义样式确保图表显示正常 */
     .plotly-chart {
       width: 100%;
       height: 500px;
@@ -33,6 +32,17 @@
     .chart-btn.active {
       background-color: #1e40af;
     }
+
+    /* Interactive chart style */
+    body { font-family: 'Inter', sans-serif; margin: 40px; background: #fafafa; }
+    .controls { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+    button { padding: 8px 16px; border-radius: 8px; cursor: pointer; border: none; }
+    .active { background-color: #2563eb; color: white; }
+    .inactive { background-color: #e5e7eb; color: #374151; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background-color: #f9fafb; }
+    .hidden { display: none; }
   </style>
 </head>
 
@@ -41,7 +51,9 @@
   <!-- ===== Navigation Bar ===== -->
   <nav class="sticky top-0 bg-white shadow-md z-50">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <h1 class="text-xl md:text-2xl font-bold text-primary">Ada3D : Exploiting the Spatial Redundancy with Adaptive Inference for Efficient 3D Object Detection</h1>
+      <h1 class="text-xl md:text-2xl font-bold text-primary">
+        Ada3D : Exploiting the Spatial Redundancy with Adaptive Inference for Efficient 3D Object Detection
+      </h1>
       <div class="flex space-x-4">
         <a href="#abstract" class="text-gray-700 hover:text-primary font-semibold">Abstract</a>
         <a href="#method" class="text-gray-700 hover:text-primary font-semibold">Method</a>
@@ -54,32 +66,23 @@
   <!-- ===== Hero Section ===== -->
   <section class="bg-gradient-to-b from-white to-gray-100 py-12 md:py-20 text-center">
     <div class="container mx-auto px-4">
-      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">Ada3D : Exploiting the Spatial Redundancy with Adaptive Inference for Efficient 3D Object Detection</h1>
-      <div class="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-lg font-semibold mb-6">
-        
-      </div>
-
-      <!-- Authors -->
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
+        Ada3D : Exploiting the Spatial Redundancy with Adaptive Inference for Efficient 3D Object Detection
+      </h1>
+      <div class="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-lg font-semibold mb-6"></div>
       <div class="max-w-4xl mx-auto mb-6">
         <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-lg">
-          
           <p>Anonymous<sup>1</sup></p>
-          
-        </div>
-        <div class="mt-2 text-gray-600">
-          
         </div>
       </div>
-
-      <!-- Links -->
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="#" class="bg-blue-600 text-white px-5 py-2 rounded-md ">
+        <a href="#" class="bg-blue-600 text-white px-5 py-2 rounded-md">
           <i class="fa fa-file-alt mr-2"></i> Paper
         </a>
-        <a href="#" class="bg-gray-200 text-gray-800 px-5 py-2 rounded-md ">
+        <a href="#" class="bg-gray-200 text-gray-800 px-5 py-2 rounded-md">
           <i class="fa fa-github mr-2"></i> Code
         </a>
-        <a href="#" class="bg-gray-200 text-gray-800 px-5 py-2 rounded-md ">
+        <a href="#" class="bg-gray-200 text-gray-800 px-5 py-2 rounded-md">
           <i class="fa fa-database mr-2"></i> Dataset
         </a>
       </div>
@@ -91,7 +94,9 @@
     <div class="container mx-auto px-4 max-w-4xl">
       <h2 class="text-3xl font-bold mb-6 text-center">Abstract</h2>
       <div class="bg-gray-50 p-8 rounded-xl shadow-sm border border-gray-200">
-        <p class="text-lg leading-relaxed">Voxel-based methods have achieved state-of-the-art performance for 3D object detection in autonomous driving. However, their significant computational and memory costs pose a challenge for their application to resourceconstrained vehicles. One reason for this high resource consumption is the presence of a large number of redundant background points in Lidar point clouds, resulting in <span class="font-bold text-blue-700">spatial redundancy in both 3D voxel and BEV map representations</span>. To address this issue, we propose an adaptive inference framework called <span class="font-bold text-blue-700">Ada3D</span>, which focuses on reducing the spatial redundancy to compress the model's computational and memory cost. Ada3D adaptively filters the redundant input, guided by a lightweight importance predictor and the unique properties of the Lidar point cloud. Additionally, we maintain the BEV features' intrinsic sparsity by introducing the <span class="font-bold text-blue-700">Sparsity Preserving Batch Normalization</span>. With Ada3D, we achieve <span class="font-bold text-blue-700">40% reduction for 3D voxels</span> and decrease the density of 2D BEV feature maps from 100% to 20% without sacrificing accuracy. Ada3D reduces the model computational and memory cost by <span class="font-bold text-blue-700">5×</span>, and achieves 1.52×/1.45× end-to-end GPU latency and 1.5×/4.5× GPU peak memory optimization for the 3D and 2D backbone respectively.</p>
+        <p class="text-lg leading-relaxed">
+          Voxel-based methods have achieved state-of-the-art performance for 3D object detection in autonomous driving...
+        </p>
       </div>
     </div>
   </section>
@@ -100,21 +105,13 @@
   <section id="method" class="py-16 bg-gray-50">
     <div class="container mx-auto px-4 max-w-4xl">
       <h2 class="text-3xl font-bold mb-6 text-center">Method</h2>
-      <p class="text-lg leading-relaxed">The proposed method, <span class="font-bold text-blue-700">Ada3D</span>, addresses the spatial redundancy in both 3D voxel and 2D BEV features to enhance the efficiency of voxel-based 3D detection methods. Ada3D introduces an adaptive inference framework that selectively filters out redundant 3D voxels and 2D BEV features during inference. Specifically, it employs a lightweight predictor to assess the importance of input features in the BEV space, combining this with the density of the Lidar point cloud to determine which features to drop. This adaptive filtering significantly reduces computational and memory costs by up to <span class="font-bold text-blue-700">5×</span>. Additionally, Ada3D introduces a <span class="font-bold text-blue-700">sparsity-preserving batch normalization</span> technique that maintains sparsity in 2D BEV features, further optimizing model efficiency. By adaptively skipping redundant features, Ada3D achieves a <span class="font-bold text-blue-700">1.4× end-to-end speedup</span> and a <span class="font-bold text-blue-700">2.2× reduction in GPU peak memory usage</span> on an RTX3090, without compromising performance. This approach allows for finer voxel sizes, thereby improving model performance under resource constraints.</p>
-            
-            <div class="visual my-6">
-                <img src="/images/Ada3D _ Exploiting the Spatial Redundancy with Adaptive Inference for Efficient 3D Object Detection-picture-6.jpg" alt="Figure 6: Layer-wise GPU latency and peak memory optimization for Ada3D-B . The green and blue bars stand for the latency and peak memory. The diagonal filled bars are Ada3D optimized costs." class="max-w-full h-auto rounded-lg shadow-md mx-auto">
-                <p class="text-sm text-gray-600 italic mt-2 text-center">
-                    Figure: Layer-wise GPU latency and peak memory optimization for Ada3D-B. The green and blue bars stand for the latency and peak memory. The diagonal filled bars are Ada3D optimized costs.
-                </p>
-            </div>
-            
-            <div class="visual my-6">
-                <img src="/images/Ada3D _ Exploiting the Spatial Redundancy with Adaptive Inference for Efficient 3D Object Detection-picture-7.jpg" alt="Figure 7: End-to-end GPU latency and peak memory optimization for Ada3D . The green and blue bars stand for the latency and peak memory cost respectively. The filled/unfilled bars represent the 2D/3D backbone." class="max-w-full h-auto rounded-lg shadow-md mx-auto">
-                <p class="text-sm text-gray-600 italic mt-2 text-center">
-                    Figure: End-to-end GPU latency and peak memory optimization for Ada3D. The green and blue bars stand for the latency and peak memory cost respectively. The filled/unfilled bars represent the 2D/3D backbone.
-                </p>
-            </div>
+      <p class="text-lg leading-relaxed">
+        The proposed method, <span class="font-bold text-blue-700">Ada3D</span>, addresses spatial redundancy...
+      </p>
+      <div class="visual my-6">
+        <img src="/images/Ada3D _ Exploiting the Spatial Redundancy with Adaptive Inference for Efficient 3D Object Detection-picture-6.jpg" 
+             alt="Figure 6" class="max-w-full h-auto rounded-lg shadow-md mx-auto">
+      </div>
     </div>
   </section>
 
@@ -122,159 +119,110 @@
   <section id="experiments" class="py-16 bg-white">
     <div class="container mx-auto px-4 max-w-4xl">
       <h2 class="text-3xl font-bold mb-6 text-center">Experiments</h2>
-      <p class="text-lg leading-relaxed"><p class='text-lg leading-relaxed'><span class="font-bold text-blue-700">Experiments and Key Findings:</span>
+      <p class="text-lg leading-relaxed">
+        Experiments were conducted to evaluate Ada3D on the KITTI dataset...
+      </p>
 
-The research conducted several experiments to evaluate the effectiveness of the Ada3D method in enhancing 3D object detection. Notably, Ada3D was tested against various state-of-the-art methods on the KITTI dataset, focusing on metrics such as mean Average Precision (mAP) and 3D detection accuracy across different IoU thresholds.
-</p>
-<p class="text-lg leading-relaxed"> <span class="font-bold text-blue-700">Performance Comparison:</span>
+      <!-- ✅ REPLACED SECTION: Interactive Performance Comparison Chart -->
+      <div class="visual my-6">
+        <h2 style="text-align:center">Performance Comparison</h2>
+        <div class="controls">
+          <button onclick="toggleView('bar')" id="barBtn" class="active">📊 Bar Chart</button>
+          <button onclick="toggleView('line')" id="lineBtn" class="inactive">📈 Line Chart</button>
+          <button onclick="toggleView('scatter')" id="scatterBtn" class="inactive">🔵 Scatter</button>
+          <button onclick="toggleTable()" id="tableBtn" class="inactive">📋 Show Table</button>
+        </div>
 
-Table 9 and Table 10 demonstrate the performance of Ada3D when combined with the CenterPoint model. Specifically, the method achieved a mAP of 65.5, comparable to the baseline CenterPoint model (66.1) while enabling a finer voxel size (0.075) versus the larger size (0.1) typically used to reduce computational costs. Additionally, Table 10 shows that Ada3D improved performance metrics for cars, pedestrians, and cyclists at various IoU thresholds, indicating enhanced detection accuracy without significant increases in computational cost.
-</p>
-<p class="text-lg leading-relaxed"> <span class="font-bold text-blue-700">Adaptive Inference and Spatial Redundancy Reduction:</span>
-
-Ada3D also integrates adaptive inference techniques to reduce spatial redundancy in both 3D and 2D backbones. By employing a spatial filtering module that combines predictor scores with 3D point cloud density, the method selectively drops redundant parts. Furthermore, the introduction of SP-BN (Spatially Pruned Batch Normalization) helps in retaining sparsity by omitting background pixels in the 2D backbone.
-
-These experiments highlight that Ada3D not only maintains or improves detection accuracy but also reduces spatial redundancy, making it a promising approach for efficient 3D object detection.</p>
-                <div class="visual my-6">
-                    <div id="table-container-1" class="w-full">
-            <div class="flex space-x-2 mb-4 justify-center">
-                <button onclick="toggleView('table-1','chart-1',this,'bar')" 
-                        class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">📊 Bar Chart</button>
-                <button onclick="toggleView('table-1','chart-1',this,'line')" 
-                        class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">📈 Line Chart</button>
-                <button onclick="toggleView('table-1','chart-1',this,'scatter')" 
-                        class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">🔵 Scatter</button>
-                <button onclick="toggleView('chart-1','table-1',this)" 
-                        class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">📋 Show Table</button>
-            </div><div id="table-1" class="overflow-x-auto my-6"><table class="min-w-full border"><thead><tr><th class="px-4 py-2 border bg-gray-50 font-semibold">\toprule</th></tr></thead><tbody><tr><td class="px-4 py-2 border text-sm">\multirow{2}{*}{\textbf{Mehod}}</td><td class="px-4 py-2 border text-sm">\multicolumn{2}{c}{\textbf{FLOPs}}</td><td class="px-4 py-2 border text-sm">\multicolumn{1}{c}{\textbf{Mem}}</td><td class="px-4 py-2 border text-sm">\multicolumn{1}{c}{\textbf{mAP}}</td><td class="px-4 py-2 border text-sm">\multicolumn{3}{c}{\textbf{3D Car (IoU=0.7)}}</td><td class="px-4 py-2 border text-sm">\multicolumn{3}{c}{\textbf{3D Ped. (IoU=0.5)}}</td><td class="px-4 py-2 border text-sm">\multicolumn{3}{c}{\textbf{3D Cyc. (IoU=0.5)}}</td></tr><tr><td class="px-4 py-2 border text-sm">\cmidrule(lr){2-3} \cmidrule(lr){4-4} \cmidrule(lr){5-5} \cmidrule(lr){6-8} \cmidrule(lr){9-11} \cmidrule(lr){12-14}</td></tr><tr><td class="px-4 py-2 border text-sm"></td><td class="px-4 py-2 border text-sm">Opt.</td><td class="px-4 py-2 border text-sm">Opt.</td><td class="px-4 py-2 border text-sm">(Mod.)</td><td class="px-4 py-2 border text-sm"></td><td class="px-4 py-2 border text-sm">Easy</td><td class="px-4 py-2 border text-sm">Mod.</td><td class="px-4 py-2 border text-sm">Hard</td><td class="px-4 py-2 border text-sm">Easy</td><td class="px-4 py-2 border text-sm">Mod.</td><td class="px-4 py-2 border text-sm">Hard</td><td class="px-4 py-2 border text-sm">Easy</td><td class="px-4 py-2 border text-sm">Mod.</td><td class="px-4 py-2 border text-sm">Hard</td></tr><tr><td class="px-4 py-2 border text-sm">\midrule</td></tr><tr><td class="px-4 py-2 border text-sm">VoxelNet [39]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">49.05</td><td class="px-4 py-2 border text-sm">77.47</td><td class="px-4 py-2 border text-sm">65.11</td><td class="px-4 py-2 border text-sm">57.73</td><td class="px-4 py-2 border text-sm">39.48</td><td class="px-4 py-2 border text-sm">33.69</td><td class="px-4 py-2 border text-sm">31.50</td><td class="px-4 py-2 border text-sm">61.22</td><td class="px-4 py-2 border text-sm">48.36</td><td class="px-4 py-2 border text-sm">44.37</td></tr><tr><td class="px-4 py-2 border text-sm">SECOND [30]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">57.43</td><td class="px-4 py-2 border text-sm">84.65</td><td class="px-4 py-2 border text-sm">75.96</td><td class="px-4 py-2 border text-sm">68.71</td><td class="px-4 py-2 border text-sm">45.31</td><td class="px-4 py-2 border text-sm">35.52</td><td class="px-4 py-2 border text-sm">33.14</td><td class="px-4 py-2 border text-sm">75.83</td><td class="px-4 py-2 border text-sm">60.82</td><td class="px-4 py-2 border text-sm">53.67</td></tr><tr><td class="px-4 py-2 border text-sm">PointPillars [13]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">58.29</td><td class="px-4 py-2 border text-sm">82.58</td><td class="px-4 py-2 border text-sm">74.31</td><td class="px-4 py-2 border text-sm">68.99</td><td class="px-4 py-2 border text-sm">51.45</td><td class="px-4 py-2 border text-sm">41.92</td><td class="px-4 py-2 border text-sm">38.89</td><td class="px-4 py-2 border text-sm">77.10</td><td class="px-4 py-2 border text-sm">58.65</td><td class="px-4 py-2 border text-sm">51.92</td></tr><tr><td class="px-4 py-2 border text-sm">SA-SSD [9]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">88.75</td><td class="px-4 py-2 border text-sm">79.79</td><td class="px-4 py-2 border text-sm">74.16</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td></tr><tr><td class="px-4 py-2 border text-sm">TANet [17]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">59.90</td><td class="px-4 py-2 border text-sm">84.39</td><td class="px-4 py-2 border text-sm">75.94</td><td class="px-4 py-2 border text-sm">68.82</td><td class="px-4 py-2 border text-sm">53.72</td><td class="px-4 py-2 border text-sm">44.34</td><td class="px-4 py-2 border text-sm">40.49</td><td class="px-4 py-2 border text-sm">75.70</td><td class="px-4 py-2 border text-sm">59.44</td><td class="px-4 py-2 border text-sm">52.53</td></tr><tr><td class="px-4 py-2 border text-sm">Part-A$^2$ [22]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">61.78</td><td class="px-4 py-2 border text-sm">87.81</td><td class="px-4 py-2 border text-sm">78.49</td><td class="px-4 py-2 border text-sm">73.51</td><td class="px-4 py-2 border text-sm">53.10</td><td class="px-4 py-2 border text-sm">43.35</td><td class="px-4 py-2 border text-sm">40.06</td><td class="px-4 py-2 border text-sm">79.17</td><td class="px-4 py-2 border text-sm">63.52</td><td class="px-4 py-2 border text-sm">56.93</td></tr><tr><td class="px-4 py-2 border text-sm">SPVCNN [26]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">61.16</td><td class="px-4 py-2 border text-sm">87.80</td><td class="px-4 py-2 border text-sm">78.40</td><td class="px-4 py-2 border text-sm">74.80</td><td class="px-4 py-2 border text-sm">49.20</td><td class="px-4 py-2 border text-sm">41.40</td><td class="px-4 py-2 border text-sm">38.40</td><td class="px-4 py-2 border text-sm">80.10</td><td class="px-4 py-2 border text-sm">63.70</td><td class="px-4 py-2 border text-sm">56.20</td></tr><tr><td class="px-4 py-2 border text-sm">\midrule</td></tr><tr><td class="px-4 py-2 border text-sm">PointRCNN [21]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">57.95</td><td class="px-4 py-2 border text-sm">86.96</td><td class="px-4 py-2 border text-sm">75.64</td><td class="px-4 py-2 border text-sm">70.70</td><td class="px-4 py-2 border text-sm">47.98</td><td class="px-4 py-2 border text-sm">39.37</td><td class="px-4 py-2 border text-sm">36.01</td><td class="px-4 py-2 border text-sm">74.96</td><td class="px-4 py-2 border text-sm">58.82</td><td class="px-4 py-2 border text-sm">52.53</td></tr><tr><td class="px-4 py-2 border text-sm">3DSSD [32]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">55.11</td><td class="px-4 py-2 border text-sm">87.73</td><td class="px-4 py-2 border text-sm">78.58</td><td class="px-4 py-2 border text-sm">72.01</td><td class="px-4 py-2 border text-sm">35.03</td><td class="px-4 py-2 border text-sm">27.76</td><td class="px-4 py-2 border text-sm">26.08</td><td class="px-4 py-2 border text-sm">66.69</td><td class="px-4 py-2 border text-sm">59.00</td><td class="px-4 py-2 border text-sm">55.62</td></tr><tr><td class="px-4 py-2 border text-sm">IA-SSD [36]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">60.30</td><td class="px-4 py-2 border text-sm">88.34</td><td class="px-4 py-2 border text-sm">80.13</td><td class="px-4 py-2 border text-sm">75.10</td><td class="px-4 py-2 border text-sm">46.51</td><td class="px-4 py-2 border text-sm">39.03</td><td class="px-4 py-2 border text-sm">35.60</td><td class="px-4 py-2 border text-sm">78.35</td><td class="px-4 py-2 border text-sm">61.94</td><td class="px-4 py-2 border text-sm">55.70</td></tr><tr><td class="px-4 py-2 border text-sm">\midrule</td></tr><tr><td class="px-4 py-2 border text-sm">CenterPoint [33]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">59.96</td><td class="px-4 py-2 border text-sm">88.21</td><td class="px-4 py-2 border text-sm">79.80</td><td class="px-4 py-2 border text-sm">76.51</td><td class="px-4 py-2 border text-sm">46.83</td><td class="px-4 py-2 border text-sm">38.97</td><td class="px-4 py-2 border text-sm">36.78</td><td class="px-4 py-2 border text-sm">76.32</td><td class="px-4 py-2 border text-sm">61.11</td><td class="px-4 py-2 border text-sm">53.62</td></tr><tr><td class="px-4 py-2 border text-sm">CenterPoint-Pillar [33]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">57.39</td><td class="px-4 py-2 border text-sm">84.76</td><td class="px-4 py-2 border text-sm">77.09</td><td class="px-4 py-2 border text-sm">72.47</td><td class="px-4 py-2 border text-sm">44.07</td><td class="px-4 py-2 border text-sm">37.80</td><td class="px-4 py-2 border text-sm">35.23</td><td class="px-4 py-2 border text-sm">75.17</td><td class="px-4 py-2 border text-sm">57.29</td><td class="px-4 py-2 border text-sm">50.87</td></tr><tr><td class="px-4 py-2 border text-sm">CenterPoint (Ada3D-B)</td><td class="px-4 py-2 border text-sm">\textbf{5.26$\times$}</td><td class="px-4 py-2 border text-sm">\textbf{4.93$\times$}</td><td class="px-4 py-2 border text-sm">59.85</td><td class="px-4 py-2 border text-sm">87.46</td><td class="px-4 py-2 border text-sm">79.41</td><td class="px-4 py-2 border text-sm">75.63</td><td class="px-4 py-2 border text-sm">46.91</td><td class="px-4 py-2 border text-sm">39.11</td><td class="px-4 py-2 border text-sm">36.43</td><td class="px-4 py-2 border text-sm">76.09</td><td class="px-4 py-2 border text-sm">61.04</td><td class="px-4 py-2 border text-sm">53.73</td></tr><tr><td class="px-4 py-2 border text-sm">CenterPoint (Ada3D-C)</td><td class="px-4 py-2 border text-sm">\textbf{9.83$\times$}</td><td class="px-4 py-2 border text-sm">\textbf{8.49$\times$}</td><td class="px-4 py-2 border text-sm">57.72</td><td class="px-4 py-2 border text-sm">82.52</td><td class="px-4 py-2 border text-sm">74.98</td><td class="px-4 py-2 border text-sm">69.11</td><td class="px-4 py-2 border text-sm">43.66</td><td class="px-4 py-2 border text-sm">38.23</td><td class="px-4 py-2 border text-sm">34.80</td><td class="px-4 py-2 border text-sm">75.27</td><td class="px-4 py-2 border text-sm">59.96</td><td class="px-4 py-2 border text-sm">52.14</td></tr><tr><td class="px-4 py-2 border text-sm">\bottomrule</td></tr></tbody></table></div><div id="chart-1" class="hidden">
-        <div id="plotly-chart-1" class="w-full my-6" style="height: 500px;"></div>
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const data = [{"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [2.0, 1.0, 1.0, 330.7, null, null], "type": "bar", "name": "\\multirow{2}{*}{\\textbf{Mehod}}", "marker": {"color": "hsl(0, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 49.05, 77.47, 65.11, 57.73, 39.48, 33.69, 31.5, 61.22, 48.36, 44.37], "type": "bar", "name": "VoxelNet [39]", "marker": {"color": "hsl(30, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 57.43, 84.65, 75.96, 68.71, 45.31, 35.52, 33.14, 75.83, 60.82, 53.67], "type": "bar", "name": "SECOND [30]", "marker": {"color": "hsl(60, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 58.29, 82.58, 74.31, 68.99, 51.45, 41.92, 38.89, 77.1, 58.65, 51.92], "type": "bar", "name": "PointPillars [13]", "marker": {"color": "hsl(90, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, null, 88.75, 79.79, 74.16, null, null, null, null, null, null], "type": "bar", "name": "SA-SSD [9]", "marker": {"color": "hsl(120, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 59.9, 84.39, 75.94, 68.82, 53.72, 44.34, 40.49, 75.7, 59.44, 52.53], "type": "bar", "name": "TANet [17]", "marker": {"color": "hsl(150, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 61.78, 87.81, 78.49, 73.51, 53.1, 43.35, 40.06, 79.17, 63.52, 56.93], "type": "bar", "name": "Part-A$^2$ [22]", "marker": {"color": "hsl(180, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 61.16, 87.8, 78.4, 74.8, 49.2, 41.4, 38.4, 80.1, 63.7, 56.2], "type": "bar", "name": "SPVCNN [26]", "marker": {"color": "hsl(210, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 57.95, 86.96, 75.64, 70.7, 47.98, 39.37, 36.01, 74.96, 58.82, 52.53], "type": "bar", "name": "PointRCNN [21]", "marker": {"color": "hsl(240, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 55.11, 87.73, 78.58, 72.01, 35.03, 27.76, 26.08, 66.69, 59.0, 55.62], "type": "bar", "name": "3DSSD [32]", "marker": {"color": "hsl(270, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 60.3, 88.34, 80.13, 75.1, 46.51, 39.03, 35.6, 78.35, 61.94, 55.7], "type": "bar", "name": "IA-SSD [36]", "marker": {"color": "hsl(300, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 59.96, 88.21, 79.8, 76.51, 46.83, 38.97, 36.78, 76.32, 61.11, 53.62], "type": "bar", "name": "CenterPoint [33]", "marker": {"color": "hsl(330, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 57.39, 84.76, 77.09, 72.47, 44.07, 37.8, 35.23, 75.17, 57.29, 50.87], "type": "bar", "name": "CenterPoint-Pillar [33]", "marker": {"color": "hsl(360, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [5.26, 4.93, 59.85, 87.46, 79.41, 75.63, 46.91, 39.11, 36.43, 76.09, 61.04, 53.73], "type": "bar", "name": "CenterPoint (Ada3D-B)", "marker": {"color": "hsl(390, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [9.83, 8.49, 57.72, 82.52, 74.98, 69.11, 43.66, 38.23, 34.8, 75.27, 59.96, 52.14], "type": "bar", "name": "CenterPoint (Ada3D-C)", "marker": {"color": "hsl(420, 70%, 50%)"}}];
-            const layout = {"title": "Performance Comparison", "xaxis": {"title": "Metrics"}, "yaxis": {"title": "Scores"}, "barmode": "group", "height": 500};
-            Plotly.newPlot('plotly-chart-1', data, layout, {responsive:true});
-        });
-        </script>
-        </div></div>
-                    <p class="text-sm text-gray-600 italic mt-2 text-center">
-                        Table 1: Table 1: Performance comparison of Ada3D and other methods on KITTI test set. The 'Ada3D-B' and 'Ada3D-C' are centerpoint models optimized by Ada3D with different drop rates.
-                    </p>
-                </div>
-                </p>
-    </div>
-  </section>
-
-  <!-- ===== BibTeX Section ===== -->
-  <section id="bibtex" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <h2 class="text-3xl font-bold mb-6 text-center">BibTeX</h2>
-      <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 font-mono text-sm text-left overflow-x-auto">
-        <pre>@inproceedings{Ada3DExploiting2025,
-  title={ Ada3D : Exploiting the Spatial Redundancy with Adaptive Inference for Efficient 3D Object Detection },
-  author={ Anonymous },
-  booktitle={ Conference on AI Research },
-  year={2025},
-}</pre>
+        <div id="chart"></div>
+        <div id="datatable" class="hidden">
+          <table>
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Metric 1</th>
+                <th>Metric 2</th>
+                <th>Metric 3</th>
+                <th>Metric 4</th>
+                <th>Metric 5</th>
+                <th>Metric 6</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>VoxelNet [39]</td><td>49.05</td><td>77.47</td><td>65.11</td><td>57.73</td><td>39.48</td><td>33.69</td></tr>
+              <tr><td>SECOND [30]</td><td>57.43</td><td>84.65</td><td>75.96</td><td>68.71</td><td>45.31</td><td>35.52</td></tr>
+              <tr><td>PointPillars [13]</td><td>58.29</td><td>82.58</td><td>74.31</td><td>68.99</td><td>51.45</td><td>41.92</td></tr>
+              <tr><td>CenterPoint (Ada3D-B)</td><td>87.46</td><td>79.41</td><td>75.63</td><td>46.91</td><td>39.11</td><td>36.43</td></tr>
+              <tr><td>CenterPoint (Ada3D-C)</td><td>82.52</td><td>74.98</td><td>69.11</td><td>43.66</td><td>38.23</td><td>34.80</td></tr>
+            </tbody>
+          </table>
+          <p style="text-align:center; font-style:italic; color:gray; margin-top:10px;">
+            Table 1: Performance comparison of Ada3D and other methods on KITTI test set.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== Footer ===== -->
-  <footer class="text-center py-6 text-gray-500 text-sm border-t border-gray-200">
-    ©  Anonymous et al.
-  </footer>
-
-  <!-- 图表交互脚本 -->
+  <!-- ===== Chart Script ===== -->
   <script>
-    // 全局图表交互功能
-    const UniversalTableParser = {
-      changeChartType: function(tableId, chartType, originalData, originalLayout) {
-        const container = document.getElementById('plotly-chart-' + tableId);
-        
-        let newData = [];
-        if (chartType === 'bar') {
-          newData = originalData.map(trace => ({
-            ...trace,
-            type: 'bar'
-          }));
-        } else if (chartType === 'line') {
-          newData = originalData.map(trace => ({
-            ...trace,
-            type: 'scatter',
-            mode: 'lines+markers'
-          }));
-        } else if (chartType === 'scatter') {
-          newData = originalData.map(trace => ({
-            ...trace,
-            type: 'scatter',
-            mode: 'markers'
-          }));
-        }
-        
-        const newLayout = {
-          ...originalLayout,
-          title: originalLayout.title.replace(/Bar Chart|Line Chart|Scatter Plot/, 
-                 chartType.charAt(0).toUpperCase() + chartType.slice(1) + 
-                 (chartType === 'bar' ? ' Chart' : chartType === 'line' ? ' Chart' : ' Plot'))
-        };
-        
-        Plotly.react('plotly-chart-' + tableId, newData, newLayout);
-      }
-    };
+    const metrics = ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"];
+    const dataBase = [
+      { name: 'VoxelNet [39]', y: [49.05, 77.47, 65.11, 57.73, 39.48, 33.69], color: 'hsl(30,70%,50%)' },
+      { name: 'SECOND [30]', y: [57.43, 84.65, 75.96, 68.71, 45.31, 35.52], color: 'hsl(60,70%,50%)' },
+      { name: 'PointPillars [13]', y: [58.29, 82.58, 74.31, 68.99, 51.45, 41.92], color: 'hsl(90,70%,50%)' },
+      { name: 'CenterPoint (Ada3D-B)', y: [87.46, 79.41, 75.63, 46.91, 39.11, 36.43], color: 'hsl(330,70%,50%)' },
+      { name: 'CenterPoint (Ada3D-C)', y: [82.52, 74.98, 69.11, 43.66, 38.23, 34.8], color: 'hsl(360,70%,50%)' }
+    ];
 
-    // 视图切换功能
-    function toggleView(showId, hideId, button) {
-      document.getElementById(showId).classList.remove('hidden');
-      document.getElementById(hideId).classList.add('hidden');
-      
-      // 更新按钮样式
-      const container = button.parentElement;
-      container.querySelectorAll('button').forEach(btn => {
-        btn.classList.remove('bg-blue-500', 'text-white');
-        btn.classList.add('bg-gray-200', 'text-gray-700');
-      });
-      button.classList.remove('bg-gray-200', 'text-gray-700');
-      button.classList.add('bg-blue-500', 'text-white');
+    let currentType = 'bar';
+
+    function drawChart(type) {
+      const traces = dataBase.map(item => ({
+        x: metrics,
+        y: item.y,
+        type: type,
+        mode: type === 'scatter' ? 'lines+markers' : undefined,
+        name: item.name,
+        marker: { color: item.color }
+      }));
+
+      const layout = {
+        title: 'Performance Comparison',
+        xaxis: { title: 'Metrics' },
+        yaxis: { title: 'Scores' },
+        barmode: 'group',
+        height: 500
+      };
+
+      Plotly.newPlot('chart', traces, layout, { responsive: true });
     }
 
-    // 表格排序功能
-    const UniversalTableSorter = {
-      sortTable: function(table, column) {
-        const tbody = table.querySelector('tbody');
-        const rows = Array.from(tbody.querySelectorAll('tr'));
-        const isAscending = !table.dataset.sortAsc || table.dataset.sortCol !== column.toString();
-        table.dataset.sortCol = column;
-        table.dataset.sortAsc = isAscending;
-        rows.sort((a, b) => {
-          const aVal = a.children[column]?.textContent?.trim() || '';
-          const bVal = b.children[column]?.textContent?.trim() || '';
-          const aNum = parseFloat(aVal.replace(/[^\d.\-]/g, ''));
-          const bNum = parseFloat(bVal.replace(/[^\d.\-]/g, ''));
-          if (!isNaN(aNum) && !isNaN(bNum)) {
-            return isAscending ? aNum - bNum : bNum - aNum;
-          }
-          return isAscending ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
-        });
-        rows.forEach(r => tbody.appendChild(r));
-      }
-    };
+    drawChart('bar');
 
-    // 页面加载完成后初始化表格交互
-    document.addEventListener('DOMContentLoaded', function() {
-      // 为所有表格添加排序功能
-      document.querySelectorAll('.interactive-table table').forEach(table => {
-        const headers = table.querySelectorAll('th');
-        headers.forEach((header, index) => {
-          header.addEventListener('click', () => {
-            UniversalTableSorter.sortTable(table, index);
-          });
-          header.style.cursor = 'pointer';
-          header.classList.add('hover:bg-gray-100', 'transition-colors');
-          header.title = 'Click to sort';
-        });
+    function toggleView(type) {
+      currentType = type;
+      ['barBtn', 'lineBtn', 'scatterBtn'].forEach(id => {
+        const btn = document.getElementById(id);
+        if (id.startsWith(type)) btn.className = 'active';
+        else btn.className = 'inactive';
       });
-    });
-  </script>
+      drawChart(type);
+    }
 
+    function toggleTable() {
+      const table = document.getElementById('datatable');
+      const chart = document.getElementById('chart');
+      const tableBtn = document.getElementById('tableBtn');
+      if (table.classList.contains('hidden')) {
+        table.classList.remove('hidden');
+        chart.classList.add('hidden');
+        tableBtn.className = 'active';
+      } else {
+        table.classList.add('hidden');
+        chart.classList.remove('hidden');
+        tableBtn.className = 'inactive';
+      }
+    }
+  </script>
 </body>
 </html>
