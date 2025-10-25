@@ -91,7 +91,7 @@
     <div class="container mx-auto px-4 max-w-4xl">
       <h2 class="text-3xl font-bold mb-6 text-center">Abstract</h2>
       <div class="bg-gray-50 p-8 rounded-xl shadow-sm border border-gray-200">
-        <p class="text-lg leading-relaxed">Voxel-based methods have achieved state-of-the-art performance for 3D object detection in autonomous driving. However, their significant computational and memory costs pose a challenge for their application to resourceconstrained vehicles. One reason for this high resource consumption is the presence of a large number of redundant background points in Lidar point clouds, resulting in spatial redundancy in both 3D voxel and BEV map representations. To address this issue, we propose an adaptive inference framework called Ada3D , which focuses on reducing the spatial redundancy to compress the model's computational and memory cost. Ada3D adaptively filters the redundant input, guided by a lightweight importance predictor and the unique properties of the Lidar point cloud. Additionally, we maintain the BEV features' intrinsic sparsity by introducing the Sparsity Preserving Batch Normalization. With Ada3D, we achieve 40 % reduction for 3D voxels and decrease the density of 2D BEV feature maps from 100% to 20 % without sacrificing accuracy. Ada3D reduces the model computational and memory cost by 5 × , and achieves 1 . 52 × / 1 . 45 × end-to-end GPU latency and 1 . 5 × / 4 . 5 × GPU peak memory optimization for the 3D and 2D backbone respectively.</p>
+        <p class="text-lg leading-relaxed">Voxel-based methods have achieved state-of-the-art performance for 3D object detection in autonomous driving. However, their significant computational and memory costs pose a challenge for their application to resourceconstrained vehicles. One reason for this high resource consumption is the presence of a large number of redundant background points in Lidar point clouds, resulting in <span class="font-bold text-blue-700">spatial redundancy in both 3D voxel and BEV map representations</span>. To address this issue, we propose an adaptive inference framework called <span class="font-bold text-blue-700">Ada3D</span>, which focuses on reducing the spatial redundancy to compress the model's computational and memory cost. Ada3D adaptively filters the redundant input, guided by a lightweight importance predictor and the unique properties of the Lidar point cloud. Additionally, we maintain the BEV features' intrinsic sparsity by introducing the <span class="font-bold text-blue-700">Sparsity Preserving Batch Normalization</span>. With Ada3D, we achieve <span class="font-bold text-blue-700">40% reduction for 3D voxels</span> and decrease the density of 2D BEV feature maps from 100% to 20% without sacrificing accuracy. Ada3D reduces the model computational and memory cost by <span class="font-bold text-blue-700">5×</span>, and achieves 1.52×/1.45× end-to-end GPU latency and 1.5×/4.5× GPU peak memory optimization for the 3D and 2D backbone respectively.</p>
       </div>
     </div>
   </section>
@@ -100,21 +100,21 @@
   <section id="method" class="py-16 bg-gray-50">
     <div class="container mx-auto px-4 max-w-4xl">
       <h2 class="text-3xl font-bold mb-6 text-center">Method</h2>
-      <p class="text-lg leading-relaxed"><p class='text-lg leading-relaxed'>The proposed method, Ada3D, addresses the spatial redundancy in both 3D voxel and 2D BEV features to enhance the efficiency of voxel-based 3D detection methods. Ada3D introduces an adaptive inference framework that selectively filters out redundant 3D voxels and 2D BEV features during inference. Specifically, it employs a lightweight predictor to assess the importance of input features in the BEV space, combining this with the density of the Lidar point cloud to determine which features to drop. This adaptive filtering significantly reduces computational and memory costs by up to 5×. Additionally, Ada3D introduces a sparsity-preserving batch normalization technique that maintains sparsity in 2D BEV features, further optimizing model efficiency. By adaptively skipping redundant features, Ada3D achieves a 1.4× end-to-end speedup and a 2.2× reduction in GPU peak memory usage on an RTX3090, without compromising performance. This approach allows for finer voxel sizes, thereby improving model performance under resource constraints.</p>
+      <p class="text-lg leading-relaxed">The proposed method, <span class="font-bold text-blue-700">Ada3D</span>, addresses the spatial redundancy in both 3D voxel and 2D BEV features to enhance the efficiency of voxel-based 3D detection methods. Ada3D introduces an adaptive inference framework that selectively filters out redundant 3D voxels and 2D BEV features during inference. Specifically, it employs a lightweight predictor to assess the importance of input features in the BEV space, combining this with the density of the Lidar point cloud to determine which features to drop. This adaptive filtering significantly reduces computational and memory costs by up to <span class="font-bold text-blue-700">5×</span>. Additionally, Ada3D introduces a <span class="font-bold text-blue-700">sparsity-preserving batch normalization</span> technique that maintains sparsity in 2D BEV features, further optimizing model efficiency. By adaptively skipping redundant features, Ada3D achieves a <span class="font-bold text-blue-700">1.4× end-to-end speedup</span> and a <span class="font-bold text-blue-700">2.2× reduction in GPU peak memory usage</span> on an RTX3090, without compromising performance. This approach allows for finer voxel sizes, thereby improving model performance under resource constraints.</p>
+            
             <div class="visual my-6">
                 <img src="/images/Ada3D _ Exploiting the Spatial Redundancy with Adaptive Inference for Efficient 3D Object Detection-picture-6.jpg" alt="Figure 6: Layer-wise GPU latency and peak memory optimization for Ada3D-B . The green and blue bars stand for the latency and peak memory. The diagonal filled bars are Ada3D optimized costs." class="max-w-full h-auto rounded-lg shadow-md mx-auto">
                 <p class="text-sm text-gray-600 italic mt-2 text-center">
-                    Figure: Figure 6: Layer-wise GPU latency and peak memory optimization for Ada3D-B . The green and blue bars stand for the latency and peak memory. The diagonal filled bars are Ada3D optimized costs.
+                    Figure: Layer-wise GPU latency and peak memory optimization for Ada3D-B. The green and blue bars stand for the latency and peak memory. The diagonal filled bars are Ada3D optimized costs.
                 </p>
             </div>
             
             <div class="visual my-6">
                 <img src="/images/Ada3D _ Exploiting the Spatial Redundancy with Adaptive Inference for Efficient 3D Object Detection-picture-7.jpg" alt="Figure 7: End-to-end GPU latency and peak memory optimization for Ada3D . The green and blue bars stand for the latency and peak memory cost respectively. The filled/unfilled bars represent the 2D/3D backbone." class="max-w-full h-auto rounded-lg shadow-md mx-auto">
                 <p class="text-sm text-gray-600 italic mt-2 text-center">
-                    Figure: Figure 7: End-to-end GPU latency and peak memory optimization for Ada3D . The green and blue bars stand for the latency and peak memory cost respectively. The filled/unfilled bars represent the 2D/3D backbone.
+                    Figure: End-to-end GPU latency and peak memory optimization for Ada3D. The green and blue bars stand for the latency and peak memory cost respectively. The filled/unfilled bars represent the 2D/3D backbone.
                 </p>
             </div>
-            </p>
     </div>
   </section>
 
@@ -122,15 +122,15 @@
   <section id="experiments" class="py-16 bg-white">
     <div class="container mx-auto px-4 max-w-4xl">
       <h2 class="text-3xl font-bold mb-6 text-center">Experiments</h2>
-      <p class="text-lg leading-relaxed"><p class='text-lg leading-relaxed'>Experiments and Key Findings:
+      <p class="text-lg leading-relaxed"><p class='text-lg leading-relaxed'><span class="font-bold text-blue-700">Experiments and Key Findings:</span>
 
 The research conducted several experiments to evaluate the effectiveness of the Ada3D method in enhancing 3D object detection. Notably, Ada3D was tested against various state-of-the-art methods on the KITTI dataset, focusing on metrics such as mean Average Precision (mAP) and 3D detection accuracy across different IoU thresholds.
 </p>
-<p class="text-lg leading-relaxed"> Performance Comparison:
+<p class="text-lg leading-relaxed"> <span class="font-bold text-blue-700">Performance Comparison:</span>
 
 Table 9 and Table 10 demonstrate the performance of Ada3D when combined with the CenterPoint model. Specifically, the method achieved a mAP of 65.5, comparable to the baseline CenterPoint model (66.1) while enabling a finer voxel size (0.075) versus the larger size (0.1) typically used to reduce computational costs. Additionally, Table 10 shows that Ada3D improved performance metrics for cars, pedestrians, and cyclists at various IoU thresholds, indicating enhanced detection accuracy without significant increases in computational cost.
 </p>
-<p class="text-lg leading-relaxed"> Adaptive Inference and Spatial Redundancy Reduction:
+<p class="text-lg leading-relaxed"> <span class="font-bold text-blue-700">Adaptive Inference and Spatial Redundancy Reduction:</span>
 
 Ada3D also integrates adaptive inference techniques to reduce spatial redundancy in both 3D and 2D backbones. By employing a spatial filtering module that combines predictor scores with 3D point cloud density, the method selectively drops redundant parts. Furthermore, the introduction of SP-BN (Spatially Pruned Batch Normalization) helps in retaining sparsity by omitting background pixels in the 2D backbone.
 
