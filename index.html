@@ -1,520 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
-
-  <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
-  <!-- Additional SEO -->
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
-
-  <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
-  
-  <!-- Favicon and App Icons -->
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
-  <!-- Critical CSS - Load synchronously -->
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-  
-  <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <!-- Fallback for browsers that don't support preload -->
-  <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  </noscript>
-  
-  <!-- Fonts - Optimized loading -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Defer non-critical JavaScript -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
-  <script defer src="static/js/index.js"></script>
-  
-  <!-- Structured Data for Academic Papers -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
-    "author": [
-      {
-        "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      }
-    ],
-    "datePublished": "2024-01-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
-    },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
-    "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
-  }
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ada3D : Exploiting the Spatial Redundancy with Adaptive Inference for Efficient 3D Object Detection</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* 添加一些自定义样式确保图表显示正常 */
+    .plotly-chart {
+      width: 100%;
+      height: 500px;
+    }
+    .chart-controls {
+      margin: 15px 0;
+      text-align: center;
+    }
+    .chart-btn {
+      margin: 0 5px;
+      padding: 8px 15px;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .chart-btn:hover {
+      background-color: #2563eb;
+    }
+    .chart-btn.active {
+      background-color: #1e40af;
+    }
+  </style>
 </head>
-<body>
 
+<body class="bg-gray-50 font-sans text-gray-800">
 
-  <!-- Scroll to Top Button -->
-  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
+  <!-- ===== Navigation Bar ===== -->
+  <nav class="sticky top-0 bg-white shadow-md z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-xl md:text-2xl font-bold text-primary">Ada3D : Exploiting the Spatial Redundancy with Adaptive Inference for Efficient 3D Object Detection</h1>
+      <div class="flex space-x-4">
+        <a href="#abstract" class="text-gray-700 hover:text-primary font-semibold">Abstract</a>
+        <a href="#method" class="text-gray-700 hover:text-primary font-semibold">Method</a>
+        <a href="#experiments" class="text-gray-700 hover:text-primary font-semibold">Experiments</a>
+        <a href="#bibtex" class="text-gray-700 hover:text-primary font-semibold">BibTeX</a>
       </div>
     </div>
-  </div>
+  </nav>
 
-  <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
-
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
+  <!-- ===== Hero Section ===== -->
+  <section class="bg-gradient-to-b from-white to-gray-100 py-12 md:py-20 text-center">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">Ada3D : Exploiting the Spatial Redundancy with Adaptive Inference for Efficient 3D Object Detection</h1>
+      <div class="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-lg font-semibold mb-6">
         
+      </div>
+
+      <!-- Authors -->
+      <div class="max-w-4xl mx-auto mb-6">
+        <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-lg">
+          
+          <p>Anonymous<sup>1</sup></p>
+          
+        </div>
+        <div class="mt-2 text-gray-600">
+          
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#" class="bg-blue-600 text-white px-5 py-2 rounded-md ">
+          <i class="fa fa-file-alt mr-2"></i> Paper
+        </a>
+        <a href="#" class="bg-gray-200 text-gray-800 px-5 py-2 rounded-md ">
+          <i class="fa fa-github mr-2"></i> Code
+        </a>
+        <a href="#" class="bg-gray-200 text-gray-800 px-5 py-2 rounded-md ">
+          <i class="fa fa-database mr-2"></i> Dataset
+        </a>
       </div>
     </div>
   </section>
-<!--End paper poster -->
 
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
-}</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
+  <!-- ===== Abstract Section ===== -->
+  <section id="abstract" class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl font-bold mb-6 text-center">Abstract</h2>
+      <div class="bg-gray-50 p-8 rounded-xl shadow-sm border border-gray-200">
+        <p class="text-lg leading-relaxed">Voxel-based methods have achieved state-of-the-art performance for 3D object detection in autonomous driving. However, their significant computational and memory costs pose a challenge for their application to resourceconstrained vehicles. One reason for this high resource consumption is the presence of a large number of redundant background points in Lidar point clouds, resulting in spatial redundancy in both 3D voxel and BEV map representations. To address this issue, we propose an adaptive inference framework called Ada3D , which focuses on reducing the spatial redundancy to compress the model's computational and memory cost. Ada3D adaptively filters the redundant input, guided by a lightweight importance predictor and the unique properties of the Lidar point cloud. Additionally, we maintain the BEV features' intrinsic sparsity by introducing the Sparsity Preserving Batch Normalization. With Ada3D, we achieve 40 % reduction for 3D voxels and decrease the density of 2D BEV feature maps from 100% to 20 % without sacrificing accuracy. Ada3D reduces the model computational and memory cost by 5 × , and achieves 1 . 52 × / 1 . 45 × end-to-end GPU latency and 1 . 5 × / 4 . 5 × GPU peak memory optimization for the 3D and 2D backbone respectively.</p>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+  <!-- ===== Method Section ===== -->
+  <section id="method" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl font-bold mb-6 text-center">Method</h2>
+      <p class="text-lg leading-relaxed"><p class='text-lg leading-relaxed'>The proposed method, Ada3D, addresses the spatial redundancy in both 3D voxel and 2D BEV features to enhance the efficiency of voxel-based 3D detection methods. Ada3D introduces an adaptive inference framework that selectively filters out redundant 3D voxels and 2D BEV features during inference. Specifically, it employs a lightweight predictor to assess the importance of input features in the BEV space, combining this with the density of the Lidar point cloud to determine which features to drop. This adaptive filtering significantly reduces computational and memory costs by up to 5×. Additionally, Ada3D introduces a sparsity-preserving batch normalization technique that maintains sparsity in 2D BEV features, further optimizing model efficiency. By adaptively skipping redundant features, Ada3D achieves a 1.4× end-to-end speedup and a 2.2× reduction in GPU peak memory usage on an RTX3090, without compromising performance. This approach allows for finer voxel sizes, thereby improving model performance under resource constraints.</p>
+            <div class="visual my-6">
+                <img src="/images/Ada3D _ Exploiting the Spatial Redundancy with Adaptive Inference for Efficient 3D Object Detection-picture-6.jpg" alt="Figure 6: Layer-wise GPU latency and peak memory optimization for Ada3D-B . The green and blue bars stand for the latency and peak memory. The diagonal filled bars are Ada3D optimized costs." class="max-w-full h-auto rounded-lg shadow-md mx-auto">
+                <p class="text-sm text-gray-600 italic mt-2 text-center">
+                    Figure: Figure 6: Layer-wise GPU latency and peak memory optimization for Ada3D-B . The green and blue bars stand for the latency and peak memory. The diagonal filled bars are Ada3D optimized costs.
+                </p>
+            </div>
+            
+            <div class="visual my-6">
+                <img src="/images/Ada3D _ Exploiting the Spatial Redundancy with Adaptive Inference for Efficient 3D Object Detection-picture-7.jpg" alt="Figure 7: End-to-end GPU latency and peak memory optimization for Ada3D . The green and blue bars stand for the latency and peak memory cost respectively. The filled/unfilled bars represent the 2D/3D backbone." class="max-w-full h-auto rounded-lg shadow-md mx-auto">
+                <p class="text-sm text-gray-600 italic mt-2 text-center">
+                    Figure: Figure 7: End-to-end GPU latency and peak memory optimization for Ada3D . The green and blue bars stand for the latency and peak memory cost respectively. The filled/unfilled bars represent the 2D/3D backbone.
+                </p>
+            </div>
+            </p>
+    </div>
+  </section>
 
-    <!-- End of Statcounter Code -->
+  <!-- ===== Experiments Section ===== -->
+  <section id="experiments" class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl font-bold mb-6 text-center">Experiments</h2>
+      <p class="text-lg leading-relaxed"><p class='text-lg leading-relaxed'>### Experiments and Key Findings
 
-  </body>
-  </html>
+The research conducted several experiments to evaluate the effectiveness of the Ada3D method in enhancing 3D object detection. Notably, Ada3D was tested against various state-of-the-art methods on the KITTI dataset, focusing on metrics such as mean Average Precision (mAP) and 3D detection accuracy across different IoU thresholds.
+
+#### Performance Comparison
+
+Table 9 and Table 10 demonstrate the performance of Ada3D when combined with the CenterPoint model. Specifically, the method achieved a mAP of 65.5, comparable to the baseline CenterPoint model (66.1) while enabling a finer voxel size (0.075) versus the larger size (0.1) typically used to reduce computational costs. Additionally, Table 10 shows that Ada3D improved performance metrics for cars, pedestrians, and cyclists at various IoU thresholds, indicating enhanced detection accuracy without significant increases in computational cost.
+
+#### Adaptive Inference and Spatial Redundancy Reduction
+
+Ada3D also integrates adaptive inference techniques to reduce spatial redundancy in both 3D and 2D backbones. By employing a spatial filtering module that combines predictor scores with 3D point cloud density, the method selectively drops redundant parts. Furthermore, the introduction of SP-BN (Spatially Pruned Batch Normalization) helps in retaining sparsity by omitting background pixels in the 2D backbone.
+
+These experiments highlight that Ada3D not only maintains or improves detection accuracy but also reduces spatial redundancy, making it a promising approach for efficient 3D object detection.</p>
+                <div class="visual my-6">
+                    <div id="table-container-1" class="w-full">
+            <div class="flex space-x-2 mb-4 justify-center">
+                <button onclick="toggleView('table-1','chart-1',this,'bar')" 
+                        class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">📊 Bar Chart</button>
+                <button onclick="toggleView('table-1','chart-1',this,'line')" 
+                        class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">📈 Line Chart</button>
+                <button onclick="toggleView('table-1','chart-1',this,'scatter')" 
+                        class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">🔵 Scatter</button>
+                <button onclick="toggleView('chart-1','table-1',this)" 
+                        class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">📋 Show Table</button>
+            </div><div id="table-1" class="overflow-x-auto my-6"><table class="min-w-full border"><thead><tr><th class="px-4 py-2 border bg-gray-50 font-semibold">\toprule</th></tr></thead><tbody><tr><td class="px-4 py-2 border text-sm">\multirow{2}{*}{\textbf{Mehod}}</td><td class="px-4 py-2 border text-sm">\multicolumn{2}{c}{\textbf{FLOPs}}</td><td class="px-4 py-2 border text-sm">\multicolumn{1}{c}{\textbf{Mem}}</td><td class="px-4 py-2 border text-sm">\multicolumn{1}{c}{\textbf{mAP}}</td><td class="px-4 py-2 border text-sm">\multicolumn{3}{c}{\textbf{3D Car (IoU=0.7)}}</td><td class="px-4 py-2 border text-sm">\multicolumn{3}{c}{\textbf{3D Ped. (IoU=0.5)}}</td><td class="px-4 py-2 border text-sm">\multicolumn{3}{c}{\textbf{3D Cyc. (IoU=0.5)}}</td></tr><tr><td class="px-4 py-2 border text-sm">\cmidrule(lr){2-3} \cmidrule(lr){4-4} \cmidrule(lr){5-5} \cmidrule(lr){6-8} \cmidrule(lr){9-11} \cmidrule(lr){12-14}</td></tr><tr><td class="px-4 py-2 border text-sm"></td><td class="px-4 py-2 border text-sm">Opt.</td><td class="px-4 py-2 border text-sm">Opt.</td><td class="px-4 py-2 border text-sm">(Mod.)</td><td class="px-4 py-2 border text-sm"></td><td class="px-4 py-2 border text-sm">Easy</td><td class="px-4 py-2 border text-sm">Mod.</td><td class="px-4 py-2 border text-sm">Hard</td><td class="px-4 py-2 border text-sm">Easy</td><td class="px-4 py-2 border text-sm">Mod.</td><td class="px-4 py-2 border text-sm">Hard</td><td class="px-4 py-2 border text-sm">Easy</td><td class="px-4 py-2 border text-sm">Mod.</td><td class="px-4 py-2 border text-sm">Hard</td></tr><tr><td class="px-4 py-2 border text-sm">\midrule</td></tr><tr><td class="px-4 py-2 border text-sm">VoxelNet [39]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">49.05</td><td class="px-4 py-2 border text-sm">77.47</td><td class="px-4 py-2 border text-sm">65.11</td><td class="px-4 py-2 border text-sm">57.73</td><td class="px-4 py-2 border text-sm">39.48</td><td class="px-4 py-2 border text-sm">33.69</td><td class="px-4 py-2 border text-sm">31.50</td><td class="px-4 py-2 border text-sm">61.22</td><td class="px-4 py-2 border text-sm">48.36</td><td class="px-4 py-2 border text-sm">44.37</td></tr><tr><td class="px-4 py-2 border text-sm">SECOND [30]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">57.43</td><td class="px-4 py-2 border text-sm">84.65</td><td class="px-4 py-2 border text-sm">75.96</td><td class="px-4 py-2 border text-sm">68.71</td><td class="px-4 py-2 border text-sm">45.31</td><td class="px-4 py-2 border text-sm">35.52</td><td class="px-4 py-2 border text-sm">33.14</td><td class="px-4 py-2 border text-sm">75.83</td><td class="px-4 py-2 border text-sm">60.82</td><td class="px-4 py-2 border text-sm">53.67</td></tr><tr><td class="px-4 py-2 border text-sm">PointPillars [13]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">58.29</td><td class="px-4 py-2 border text-sm">82.58</td><td class="px-4 py-2 border text-sm">74.31</td><td class="px-4 py-2 border text-sm">68.99</td><td class="px-4 py-2 border text-sm">51.45</td><td class="px-4 py-2 border text-sm">41.92</td><td class="px-4 py-2 border text-sm">38.89</td><td class="px-4 py-2 border text-sm">77.10</td><td class="px-4 py-2 border text-sm">58.65</td><td class="px-4 py-2 border text-sm">51.92</td></tr><tr><td class="px-4 py-2 border text-sm">SA-SSD [9]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">88.75</td><td class="px-4 py-2 border text-sm">79.79</td><td class="px-4 py-2 border text-sm">74.16</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td></tr><tr><td class="px-4 py-2 border text-sm">TANet [17]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">59.90</td><td class="px-4 py-2 border text-sm">84.39</td><td class="px-4 py-2 border text-sm">75.94</td><td class="px-4 py-2 border text-sm">68.82</td><td class="px-4 py-2 border text-sm">53.72</td><td class="px-4 py-2 border text-sm">44.34</td><td class="px-4 py-2 border text-sm">40.49</td><td class="px-4 py-2 border text-sm">75.70</td><td class="px-4 py-2 border text-sm">59.44</td><td class="px-4 py-2 border text-sm">52.53</td></tr><tr><td class="px-4 py-2 border text-sm">Part-A$^2$ [22]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">61.78</td><td class="px-4 py-2 border text-sm">87.81</td><td class="px-4 py-2 border text-sm">78.49</td><td class="px-4 py-2 border text-sm">73.51</td><td class="px-4 py-2 border text-sm">53.10</td><td class="px-4 py-2 border text-sm">43.35</td><td class="px-4 py-2 border text-sm">40.06</td><td class="px-4 py-2 border text-sm">79.17</td><td class="px-4 py-2 border text-sm">63.52</td><td class="px-4 py-2 border text-sm">56.93</td></tr><tr><td class="px-4 py-2 border text-sm">SPVCNN [26]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">61.16</td><td class="px-4 py-2 border text-sm">87.80</td><td class="px-4 py-2 border text-sm">78.40</td><td class="px-4 py-2 border text-sm">74.80</td><td class="px-4 py-2 border text-sm">49.20</td><td class="px-4 py-2 border text-sm">41.40</td><td class="px-4 py-2 border text-sm">38.40</td><td class="px-4 py-2 border text-sm">80.10</td><td class="px-4 py-2 border text-sm">63.70</td><td class="px-4 py-2 border text-sm">56.20</td></tr><tr><td class="px-4 py-2 border text-sm">\midrule</td></tr><tr><td class="px-4 py-2 border text-sm">PointRCNN [21]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">57.95</td><td class="px-4 py-2 border text-sm">86.96</td><td class="px-4 py-2 border text-sm">75.64</td><td class="px-4 py-2 border text-sm">70.70</td><td class="px-4 py-2 border text-sm">47.98</td><td class="px-4 py-2 border text-sm">39.37</td><td class="px-4 py-2 border text-sm">36.01</td><td class="px-4 py-2 border text-sm">74.96</td><td class="px-4 py-2 border text-sm">58.82</td><td class="px-4 py-2 border text-sm">52.53</td></tr><tr><td class="px-4 py-2 border text-sm">3DSSD [32]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">55.11</td><td class="px-4 py-2 border text-sm">87.73</td><td class="px-4 py-2 border text-sm">78.58</td><td class="px-4 py-2 border text-sm">72.01</td><td class="px-4 py-2 border text-sm">35.03</td><td class="px-4 py-2 border text-sm">27.76</td><td class="px-4 py-2 border text-sm">26.08</td><td class="px-4 py-2 border text-sm">66.69</td><td class="px-4 py-2 border text-sm">59.00</td><td class="px-4 py-2 border text-sm">55.62</td></tr><tr><td class="px-4 py-2 border text-sm">IA-SSD [36]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">60.30</td><td class="px-4 py-2 border text-sm">88.34</td><td class="px-4 py-2 border text-sm">80.13</td><td class="px-4 py-2 border text-sm">75.10</td><td class="px-4 py-2 border text-sm">46.51</td><td class="px-4 py-2 border text-sm">39.03</td><td class="px-4 py-2 border text-sm">35.60</td><td class="px-4 py-2 border text-sm">78.35</td><td class="px-4 py-2 border text-sm">61.94</td><td class="px-4 py-2 border text-sm">55.70</td></tr><tr><td class="px-4 py-2 border text-sm">\midrule</td></tr><tr><td class="px-4 py-2 border text-sm">CenterPoint [33]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">59.96</td><td class="px-4 py-2 border text-sm">88.21</td><td class="px-4 py-2 border text-sm">79.80</td><td class="px-4 py-2 border text-sm">76.51</td><td class="px-4 py-2 border text-sm">46.83</td><td class="px-4 py-2 border text-sm">38.97</td><td class="px-4 py-2 border text-sm">36.78</td><td class="px-4 py-2 border text-sm">76.32</td><td class="px-4 py-2 border text-sm">61.11</td><td class="px-4 py-2 border text-sm">53.62</td></tr><tr><td class="px-4 py-2 border text-sm">CenterPoint-Pillar [33]</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">-</td><td class="px-4 py-2 border text-sm">57.39</td><td class="px-4 py-2 border text-sm">84.76</td><td class="px-4 py-2 border text-sm">77.09</td><td class="px-4 py-2 border text-sm">72.47</td><td class="px-4 py-2 border text-sm">44.07</td><td class="px-4 py-2 border text-sm">37.80</td><td class="px-4 py-2 border text-sm">35.23</td><td class="px-4 py-2 border text-sm">75.17</td><td class="px-4 py-2 border text-sm">57.29</td><td class="px-4 py-2 border text-sm">50.87</td></tr><tr><td class="px-4 py-2 border text-sm">CenterPoint (Ada3D-B)</td><td class="px-4 py-2 border text-sm">\textbf{5.26$\times$}</td><td class="px-4 py-2 border text-sm">\textbf{4.93$\times$}</td><td class="px-4 py-2 border text-sm">59.85</td><td class="px-4 py-2 border text-sm">87.46</td><td class="px-4 py-2 border text-sm">79.41</td><td class="px-4 py-2 border text-sm">75.63</td><td class="px-4 py-2 border text-sm">46.91</td><td class="px-4 py-2 border text-sm">39.11</td><td class="px-4 py-2 border text-sm">36.43</td><td class="px-4 py-2 border text-sm">76.09</td><td class="px-4 py-2 border text-sm">61.04</td><td class="px-4 py-2 border text-sm">53.73</td></tr><tr><td class="px-4 py-2 border text-sm">CenterPoint (Ada3D-C)</td><td class="px-4 py-2 border text-sm">\textbf{9.83$\times$}</td><td class="px-4 py-2 border text-sm">\textbf{8.49$\times$}</td><td class="px-4 py-2 border text-sm">57.72</td><td class="px-4 py-2 border text-sm">82.52</td><td class="px-4 py-2 border text-sm">74.98</td><td class="px-4 py-2 border text-sm">69.11</td><td class="px-4 py-2 border text-sm">43.66</td><td class="px-4 py-2 border text-sm">38.23</td><td class="px-4 py-2 border text-sm">34.80</td><td class="px-4 py-2 border text-sm">75.27</td><td class="px-4 py-2 border text-sm">59.96</td><td class="px-4 py-2 border text-sm">52.14</td></tr><tr><td class="px-4 py-2 border text-sm">\bottomrule</td></tr></tbody></table></div><div id="chart-1" class="hidden">
+        <div id="plotly-chart-1" class="w-full my-6" style="height: 500px;"></div>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const data = [{"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [2.0, 1.0, 1.0, 330.7, null, null], "type": "bar", "name": "\\multirow{2}{*}{\\textbf{Mehod}}", "marker": {"color": "hsl(0, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 49.05, 77.47, 65.11, 57.73, 39.48, 33.69, 31.5, 61.22, 48.36, 44.37], "type": "bar", "name": "VoxelNet [39]", "marker": {"color": "hsl(30, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 57.43, 84.65, 75.96, 68.71, 45.31, 35.52, 33.14, 75.83, 60.82, 53.67], "type": "bar", "name": "SECOND [30]", "marker": {"color": "hsl(60, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 58.29, 82.58, 74.31, 68.99, 51.45, 41.92, 38.89, 77.1, 58.65, 51.92], "type": "bar", "name": "PointPillars [13]", "marker": {"color": "hsl(90, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, null, 88.75, 79.79, 74.16, null, null, null, null, null, null], "type": "bar", "name": "SA-SSD [9]", "marker": {"color": "hsl(120, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 59.9, 84.39, 75.94, 68.82, 53.72, 44.34, 40.49, 75.7, 59.44, 52.53], "type": "bar", "name": "TANet [17]", "marker": {"color": "hsl(150, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 61.78, 87.81, 78.49, 73.51, 53.1, 43.35, 40.06, 79.17, 63.52, 56.93], "type": "bar", "name": "Part-A$^2$ [22]", "marker": {"color": "hsl(180, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 61.16, 87.8, 78.4, 74.8, 49.2, 41.4, 38.4, 80.1, 63.7, 56.2], "type": "bar", "name": "SPVCNN [26]", "marker": {"color": "hsl(210, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 57.95, 86.96, 75.64, 70.7, 47.98, 39.37, 36.01, 74.96, 58.82, 52.53], "type": "bar", "name": "PointRCNN [21]", "marker": {"color": "hsl(240, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 55.11, 87.73, 78.58, 72.01, 35.03, 27.76, 26.08, 66.69, 59.0, 55.62], "type": "bar", "name": "3DSSD [32]", "marker": {"color": "hsl(270, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 60.3, 88.34, 80.13, 75.1, 46.51, 39.03, 35.6, 78.35, 61.94, 55.7], "type": "bar", "name": "IA-SSD [36]", "marker": {"color": "hsl(300, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 59.96, 88.21, 79.8, 76.51, 46.83, 38.97, 36.78, 76.32, 61.11, 53.62], "type": "bar", "name": "CenterPoint [33]", "marker": {"color": "hsl(330, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [null, null, 57.39, 84.76, 77.09, 72.47, 44.07, 37.8, 35.23, 75.17, 57.29, 50.87], "type": "bar", "name": "CenterPoint-Pillar [33]", "marker": {"color": "hsl(360, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [5.26, 4.93, 59.85, 87.46, 79.41, 75.63, 46.91, 39.11, 36.43, 76.09, 61.04, 53.73], "type": "bar", "name": "CenterPoint (Ada3D-B)", "marker": {"color": "hsl(390, 70%, 50%)"}}, {"x": ["Metric 1", "Metric 2", "Metric 3", "Metric 4", "Metric 5", "Metric 6"], "y": [9.83, 8.49, 57.72, 82.52, 74.98, 69.11, 43.66, 38.23, 34.8, 75.27, 59.96, 52.14], "type": "bar", "name": "CenterPoint (Ada3D-C)", "marker": {"color": "hsl(420, 70%, 50%)"}}];
+            const layout = {"title": "Performance Comparison", "xaxis": {"title": "Metrics"}, "yaxis": {"title": "Scores"}, "barmode": "group", "height": 500};
+            Plotly.newPlot('plotly-chart-1', data, layout, {responsive:true});
+        });
+        </script>
+        </div></div>
+                    <p class="text-sm text-gray-600 italic mt-2 text-center">
+                        Table 1: Table 1: Performance comparison of Ada3D and other methods on KITTI test set. The 'Ada3D-B' and 'Ada3D-C' are centerpoint models optimized by Ada3D with different drop rates.
+                    </p>
+                </div>
+                </p>
+    </div>
+  </section>
+
+  <!-- ===== BibTeX Section ===== -->
+  <section id="bibtex" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl font-bold mb-6 text-center">BibTeX</h2>
+      <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 font-mono text-sm text-left overflow-x-auto">
+        <pre>@inproceedings{Ada3DExploiting2025,
+  title={ Ada3D : Exploiting the Spatial Redundancy with Adaptive Inference for Efficient 3D Object Detection },
+  author={ Anonymous },
+  booktitle={ Conference on AI Research },
+  year={2025},
+}</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="text-center py-6 text-gray-500 text-sm border-t border-gray-200">
+    ©  Anonymous et al.
+  </footer>
+
+  <!-- 图表交互脚本 -->
+  <script>
+    // 全局图表交互功能
+    const UniversalTableParser = {
+      changeChartType: function(tableId, chartType, originalData, originalLayout) {
+        const container = document.getElementById('plotly-chart-' + tableId);
+        
+        let newData = [];
+        if (chartType === 'bar') {
+          newData = originalData.map(trace => ({
+            ...trace,
+            type: 'bar'
+          }));
+        } else if (chartType === 'line') {
+          newData = originalData.map(trace => ({
+            ...trace,
+            type: 'scatter',
+            mode: 'lines+markers'
+          }));
+        } else if (chartType === 'scatter') {
+          newData = originalData.map(trace => ({
+            ...trace,
+            type: 'scatter',
+            mode: 'markers'
+          }));
+        }
+        
+        const newLayout = {
+          ...originalLayout,
+          title: originalLayout.title.replace(/Bar Chart|Line Chart|Scatter Plot/, 
+                 chartType.charAt(0).toUpperCase() + chartType.slice(1) + 
+                 (chartType === 'bar' ? ' Chart' : chartType === 'line' ? ' Chart' : ' Plot'))
+        };
+        
+        Plotly.react('plotly-chart-' + tableId, newData, newLayout);
+      }
+    };
+
+    // 视图切换功能
+    function toggleView(showId, hideId, button) {
+      document.getElementById(showId).classList.remove('hidden');
+      document.getElementById(hideId).classList.add('hidden');
+      
+      // 更新按钮样式
+      const container = button.parentElement;
+      container.querySelectorAll('button').forEach(btn => {
+        btn.classList.remove('bg-blue-500', 'text-white');
+        btn.classList.add('bg-gray-200', 'text-gray-700');
+      });
+      button.classList.remove('bg-gray-200', 'text-gray-700');
+      button.classList.add('bg-blue-500', 'text-white');
+    }
+
+    // 表格排序功能
+    const UniversalTableSorter = {
+      sortTable: function(table, column) {
+        const tbody = table.querySelector('tbody');
+        const rows = Array.from(tbody.querySelectorAll('tr'));
+        const isAscending = !table.dataset.sortAsc || table.dataset.sortCol !== column.toString();
+        table.dataset.sortCol = column;
+        table.dataset.sortAsc = isAscending;
+        rows.sort((a, b) => {
+          const aVal = a.children[column]?.textContent?.trim() || '';
+          const bVal = b.children[column]?.textContent?.trim() || '';
+          const aNum = parseFloat(aVal.replace(/[^\d.\-]/g, ''));
+          const bNum = parseFloat(bVal.replace(/[^\d.\-]/g, ''));
+          if (!isNaN(aNum) && !isNaN(bNum)) {
+            return isAscending ? aNum - bNum : bNum - aNum;
+          }
+          return isAscending ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+        });
+        rows.forEach(r => tbody.appendChild(r));
+      }
+    };
+
+    // 页面加载完成后初始化表格交互
+    document.addEventListener('DOMContentLoaded', function() {
+      // 为所有表格添加排序功能
+      document.querySelectorAll('.interactive-table table').forEach(table => {
+        const headers = table.querySelectorAll('th');
+        headers.forEach((header, index) => {
+          header.addEventListener('click', () => {
+            UniversalTableSorter.sortTable(table, index);
+          });
+          header.style.cursor = 'pointer';
+          header.classList.add('hover:bg-gray-100', 'transition-colors');
+          header.title = 'Click to sort';
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
