@@ -119,15 +119,15 @@
   <section id="experiments" class="py-16 bg-white">
     <div class="container mx-auto px-4 max-w-4xl">
       <h2 class="text-3xl font-bold mb-6 text-center">Experiments</h2>
-      <p class="text-lg leading-relaxed">### Experiments and Key Findings
+      <p class="text-lg leading-relaxed">Experiments and Key Findings: 
 
 The research conducted several experiments to evaluate the effectiveness of the <span class="font-bold text-blue-700">Ada3D</span> method in enhancing 3D object detection. Notably, Ada3D was tested against various state-of-the-art methods on the KITTI dataset, focusing on metrics such as mean Average Precision (mAP) and 3D detection accuracy across different IoU thresholds.
-
-#### Performance Comparison
+</p>
+<p class="text-lg leading-relaxed">Performance Comparison:
 
 Table 1 demonstrates the performance of Ada3D when combined with the CenterPoint model. Specifically, the method achieved a mAP of <span class="font-bold text-blue-700">65.5</span>, comparable to the baseline CenterPoint model (66.1) while enabling a finer voxel size (0.075) versus the larger size (0.1) typically used to reduce computational costs. Additionally, Table 1 shows that Ada3D improved performance metrics for cars, pedestrians, and cyclists at various IoU thresholds, indicating enhanced detection accuracy without significant increases in computational cost.
-
-#### Adaptive Inference and Spatial Redundancy Reduction
+</p>
+<p class="text-lg leading-relaxed">Adaptive Inference and Spatial Redundancy Reduction
 
 Ada3D also integrates adaptive inference techniques to reduce spatial redundancy in both 3D and 2D backbones. By employing a <span class="font-bold text-blue-700">spatial filtering module</span> that combines predictor scores with 3D point cloud density, the method selectively drops redundant parts. Furthermore, the introduction of <span class="font-bold text-blue-700">SP-BN (Spatially Pruned Batch Normalization)</span> helps in retaining sparsity by omitting background pixels in the 2D backbone.
 
